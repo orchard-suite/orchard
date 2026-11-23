@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2](https://github.com/orchard-suite/orchard/compare/v1.1.1...v1.1.2) (2026-11-23)
+
+### Bug Fixes
+
+* **orchard:** skip nested checkouts in the check ([9347809](https://github.com/orchard-suite/orchard/commit/9347809913fef34b0b85cb8137efabb79d58299d))
+* **orchard:** name muster and mark tender built ([8fcdab3](https://github.com/orchard-suite/orchard/commit/8fcdab30b8d4811614e5a3adb3762cfe138aae8e))
+
 ## [1.1.1](https://github.com/orchard-suite/orchard/compare/v1.1.0...v1.1.1) (2026-11-23)
 
 ### Bug Fixes
