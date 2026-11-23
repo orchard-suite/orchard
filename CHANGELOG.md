@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1](https://github.com/orchard-suite/orchard/compare/v1.0.0...v1.0.1) (2026-11-23)
+
+### Bug Fixes
+
+* **orchard:** mark every member moved ([8bc6c06](https://github.com/orchard-suite/orchard/commit/8bc6c06014f1cc8d95e5d36a37e89b66363b4875))
+
 ## [1.0.0](https://github.com/orchard-suite/orchard/compare/v0.1.11...v1.0.0) (2026-11-23)
 
 ### ⚠ BREAKING CHANGES
