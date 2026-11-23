@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1](https://github.com/orchard-suite/orchard/compare/v1.1.0...v1.1.1) (2026-11-23)
+
+### Bug Fixes
+
+* **orchard:** link redgreen to its new repository ([98d6825](https://github.com/orchard-suite/orchard/commit/98d6825c8965d4618acc503f81d6b2e3a6649f3b))
+
 ## [1.1.0](https://github.com/orchard-suite/orchard/compare/v1.0.1...v1.1.0) (2026-11-23)
 
 ### Features
