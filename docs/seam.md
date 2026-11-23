@@ -16,8 +16,9 @@ docs, and fictional examples.
 **An estate** holds everything that is true only of it: its hosts and
 domains, its deploy overlays, its configuration and secrets, its database
 server (decision 0023), its catalog model and pushers, its code analyzers (decision 0014), its chat bots
-(decision 0015), its device certificates and the list of addresses its
-device agent posts to (decision 0018), its Trellis packs and waivers, its classes, its lanes
+(decision 0015), its device certificates, from its device management or a
+small certificate authority of its own, and the list of addresses its
+device agent posts to (decisions 0018 and 0025), its Trellis packs and waivers, its classes, its lanes
 and protected paths, each bed's own laws, its telemetry declarations, its
 dashboards and alert rules, and its own apps.
 

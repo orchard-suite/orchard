@@ -40,12 +40,12 @@ gardener cannot tend what it cannot see.
 | # | What is owed | Who owes it | From | State | Checked |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Count where growers get stuck: retries, stops, redirects, and failed tool calls per session, as plain numbers on each repository. | A new, small source. It is not admitted yet. | 0008 | Owed. No source has a repository yet. | 2026-11-21 |
-| 2 | Loop, friction, and weeds as fields on each repository, beside the delivery measures. | Orrery and redgreen | 0007, 0008 | Partly. redgreen writes each pipeline's median duration, and Orrery keeps a budget beside a number. Friction and weeds have no source. | 2026-11-20 |
+| 2 | Loop, friction, and weeds as fields on each repository, beside the delivery measures. | Orrery and Muster | 0007, 0008 | Partly. Muster writes each pipeline's median duration, and Orrery keeps a budget beside a number. Friction and weeds have no source. | 2026-11-20 |
 | 3 | Open the ground view to everyone. | Each estate, on its own hub | 0008 | Partly. Built, and still in preview at Orrery v1.156.3. | 2026-11-21 |
 | 4 | Offer the cost of checking, catches, and the class as fields an estate's model may name. | Orrery | 0010 | Owed | 2026-11-20 |
-| 5 | Write which check failed, per run, so catches can be counted. | redgreen | 0010 | Owed | 2026-11-20 |
+| 5 | Write which check failed, per run, so catches can be counted. | Muster | 0010 | Owed | 2026-11-20 |
 | 6 | Tell an agent session that checks from one that builds, for sessions outside the desk. | Tally | 0010, 0011 | Owed | 2026-11-20 |
-| 25 | Count rework rate, the fifth delivery measure: the share of deployments that are unplanned and happen because of an incident in production. | redgreen and Orrery | 0016 | Owed | 2026-11-20 |
+| 25 | Count rework rate, the fifth delivery measure: the share of deployments that are unplanned and happen because of an incident in production. | Muster and Orrery | 0016 | Owed | 2026-11-20 |
 | 26 | Show the three outcomes for a whole estate, from the numbers each repository carries. | Orrery | 0016 | Owed | 2026-11-20 |
 
 ## The map
@@ -77,7 +77,7 @@ not, and until they do a reader meets both sets of names.
 | --- | --- | --- | --- | --- | --- |
 | 12 | One CLI shape and one token story across the members. | Every member | Build order, step 5 | Owed. Orrery, Vantage, Tally, and Trellis each ship a CLI of their own. | 2026-11-21 |
 | 13 | Move the members that are not on the shared kit onto it. | Those members | Build order, step 6 | Owed. Five of ten build on it. | 2026-11-20 |
-| 14 | Put the forge behind an adapter, as redgreen and Graft already do. | Trellis | Build order, step 7 | Owed. Its one forge source is GitHub, at v5.6.1. | 2026-11-21 |
+| 14 | Put the forge behind an adapter, as Muster and Graft already do. | Trellis | Build order, step 7 | Owed. Its one forge source is GitHub, at v5.6.1. | 2026-11-21 |
 | 15 | Post every act to Annals. | Every member that acts | Build order, step 8 | Owed | 2026-11-21 |
 
 ## Documents
@@ -104,15 +104,17 @@ Dispatch is the one place a product's notices go out from (decision
 ## Muster and Tender
 
 redgreen and forgitten become one member, Muster (decision 0017). The
-suite gets one device agent, Tender, in the shed (decision 0018).
+suite gets one device agent, Tender, in the shed (decision 0018). Both
+are built together, and forgitten retires once Muster holds each
+estate's machine reports (decision 0025).
 
 | # | What is owed | Who owes it | From | State | Checked |
 | --- | --- | --- | --- | --- | --- |
-| 27 | Take what a machine reports and write unpushed work onto each repository's record in the catalog. | Muster (redgreen today) | 0017 | Owed. redgreen reads forges only, at v1.12.0. | 2026-11-20 |
-| 28 | Retire forgitten's hub, store, page, and CLI once Muster holds what they hold, and take the new name. | redgreen and forgitten | 0017 | Owed. forgitten keeps its own hub, at v0.1.9. | 2026-11-20 |
-| 29 | Build Tender: readers that stay off until given an address, a question before it sends, a certificate as its identity, a saved place, and sending again. | Tender, a new tool in the shed | 0018 | Owed | 2026-11-20 |
+| 27 | Take what a machine reports and write unpushed work onto each repository's record in the catalog. | Muster | 0017, 0025 | Done. Muster 3.1.0 writes each report as `sw_checkout` records and counts `machines_with_unseen_work` on each repository. | 2026-11-23 |
+| 28 | Retire forgitten's hub, store, page, and CLI once Muster holds what they hold, and take the new name. | Muster and forgitten | 0017, 0025 | Partly. Muster took the name at 3.0.0; forgitten's hub, store, page, and CLI retire once each estate's machines report. | 2026-11-23 |
+| 29 | Build Tender: readers that stay off until given an address, a question before it sends, a certificate as its identity, a saved place, and sending again. | Tender, a new tool in the shed | 0018, 0025 | Done. Tender 0.0.2, in `orchard-suite/tender`. | 2026-11-23 |
 | 30 | Offer its reader as a small module, take a reader's posts at a door that checks a device certificate, and stop installing its server on machines. | Tally | 0018 | Owed. `tally ship` is the server program in another mode, at v0.0.45. | 2026-11-20 |
-| 31 | Offer its reader as a small module, and the same door. | Muster | 0017, 0018 | Owed | 2026-11-20 |
+| 31 | Offer its reader as a small module, and the same door. | Muster | 0017, 0018, 0025 | Done. The reader module at `reader/v1.0.0`, and the `device` door from platformkit 3.1.0, at Muster 3.1.0. | 2026-11-23 |
 | 32 | Issue device certificates from its own device management, and push the list of addresses for the members it runs. | Each estate | 0018 | Owed | 2026-11-20 |
 
 ## Reports
@@ -168,7 +170,7 @@ Every member and the suite's own shed tools are public in
 
 | # | What is owed | Who owes it | From | State | Checked |
 | --- | --- | --- | --- | --- | --- |
-| 46 | Move to a public repository in `orchard-suite`, from today's files with a fresh history, with its full CI on hosted runners. | Every member | 0024 | Done. Orrery 2.0.0, Vantage 4.0.0, My Apps 1.0.0, Tally 1.0.0, Annals 1.0.0, Trellis 6.0.0, Dispatch 1.0.0, Graft 7.0.0, forgitten 1.0.0, redgreen 2.0.1. | 2026-11-23 |
+| 46 | Move to a public repository in `orchard-suite`, from today's files with a fresh history, with its full CI on hosted runners. | Every member | 0024 | Done. Orrery 2.0.0, Vantage 4.0.0, My Apps 1.0.0, Tally 1.0.0, Annals 1.0.0, Trellis 6.0.0, Dispatch 1.0.0, Graft 7.0.0, forgitten 1.0.0, Muster 2.0.1, as redgreen. | 2026-11-23 |
 | 47 | Keep a private register of its names and its zones, and run hedge on every machine its people and agents work on. | Each estate | 0024 | Owed | 2026-11-23 |
 | 48 | Judge hedge's findings in every repository it reads: `hedge audit --facts` through Trellis's command source, and a rule in its own pack. | Each estate | 0024 | Owed | 2026-11-23 |
 
@@ -191,14 +193,7 @@ They are listed where they were left open.
 | Whether the standard takes the map of six pillars, five properties, and three outcomes | 0016 |
 | How adoption is counted, and who counts what an agent chooses | 0016 |
 | Whether Health gets a proof that a thing comes back, ahead of a failure | 0016 |
-| Which repository holds Muster, and whether it is public | 0017 |
-| Whether Muster builds on the kit, which decision 0004 kept redgreen off | 0017 |
-| How much of a machine's scan is kept: counts and branch names, or file names too | 0017 |
-| Whether Tender runs as the person or as the system, and so whose certificate it holds | 0018 |
-| Where the door lives that every member needs for a reader's posts | 0018 |
-| How Tender updates | 0018 |
 | Whether friction is counted by a reader in Tender | 0008, 0018 |
-| What an estate with no device management does for certificates | 0018 |
 | Whether a person who subscribes to a report on Dispatch is a reader of it | 0019 |
 | Whether the standard keeps a report to its home team or to its owner | 0019 |
 | How a run that ends wakes the agent that asked for it | 0020 |

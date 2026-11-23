@@ -20,7 +20,7 @@ The other rules: a read of each member's checkout over tracked files.
 
 No member does. Clean on 2026-11-23: Orrery 2.0.0, Vantage 4.0.0, My Apps
 1.0.0, Tally 1.0.0, Annals 1.0.1, Trellis 6.0.0, Dispatch 1.0.0, Graft
-7.0.0, forgitten 1.0.0, and redgreen 2.0.1.
+7.0.0, forgitten 1.0.0, and redgreen 2.0.1, which is Muster now.
 
 ## Rule 2: an estate's deployment lives in the product
 
@@ -36,8 +36,8 @@ agent).
 
 | Member | Forges it reads |
 | --- | --- |
-| redgreen | GitHub, GitLab, Azure DevOps, each behind a provider |
-| forgitten | none; it reads git on each machine |
+| Muster | GitHub, GitLab, Azure DevOps, each behind a provider |
+| forgitten | none; it reads git on each machine, and retires into Muster |
 | Trellis | GitHub and its registry only |
 | Orrery | GitHub Actions as the one actions backend |
 | Graft | GitHub and GitLab, each behind an adapter |
@@ -55,8 +55,8 @@ adapter per runtime.
 
 | Gap | Members |
 | --- | --- |
-| Not on the shared kit | Orrery, Trellis, Vantage, forgitten, and redgreen by decision 0004 |
-| Not shown posting to Annals in its `orrery.yaml` | Vantage, My Apps, Tally, Trellis, redgreen, forgitten |
+| Not on the shared kit | Orrery, Trellis, Vantage, forgitten, and Muster by decision 0004, which takes only the kit's `device` door (decision 0025) |
+| Not shown posting to Annals in its `orrery.yaml` | Vantage, My Apps, Tally, Trellis, Muster, forgitten |
 | No `consumes` in its `orrery.yaml` | forgitten, Annals (Annals only receives, so this one is correct) |
 
 The kit is a Go module today. Vantage is TypeScript, and

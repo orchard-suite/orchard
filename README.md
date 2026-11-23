@@ -37,9 +37,10 @@ reads them and fills the gaps the market leaves between them.
 ## The members
 
 Each member belongs to one of six pillars ([docs/pillars.md](docs/pillars.md),
-decision 0016). Six own a pillar. Four are parts of Catalog. redgreen and
-forgitten will become one member, Muster (decision 0017). Until it ships
-the suite has ten members, and after that nine.
+decision 0016). Six own a pillar. Four are parts of Catalog. redgreen is
+Muster now, and forgitten retires into it once Muster holds each estate's
+machine reports (decisions 0017 and 0025). Until then the suite has ten
+members, and after that nine.
 
 | App | Pillar | What it answers | Its tending job |
 | --- | --- | --- | --- |
@@ -49,10 +50,10 @@ the suite has ten members, and after that nine.
 | [Tally](https://github.com/orchard-suite/tally) | Cost (owner) | What each workload, host, agent, and job costs, in money and in capacity. | Sense cost. Prune: right-sizing. |
 | [Annals](https://github.com/orchard-suite/annals) | Record (owner) | What every person and agent did, across every product. | Sense and trace: who did what. |
 | [Trellis](https://github.com/orchard-suite/trellis) | Rules (owner) | Whether the estate meets its standards, rule by rule, with waivers. | Stake and fence: rules in the path of work. The suite's one judge, of its laws and of the map's five properties. |
-| [redgreen](https://github.com/orchard-suite/muster) | Catalog | Every forge's repositories, pipelines, and deployments in the catalog, which judges their health and the delivery measures. | Sense: each repository's loop and delivery. |
+| [Muster](https://github.com/orchard-suite/muster) | Catalog | Where the code is and what state it is in: every forge's repositories, pipelines, and deployments in the catalog, which judges their health and the delivery measures, and each machine's work that has not left it. | Sense: each repository's loop and delivery, and stranded work. |
 | [Dispatch](https://github.com/orchard-suite/dispatch) | Health (owner) | Which incidents are open, who owns them, and how long restores take. Also sends every product's notices, to channels and to people. | Trace: the postmortem. |
 | [Graft](https://github.com/orchard-suite/graft) | Change (owner) | How a request to change a repository becomes a tested change, landed, with an agent doing the work. | Fix: the hands that change a bed. |
-| [forgitten](https://github.com/orchard-suite/forgitten) | Catalog | Which work has not left the machine it was done on. | Sense and prune: stranded work. |
+| [forgitten](https://github.com/orchard-suite/forgitten) | Catalog | Which work has not left the machine it was done on. It retires into Muster (decision 0025). | Sense and prune: stranded work. |
 
 Two tools in the shed are the suite's own:
 [platformkit](https://github.com/orchard-suite/platformkit), the Go module

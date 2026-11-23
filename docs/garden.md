@@ -127,7 +127,7 @@ parts of quality the same way.
 
 | Job | Covered by | Rating | What is missing |
 | --- | --- | --- | --- |
-| Sense what exists and its health | Orrery, redgreen, Dispatch, forgitten | Covered | |
+| Sense what exists and its health | Orrery, Muster, Dispatch, forgitten | Covered | |
 | Sense what it costs | Tally | Covered | |
 | Sense what growers did | Annals | Partial | Only Orrery, Dispatch, and Graft say they post to it. |
 | Sense friction | Nothing | Gap | No member counts retries, stops, or failed tool calls. A new, small source will, and Orrery will show its numbers (decision 0008). It is not built. |
@@ -135,7 +135,7 @@ parts of quality the same way.
 | Fix at the source, everywhere | Orrery's actions, Graft | Partial | An action can ask a backend to change many beds. Graft has an agent change one bed per request (decision 0009). No member finds every copy of a weed. |
 | Stake | Trellis in a pipeline, Orrery's scorecards and field budgets | Partial | Orrery keeps a budget beside a number and shows when the number is outside it. The budget shows and stops nothing. Each estate sets its own; the suite ships none. |
 | Fence | Trellis in a pipeline, with waivers; Graft's protected paths | Partial | The fences themselves (required checks, admission, permissions) are the estate's own. No member reads a bed's own laws (decision 0010). |
-| Prune | Tally's right-sizing, forgitten | Partial | No member finds unused code, stale instructions, or checks that guard nothing. Decision 0010 says how a check is judged: by what it costs and what it caught. Nothing counts either yet. |
+| Prune | Tally's right-sizing, Muster's checkouts, forgitten | Partial | No member finds unused code, stale instructions, or checks that guard nothing. Decision 0010 says how a check is judged: by what it costs and what it caught. Nothing counts either yet. |
 | Soil | Trellis's build pack | Partial | It checks that a bed has an instruction file. It does not judge what the file says. |
 | Seed | Bring your own | Bring your own | Seeds stay with each estate (decision 0008). Orrery's ground lists the templates beds were started from, which beds have fallen behind, and the action that plants a new one. |
 | Nursery | Nothing | Bring your own | An estate picks its own nursery bed. |

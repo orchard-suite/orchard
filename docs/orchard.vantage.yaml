@@ -1,6 +1,6 @@
 vantage: 1
 title: Orchard
-updated: 2026-11-22
+updated: 2026-11-23
 description: >
   Orchard is a suite of ten platform services that help a small
   team tend a platform. This document holds the suite's pictures and its
@@ -165,9 +165,9 @@ nodes:
   - id: tender
     name: Tender
     type: worker
-    subtitle: the device agent, not built
-    style: { dashed: true }
-    description: The suite's one device agent, in the shed. It holds a reader for each member that reads from a machine. A reader stays off until the estate gives it an address. It proves itself with a certificate the estate issues, only reports, and never writes to the catalog. Decision 0018.
+    subtitle: the device agent, in the shed
+    facts: ["Carries: Muster's reader", "Runs as: the machine's person"]
+    description: The suite's one device agent, in the shed, built. It holds a reader for each member that reads from a machine, and carries Muster's today. A reader stays off until the estate gives it an address. It asks a member before it posts, signs each post with the device certificate's key from the operating system's store, saves its place, and sends again after a failure. It only reports, never writes to the catalog, and never updates itself. Decisions 0018 and 0025.
 
   - id: friction-source
     name: Friction Source
@@ -241,12 +241,12 @@ nodes:
         subtitle: standards as data
         facts: ["Pillar: Rules (owner)", "Judges: the five properties", "Packs: security, telemetry, build, interfaces, catalog, access, alerts, delivery, graft"]
         description: One judge over an estate's standards, and the suite's one judge of quality (decision 0010) and of the map's five properties (decision 0016). The same packs run on the board, by hand, and in a pipeline.
-      - id: redgreen
-        name: redgreen
+      - id: muster
+        name: Muster
         type: worker
-        subtitle: the forge source, headless
-        facts: ["Pillar: Catalog, its forge feed", "Pages: none (decision 0004)"]
-        description: Reads every forge's repositories, pipelines, deployments, and issues into Orrery. The health rules and DORA measures are calculated fields in Orrery. It will become Muster, with forgitten (decision 0017).
+        subtitle: where the code is, headless
+        facts: ["Pillar: Catalog, its code feed", "Pages: none (decision 0004)"]
+        description: Answers where the code is and what state it is in. Reads every forge's repositories, pipelines, deployments, and issues into Orrery, and takes each machine's report through Tender as checkouts, one for each repository on each machine. The health rules and DORA measures are calculated fields in Orrery. It was redgreen (decisions 0017 and 0025).
       - id: dispatch
         name: Dispatch
         type: service
@@ -262,9 +262,10 @@ nodes:
       - id: forgitten
         name: forgitten
         type: app
-        subtitle: unpushed work
+        subtitle: unpushed work, retiring
+        style: { dashed: true }
         facts: ["Pillar: Catalog, its stranded work", "Writes: nothing outside itself"]
-        description: Work that has not left the machine it was done on. A CLI scans each machine; a hub shows them on one page. It only reads. It will become part of Muster, with redgreen, and its own hub goes away (decision 0017).
+        description: Work that has not left the machine it was done on. A CLI scans each machine; a hub shows them on one page. It only reads. It retires into Muster once Muster holds each estate's machine reports. Then its hub, store, page, and CLI go (decision 0025).
       - id: annals
         name: Annals
         type: service
@@ -352,12 +353,12 @@ nodes:
         name: Device Management
         type: service
         subtitle: brought by the estate
-        description: Installs software on an estate's machines, pushes their settings, and issues their certificates. It will install Tender, give it a certificate, and list the members it posts to (decision 0018).
+        description: Installs software on an estate's machines, pushes their settings, and issues their certificates. It installs Tender, gives it a certificate, and lists the members it posts to. An estate without it runs a small certificate authority of its own, and each machine enrolls once by sign-in (decisions 0018 and 0025).
       - id: machines
         name: Machines
         type: device
         subtitle: where work is done
-        description: Each machine where people and agents work. forgitten's CLI scans them.
+        description: Each machine where people and agents work. Tender runs on each one and carries Muster's reader. forgitten's CLI still scans them until it retires.
       - id: agent-runtime
         name: Agent Runtime
         type: agent
@@ -391,7 +392,7 @@ relations:
   - { from: myapps, to: orrery-actions, label: lists a person's actions, kind: sync, tags: [web, core] }
   - { from: tally, to: orrery-catalog, label: "reads the bill, writes namespace cost", kind: sync, tags: [web, core] }
   - { from: trellis, to: orrery-catalog, label: "reads subjects, writes open findings", kind: sync, tags: [web, core] }
-  - { from: redgreen, to: orrery-catalog, label: "writes repos, pipelines, deploys, issues", kind: sync, tags: [web, core], description: It also reads Argo CD syncs and Dispatch's incidents back from the catalog. }
+  - { from: muster, to: orrery-catalog, label: "writes repos, pipelines, deploys, issues, checkouts", kind: sync, tags: [web, core], description: It also reads Argo CD syncs and Dispatch's incidents back from the catalog. }
   - { from: dispatch, to: orrery-catalog, label: pushes incidents, kind: sync, tags: [web, core] }
   - { from: orrery-actions, to: dispatch, label: tells every run, kind: async, tags: [web, core], description: "Orrery's notices pass, with DISPATCH_URL and DISPATCH_TOKEN." }
   - { from: orrery-forwarder, to: annals, label: forwards the activity log, kind: async, tags: [web, core], weight: 2 }
@@ -401,8 +402,8 @@ relations:
   - { from: graft, to: forges, label: "lands commits, GitHub and GitLab", kind: manage, tags: [web, seam] }
   - { from: graft, to: dispatch, label: "reads open incidents, sends notices", kind: sync, tags: [web, core] }
   - { from: graft, to: agent-runtime, label: starts agent sessions, kind: manage, tags: [web, seam] }
-  - { from: redgreen, to: forges, label: reads, kind: data, tags: [web, seam] }
-  - { from: redgreen, to: identity, label: signs in to Azure DevOps, kind: auth, tags: [web, seam] }
+  - { from: muster, to: forges, label: reads, kind: data, tags: [web, seam] }
+  - { from: muster, to: identity, label: signs in to Azure DevOps, kind: auth, tags: [web, seam] }
   - { from: trellis, to: forges, label: reads GitHub and its registry, kind: data, tags: [web, seam] }
   - { from: trellis, to: observability, label: "queries Prometheus, Loki, Tempo", kind: observe, tags: [web, seam] }
   - { from: trellis, to: vault, label: judges, kind: data, tags: [web, seam] }
@@ -461,23 +462,24 @@ relations:
 
   # What is owed next: one arrow per roadmap row that changes a flow.
   - { from: friction-source, to: orrery-catalog, label: "row 1: will count where growers get stuck", color: amber, kind: data, tags: [next] }
-  - { from: redgreen, to: orrery-catalog, label: "row 5: will write which check failed", color: amber, kind: data, tags: [next] }
+  - { from: muster, to: orrery-catalog, label: "row 5: will write which check failed", color: amber, kind: data, tags: [next] }
   - { from: tally, to: orrery-catalog, label: "row 6: will tell a checking session from a building one", color: amber, kind: data, tags: [next] }
   - { from: trellis, to: forges, label: "row 7: will read a repository's laws", color: amber, kind: sync, tags: [next] }
   - { from: graft, to: orrery-catalog, label: "row 8: will read a bed's class", color: amber, kind: sync, tags: [next] }
   - { from: dispatch, to: trellis, label: "row 11: a postmortem will name the law", color: amber, kind: sync, tags: [next] }
   - { from: dispatch, to: products, label: "row 19: will tell a sender how each delivery went", color: amber, kind: sync, tags: [next] }
   - { from: dispatch, to: chat, label: "row 20: will speak as more than one bot", color: amber, kind: async, tags: [next] }
-  - { from: redgreen, to: orrery-catalog, label: "row 25: will count rework rate", color: amber, kind: data, tags: [next] }
+  - { from: muster, to: orrery-catalog, label: "row 25: will count rework rate", color: amber, kind: data, tags: [next] }
   - { from: vantage, to: orrery-catalog, label: "row 41: will push its workspaces and their members", color: amber, kind: data, tags: [next] }
 
-  # From a machine to a member (decisions 0017 and 0018). None of it is built.
-  - { from: forgitten, to: redgreen, label: "rows 27 and 28: will fold into one member, Muster", color: amber, kind: data, tags: [device] }
+  # From a machine to a member (decisions 0017, 0018, and 0025). Muster's path is built.
+  - { from: machines, to: tender, label: runs on each machine, kind: data, tags: [device, web] }
+  - { from: tender, to: muster, label: "posts unpushed work, signed", kind: async, tags: [device, web], description: "To /tender/v1/readers/muster, behind platformkit's device door. Names and counts only." }
+  - { from: muster, to: orrery-catalog, label: "writes checkouts; a machine never does", kind: data, tags: [device] }
+  - { from: forgitten, to: muster, label: "row 28: will retire into Muster", color: amber, kind: data, tags: [device] }
   - { from: device-management, to: tender, label: "row 32: will give a certificate and the addresses", color: amber, kind: auth, tags: [device] }
-  - { from: machines, to: tender, label: "row 29: will run on each machine", color: amber, kind: data, tags: [device] }
   - { from: tender, to: tally, label: "row 30: will carry what agents used", color: amber, kind: async, tags: [device] }
-  - { from: tender, to: redgreen, label: "row 31: will carry unpushed work", color: amber, kind: async, tags: [device] }
-  - { from: [tally, redgreen], to: orrery-catalog, label: "write it; a machine never does", color: amber, kind: data, tags: [device] }
+  - { from: tally, to: orrery-catalog, label: "row 30: will write it; a machine never does", color: amber, kind: data, tags: [device] }
   - { from: orrery-catalog, to: outcomes, label: "row 26: will show the three outcomes", color: amber, kind: data, tags: [next] }
   - { from: trellis, to: properties, label: "row 24: will judge all five properties", color: amber, kind: sync, tags: [next] }
 
@@ -512,18 +514,18 @@ views:
     title: Who Answers What
     group: The Map
     question: Which member owns each pillar, and which members are parts of one?
-    include: { tags: [engine], nodes: [p-catalog, p-change, p-health, p-cost, p-rules, p-record, orrery, vantage, myapps, redgreen, forgitten, graft, dispatch, tally, trellis, annals] }
-    reparent: { orrery: p-catalog, vantage: p-catalog, myapps: p-catalog, redgreen: p-catalog, forgitten: p-catalog, graft: p-change, dispatch: p-health, tally: p-cost, trellis: p-rules, annals: p-record }
+    include: { tags: [engine], nodes: [p-catalog, p-change, p-health, p-cost, p-rules, p-record, orrery, vantage, myapps, muster, forgitten, graft, dispatch, tally, trellis, annals] }
+    reparent: { orrery: p-catalog, vantage: p-catalog, myapps: p-catalog, muster: p-catalog, forgitten: p-catalog, graft: p-change, dispatch: p-health, tally: p-cost, trellis: p-rules, annals: p-record }
     collapse: [annals, orrery]
     direction: right
     arrange:
       - { node: pillars, as: row, order: [p-catalog, p-change, p-health, p-cost, p-rules, p-record] }
-      - { node: p-catalog, as: column, order: [orrery, vantage, myapps, redgreen, forgitten] }
+      - { node: p-catalog, as: column, order: [orrery, vantage, myapps, muster, forgitten] }
     highlights:
       - { nodes: [orrery, graft, dispatch, tally, trellis, annals], label: The six owners, color: blue }
     annotations:
       - { text: "One owner per pillar. Four members are parts of Catalog.", kind: heading }
-      - { text: "Each member sits in the one pillar it belongs to. Vantage is the catalog's picture, My Apps its front page, redgreen its forge feed, and forgitten finds work that never reached a forge. redgreen and forgitten will become one member, Muster (decision 0017)." }
+      - { text: "Each member sits in the one pillar it belongs to. Vantage is the catalog's picture, My Apps its front page, Muster says where the code is, on a forge or on a machine, and forgitten, which finds work that never reached a forge, retires into Muster (decision 0025). The suite counts ten members until it does." }
       - { text: "Change has one owner and one engine: Graft changes a repository, and Orrery's actions engine runs every other change. So Change is rated Partial. Members still name the old pillars in their own files until roadmap rows 21 and 22 are done." }
 
   - id: suite
@@ -553,13 +555,13 @@ views:
     direction: right
     legend: true
     arrange:
-      - { node: orchard, as: ring, center: orrery, order: [annals, vantage, myapps, tally, trellis, redgreen, forgitten, dispatch, graft] }
+      - { node: orchard, as: ring, center: orrery, order: [annals, vantage, myapps, tally, trellis, muster, forgitten, dispatch, graft] }
     highlights:
       - { nodes: [orrery], label: The spine, color: blue, style: band }
     annotations:
-      - { text: forgitten stands alone. Its CLI posts scans to its own hub., at: forgitten }
+      - { text: "forgitten stands alone, and retires into Muster. Its CLI posts scans to its own hub.", at: forgitten }
       - { text: Orrery is the spine, kind: heading }
-      - { text: "Five members write into the catalog: My Apps its list of applications, Tally namespace cost, trellis open findings, redgreen the forges' records, Dispatch its incidents. Orrery tells Dispatch every action run. Graft declares its actions on Orrery and reports each run there. Only Orrery, Dispatch, and Graft post to Annals today." }
+      - { text: "Five members write into the catalog: My Apps its list of applications, Tally namespace cost, trellis open findings, Muster the forges' records and each machine's checkouts, Dispatch its incidents. Orrery tells Dispatch every action run. Graft declares its actions on Orrery and reports each run there. Only Orrery, Dispatch, and Graft post to Annals today." }
 
   - id: seam
     title: Through the Seam
@@ -570,7 +572,7 @@ views:
     direction: right
     legend: true
     arrange:
-      - { node: orchard, as: column, order: [redgreen, vantage, graft, orrery, trellis, tally, dispatch, forgitten] }
+      - { node: orchard, as: column, order: [muster, vantage, graft, orrery, trellis, tally, dispatch, forgitten] }
       - { node: estate, as: column, order: [front-door, identity, forges, code-analyzer, agent-runtime, database-server, deploy-tool, observability, alertmanager, products, chat, vault, machines] }
     annotations:
       - { text: "Orchard builds no forge, identity provider, secrets store, observability stack, agent runtime, or database server. Each is the estate's own.", kind: heading }
@@ -668,7 +670,7 @@ views:
       - { text: "Every amber arrow is a row of roadmap.md that is owed and not built. Nothing on this view runs today.", kind: heading }
       - { text: "Rows 2 to 4 and 10 change no flow: fields on each repository, the ground view opened to everyone, and the gate saying which checks it ran. Row 17 changes none either: a pointer file in a repository. Rows 9, 16, and 18 are done." }
       - { text: "Rows 21 to 23 only rename: Trellis's rules, each member's own file, and each estate's pillar records take the names of the map (decision 0016)." }
-      - { text: "Rows 27 to 32 are drawn on their own view, From a Machine to a Member." }
+      - { text: "Rows 27 to 32 are drawn on their own view, From a Machine to a Member. Rows 27, 29, and 31 are done." }
       - { text: "Rows 33 to 38 change no flow: who may read a report in Orrery's catalog, and how its owner shares it (decision 0019)." }
       - { text: "Rows 39 and 40 are not drawn yet: the actions engine starts one job for each run, through a starter the estate runs (decision 0020)." }
       - { text: "Rows 12 to 15 are owed by every member: one CLI shape, the shared kit, a forge adapter in Trellis, and every act posted to Annals." }
@@ -678,29 +680,32 @@ views:
   - id: device
     title: From a Machine to a Member
     group: Orchard
-    question: How will what exists only on a person's machine reach the suite, with no token on the machine?
+    question: How does what exists only on a person's machine reach the suite, with no token on the machine?
     include: { tags: [device] }
     collapse: [annals, orrery]
     direction: right
     legend: true
     arrange:
       - { node: estate, as: column, order: [device-management, machines] }
-      - { node: orchard, as: column, order: [tally, redgreen, forgitten, orrery] }
+      - { node: orchard, as: column, order: [tally, forgitten, muster, orrery] }
     highlights:
-      - { nodes: [tender], label: "In the shed, not built", color: amber }
-      - { nodes: [redgreen, forgitten], label: Will become Muster, color: amber }
+      - { nodes: [tender], label: "In the shed, built at 0.0.2", color: green }
+      - { nodes: [forgitten], label: Retires into Muster, color: amber }
     paths:
-      - title: One report, once Tender is built
+      - title: Unpushed work, from a machine to Muster
+        steps:
+          - { from: machines, to: tender, text: "Tender runs on the machine, as its person. Muster's reader reads each checkout's counts and branch names. A reader with no address stays off." }
+          - { from: tender, to: muster, text: "Tender asks Muster whether it takes this reader. Then it posts names and counts, never a file's name or contents, signed with the device certificate's key." }
+          - { from: muster, to: orrery-catalog, text: "Muster's door checks the signature, and Muster writes one checkout for each repository on the machine, private to its person. The machine holds no catalog token." }
+      - title: Still owed
         color: amber
         steps:
-          - { from: device-management, to: tender, text: "The estate's device management installs Tender, gives the machine a certificate, and lists one address for each member the estate runs." }
-          - { from: machines, to: tender, text: "Tender runs on the machine. Each reader reads what only that machine holds. A reader with no address stays off." }
-          - { from: tender, to: tally, id: 3a, text: "Tender asks the member whether it takes this reader. Then it sends names and counts, never contents, and shows its certificate." }
-          - { from: tender, to: redgreen, id: 3b, text: "The same for work that has not left the machine. An estate without this member lists no address, so this reader never runs." }
-          - { from: redgreen, to: orrery-catalog, id: 4, text: "Only the member writes to the catalog. The machine holds no catalog token." }
+          - { from: device-management, to: tender, text: "Row 32: the estate's device management installs Tender, gives the machine a certificate, and lists one address for each member the estate runs." }
+          - { from: tender, to: tally, text: "Row 30: Tally offers its reader and the same door." }
+          - { from: forgitten, to: muster, text: "Row 28: forgitten retires once Muster holds each estate's machine reports." }
     annotations:
-      - { text: "Nothing on this view is built. Every arrow is a roadmap row, 27 to 32.", kind: heading }
-      - { text: "Tender only reports. Nothing in the suite sends it a command, and no member's server is installed on a person's machine (decision 0018)." }
+      - { text: "Muster's path is built. Each amber arrow is a roadmap row still owed: 28, 30, and 32.", kind: heading }
+      - { text: "Tender only reports. Nothing in the suite sends it a command, and no member's server is installed on a person's machine (decision 0018). An estate with no device management runs a small certificate authority, and each machine enrolls once by sign-in (decision 0025)." }
 
   - id: page-map
     kind: doc

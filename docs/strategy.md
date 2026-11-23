@@ -104,7 +104,7 @@ at work.
   Graft is held to this: it changes a repository only when asked.
 - **Not a server on a person's machine.** What a member reads from a
   machine comes through one small device agent, Tender, which only
-  reports (decision 0018).
+  reports (decisions 0018 and 0025).
 - **Not a home for personal apps.** An app for one person or one family is
   a private app that may use the suite. It never joins it.
 
@@ -175,16 +175,24 @@ map, how adoption is counted, whether Health gets a proof of recovery,
 and whether Change keeps two apps. Decision 0020 has closed the last.
 
 Decision 0017 merges redgreen and forgitten into one member, Muster. The
-suite has ten members until it ships, and nine after. It leaves three:
-which repository holds Muster, whether it builds on the kit, and how much
-of a machine's scan is kept.
+suite has ten members until forgitten retires, and nine after. It left
+three questions: which repository holds Muster, whether it builds on the
+kit, and how much of a machine's scan is kept.
 
 Decision 0018 gives the suite one device agent, Tender, in the shed. No
 member's server is installed on a person's machine. A machine proves
-itself with a certificate its estate issues. It leaves five: whose
+itself with a certificate its estate issues. It left five: whose
 certificate that is, where the member's door lives, how Tender updates,
 whether friction is one of its readers, and what an estate with no device
 management does.
+
+Decision 0025 settles all of these but friction. Muster is redgreen's
+public repository, renamed. It takes only the kit's `device` door. A
+report keeps counts and branch names, never file names. Tender runs as
+the person, with a certificate that names the person and the device. It
+never updates itself. An estate with no device management runs a small
+certificate authority of its own, and each machine enrolls once by
+sign-in. Where friction is sensed stays open (decision 0008).
 
 Decision 0020 says work that waits for a person, or runs long, is never
 held by the thing that asked. The actions engine starts one job for each

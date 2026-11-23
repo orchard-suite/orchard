@@ -405,9 +405,9 @@ This table rates the parts that produce it.
 | Break-it runs | Nothing | Bring your own | The engines are open and free. No member reads what they find. |
 | Proof in an environment | Graft's sandbox | Partial | Each agent session runs in a sandbox of its own. Graft's gate runs the check a repository names in its own file, or its `make check`. A failed gate names the command. A gate that passes does not say what ran. A build lands only when its builder says it is finished and each criterion is proven. A preview of a change is the estate's own. |
 | Undo | Graft, and the estate's deploy tool | Partial | Graft names the ticket under every commit, and takes its commits back out when a round sends the build back and none are left. A build that fails its gate stalls, is kept, and never reaches the forge. A landed change whose pipeline is not green stalls the request, and the ticket links the commit and each failed job. A person decides what happens next. A new feature ships switched off. The rollout is the estate's own. |
-| Watch | Dispatch, redgreen | Partial | Dispatch holds each incident and its postmortem. redgreen counts failed changes and time to restore. A postmortem does not name the law that would have caught it. |
-| Cost of checking | Tally, redgreen, Graft | Partial | Tally counts every agent session's tokens and each repository's build cost. Graft keeps what each request's agents spent on its catalog record, by stage: the screen, the plan, and the build with its proof. redgreen writes each pipeline's median duration. Nothing joins them per change outside the desk. |
-| Catches | Nothing | Gap | redgreen reads a pipeline's result, not which check failed. |
+| Watch | Dispatch, Muster | Partial | Dispatch holds each incident and its postmortem. Muster counts failed changes and time to restore. A postmortem does not name the law that would have caught it. |
+| Cost of checking | Tally, Muster, Graft | Partial | Tally counts every agent session's tokens and each repository's build cost. Graft keeps what each request's agents spent on its catalog record, by stage: the screen, the plan, and the build with its proof. Muster writes each pipeline's median duration. Nothing joins them per change outside the desk. |
+| Catches | Nothing | Gap | Muster reads a pipeline's result, not which check failed. |
 
 ## Sources
 

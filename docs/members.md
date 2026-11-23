@@ -3,9 +3,10 @@
 Ten apps, each in its own repository, each belonging to one pillar and
 doing one tending job first (`pillars.md` holds the six pillars, and
 `garden.md` defines the jobs). Six own a pillar. Four are parts of
-Catalog: Vantage, My Apps, redgreen, and forgitten (decision 0016).
-redgreen and forgitten will become one member, Muster (decision 0017).
-Each keeps its section here until Muster ships. Facts here were
+Catalog: Vantage, My Apps, Muster, and forgitten (decision 0016).
+redgreen took the name Muster, and forgitten retires into it once Muster
+holds each estate's machine reports (decisions 0017 and 0025). Until then
+there are ten, and forgitten keeps its section here. Facts here were
 read from each repository's `README.md`, `orrery.yaml`, and manifests on
 2026-11-05, the table below again on 2026-11-07, and each tending job and
 the shed on 2026-11-12. Orrery's ground was read on 2026-11-12, after it
@@ -18,7 +19,8 @@ member's pillar the same day, for decision 0016. Orrery's reports were read on 2
 decision 0019, and its actions engine the same day, at v1.156.4 and
 again at v1.157.0, for decision 0020. Vantage was read again on
 2026-11-22, at v3.1.0, for decision 0022, and each member's store the
-same day, for decision 0023. "Reads" lists the APIs an app's `orrery.yaml` says it
+same day, for decision 0023. Muster, forgitten, Tender, and platformkit
+were read on 2026-11-23, for decision 0025. "Reads" lists the APIs an app's `orrery.yaml` says it
 consumes.
 
 ## How they fit together
@@ -39,10 +41,10 @@ is owed (`roadmap.md`).
 | Tally | Orrery's catalog and the bill in it, Prometheus | Orrery (cost on each namespace), metrics over OTLP |
 | Annals | none | none; everyone posts to it |
 | Trellis | Orrery, Prometheus, Loki, Tempo, policy reports, the forge, the registry, the vault, Azure Policy | Orrery (open findings, verdicts, packs, and, when named, every rule and every waiver it weighed) |
-| redgreen | the forges, the identity provider (to sign in to a forge), Orrery's Argo syncs and incidents | Orrery (repositories, pipelines, services, deployments, issues) |
+| Muster | the forges, the identity provider (to sign in to a forge), Orrery's Argo syncs and incidents, each machine's report through Tender | Orrery (repositories, pipelines, services, deployments, issues, and each machine's checkouts) |
 | Dispatch | Orrery, Alertmanager, the events products send it | Annals, Orrery (every incident), an estate's chat, mail, and text services (each product's notices, to channels and to people) |
 | Graft | Orrery's actions and catalog, Dispatch's incidents, the forge (GitHub and GitLab), the agent runtime | Annals (every step of a request), Orrery (a lane's action, each plan's run, and each request as a record), Dispatch (its notices, and each release as a change), the forge (a ticket, and the commits it lands) |
-| forgitten | each machine's scans | none |
+| forgitten | each machine's scans | none; it retires into Muster (decision 0025) |
 
 ## Where each keeps its data
 
@@ -59,8 +61,8 @@ writer pod on one volume keeps SQLite, and that is not a lesser choice
 | Trellis | Postgres, only when an estate turns on its history. It signs in as the pod's workload identity. | v5.7.1 |
 | Dispatch | One SQLite file. | v0.0.40 |
 | Graft | One SQLite file. | v6.6.0 |
-| redgreen | One SQLite file. | v1.12.1 |
-| forgitten | One SQLite file. | v0.1.9 |
+| Muster | One SQLite file. | v3.1.0 |
+| forgitten | One SQLite file. | v1.0.0 |
 | Tally | One SQLite file for what agents used, only when an estate sets it. | v0.0.45 |
 | My Apps | None. Its list lives in Orrery. | v0.0.47 |
 | Annals | ClickHouse. Decision 0023 does not cover it. | v0.0.27 |
@@ -197,9 +199,13 @@ laws. It does not yet read a repository's own laws. It also judges the
 map's five properties, and its rules reach one of them today (decision
 0016). Each of its 99 rules still names one of the old pillars.
 
-### redgreen: Catalog, its forge feed
+### Muster: Catalog, where the code is
 
-The forge source. It reads every repository, pipeline, deployment, and
+Muster answers where the code is and what state it is in, on a forge or
+on a machine. It was redgreen, and took the name at v3.0.0 (decisions 0017
+and 0025). Read on 2026-11-23, at v3.1.0, in `orchard-suite/muster`.
+
+It reads every repository, pipeline, deployment, and
 issue on GitHub, GitLab, and Azure DevOps into Orrery, and has no pages of
 its own. The health rules (only a failing pipeline turns a repository red,
 and a repository that runs nothing stays quiet) and the four DORA measures
@@ -208,12 +214,25 @@ calculated fields on the blueprints it offers, so Orrery is the board.
 Restores come from Dispatch's incidents in the catalog. Decision 0004.
 A fifth measure, rework rate, is owed (decision 0016).
 
-It will become Muster, with forgitten (decision 0017): one member for
-where the code is and what state it is in, on a forge or on a machine.
+It takes each machine's report through Tender, the suite's device agent,
+at `/tender/v1/readers/muster`, behind the `device` door from platformkit.
+A report holds names and counts, never a file's name or contents. Muster
+writes it as `sw_checkout` records, one for each repository on each
+machine, linked to the repository's record and to the machine's.
+A checkout is private to the machine's person and the estate's admins.
+Muster writes none until the estate sets that access rule. Each
+repository's record carries `machines_with_unseen_work`: the machines
+that hold work its forge has not seen. Muster's reader is the module
+`github.com/orchard-suite/muster/reader`, at `reader/v1.0.0`, and Tender
+carries it.
 
-Tending job: sense. It writes each pipeline's median duration, 30-day
+It takes only the `device` package from platformkit (decision 0025).
+Otherwise it stays off the kit (decision 0004).
+
+Tending job: sense, and prune. It writes each pipeline's median duration, 30-day
 success rate, and a flaky flag, which is most of a repository's loop
-number. The delivery measures are the guard on the other three.
+number. The delivery measures are the guard on the other three. Its
+checkouts show the stranded work a gardener lands or clears away.
 
 ### Dispatch: Health
 
@@ -287,11 +306,12 @@ Work that has not left the machine it was done on: uncommitted files,
 unpushed commits, stashes, repositories with no remote. A CLI scans each
 machine; a hub shows every machine on one page. It only reads.
 
-It will become part of Muster, with redgreen (decision 0017). Its hub,
-its store, and its page go away, and what a machine reports lands on the
-repository's record in the catalog. Read on 2026-11-20, at v0.1.9: the
-CLI is written in C#, the hub in TypeScript, and a device signs in with a
-code a person types.
+It is retiring into Muster (decisions 0017 and 0025). Muster already
+takes what a machine reports, through Tender. forgitten still runs in
+each estate until Muster holds that estate's machine reports. Then its
+hub, store, page, and CLI go, and its repository is archived. Read on
+2026-11-23, at v1.0.0: the CLI is written in C#, the hub in TypeScript,
+and a device signs in with a code a person types.
 
 Tending job: sense and prune. Stranded work is what a gardener lands or
 clears away.
@@ -309,9 +329,9 @@ are not members and do not take the membership test (decision 0007,
 | dev | A CLI that stands up a whole development environment from one file. | Loop: it shortens the wait before the first change. |
 | release-damnit | A release tool and a landing command with a commit check. | Fence and loop: every change lands the same way. |
 | Observatory | A local dashboard of events from agents as they work. | Sense: one machine's agents, live. |
-| platformkit | A library the members build on. | Seed stock: the door, telemetry, and Annals client a new service starts with. |
+| platformkit | A library the members build on. Since v3.1.0 it holds the `device` package, the door a member puts in front of a device's posts (decision 0025). | Seed stock: the door, telemetry, and Annals client a new service starts with. |
 | hedge | A CLI and an agent hook that keep an estate's names out of every repository that may not hold them, on every write, commit, push, and post, against a register the estate keeps private (decision 0024). | Fence: the seam itself, in the path of work. |
-| Tender | The suite's one device agent. It holds a reader for each member that reads from a machine, and each reader stays off until the estate gives it an address. Decided and not built (decision 0018). | Sense: what exists only on a machine. |
+| Tender | The suite's one device agent, in `orchard-suite/tender`, built, at v0.0.2. It runs as the person and carries Muster's reader. Each reader stays off until the estate gives it an address. It asks a member before it posts, signs each post with the device certificate's key from the operating system's store, saves its place, and sends again after a failure. An estate with no device management enrolls a machine by sign-in with a step-ca authority, and Tender renews only a certificate it enrolled. It never updates itself (decisions 0018 and 0025). | Sense: what exists only on a machine. |
 
 ## What is not a member
 
@@ -321,11 +341,11 @@ above; the shed is a list of tending tools, not a kind of membership.
 
 | Tool | Why it stays out |
 | --- | --- |
-| platformkit | A library, not a service. Five members build on it (My Apps and Tally on v1.3.2; Annals, Dispatch, and Graft on v3.0.0, read on 2026-11-23). In the shed. |
+| platformkit | A library, not a service. Five members build on it (My Apps and Tally on v1.3.2; Annals, Dispatch, and Graft on v3.0.0, read on 2026-11-23). Muster takes only its `device` package, at v3.1.0. In the shed. |
 | hedge | A guard installed on a machine, not a service. In the shed. |
 | release-damnit | A release tool for one way of working, not a platform service. In the shed. |
 | climb, Rudder, dev, Observatory | Installed tools, not services. In the shed. |
-| Tender | An agent installed on a machine, not a service. In the shed (decision 0018). |
+| Tender | An agent installed on a machine, not a service. In the shed (decisions 0018 and 0025). |
 | Ion | An agent runtime. Graft drives it today. An estate brings its own runtime (decision 0009). |
 | SlopDrop | A personal hand-off box. |
 | cli-proxmox | A CLI for one hypervisor. |
