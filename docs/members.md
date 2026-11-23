@@ -1,12 +1,13 @@
 # The members
 
-Ten apps, each in its own repository, each belonging to one pillar and
+Nine apps, each in its own repository, each belonging to one pillar and
 doing one tending job first (`pillars.md` holds the six pillars, and
-`garden.md` defines the jobs). Six own a pillar. Four are parts of
-Catalog: Vantage, My Apps, Muster, and forgitten (decision 0016).
-redgreen took the name Muster, and forgitten retires into it once Muster
-holds each estate's machine reports (decisions 0017 and 0025). Until then
-there are ten, and forgitten keeps its section here. One more member,
+`garden.md` defines the jobs). Six own a pillar. Three are parts of
+Catalog: Vantage, My Apps, and Muster (decision 0016). redgreen took the
+name Muster, and forgitten retired into it on 2026-11-23, once Muster
+held each estate's machine reports through Tender (decisions 0017 and
+0025). Its hub, store, page, and CLI are gone from each estate, and its
+repository is archived. One more member,
 Rootstock, belongs to no pillar and stands on the floor (decision 0028).
 Its section follows the apps. Facts here were
 read from each repository's `README.md`, `orrery.yaml`, and manifests on
@@ -46,7 +47,6 @@ is owed (the roadmap).
 | Muster | the forges, the identity provider (to sign in to a forge), Orrery's Argo syncs and incidents, each machine's report through Tender | Orrery (repositories, pipelines, services, deployments, issues, and each machine's checkouts) |
 | Dispatch | Orrery, Alertmanager, the events products send it | Annals, Orrery (every incident), an estate's chat, mail, and text services (each product's notices, to channels and to people) |
 | Graft | Orrery's actions and catalog, Dispatch's incidents, the forge (GitHub and GitLab), the agent runtime | Annals (every step of a request), Orrery (a lane's action, each plan's run, and each request as a record), Dispatch (its notices, and each release as a change), the forge (a ticket, and the commits it lands) |
-| forgitten | each machine's scans | none; it retires into Muster (decision 0025) |
 | Rootstock | each environment's apply record beside its state, each cluster's controller, the forge's release tags, the registry | Orrery (environments and landing zones as inventory, owed), Annals (every apply, rollback, and environment change, owed) |
 
 ## Where each keeps its data
@@ -65,7 +65,6 @@ writer pod on one volume keeps SQLite, and that is not a lesser choice
 | Dispatch | One SQLite file. | v0.0.40 |
 | Graft | One SQLite file. | v6.6.0 |
 | Muster | One SQLite file. | v3.1.0 |
-| forgitten | One SQLite file. | v1.0.0 |
 | Tally | One SQLite file for what agents used, only when an estate sets it. | v0.0.45 |
 | My Apps | None. Its list lives in Orrery. | v0.0.47 |
 | Annals | ClickHouse. Decision 0023 does not cover it. | v0.0.27 |
@@ -302,22 +301,6 @@ Tending job: fix. It is the hands that change a bed. It changes one
 repository per request. It is also where the suite already bounds a
 change: by size, by path, by plan, and by an undo (decision 0010), and
 where a request is weighed before anything is built (decision 0011).
-
-### forgitten: Catalog, its stranded work
-
-Work that has not left the machine it was done on: uncommitted files,
-unpushed commits, stashes, repositories with no remote. A CLI scans each
-machine; a hub shows every machine on one page. It only reads.
-
-It is retiring into Muster (decisions 0017 and 0025). Muster already
-takes what a machine reports, through Tender. forgitten still runs in
-each estate until Muster holds that estate's machine reports. Then its
-hub, store, page, and CLI go, and its repository is archived. Read on
-2026-11-23, at v1.0.0: the CLI is written in C#, the hub in TypeScript,
-and a device signs in with a code a person types.
-
-Tending job: sense and prune. Stranded work is what a gardener lands or
-clears away.
 
 ## Rootstock: the floor
 
