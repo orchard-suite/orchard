@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/orchard-suite/orchard/compare/v1.0.1...v1.1.0) (2026-11-23)
+
+### Features
+
+* **orchard:** build muster and tender together ([b4c9a65](https://github.com/orchard-suite/orchard/commit/b4c9a659e32ce9653e2b730532f7668a6ed2c13c))
+
 ## [1.0.1](https://github.com/orchard-suite/orchard/compare/v1.0.0...v1.0.1) (2026-11-23)
 
 ### Bug Fixes
