@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0](https://github.com/orchard-suite/orchard/compare/v1.5.0...v1.6.0) (2026-11-23)
+
+### Features
+
+* **orchard:** decide what orrery is ([3924cac](https://github.com/orchard-suite/orchard/commit/3924cacb07cae1bc1ed03eedabceff94df7c3ac8))
+
 ## [1.5.0](https://github.com/orchard-suite/orchard/compare/v1.4.0...v1.5.0) (2026-11-23)
 
 ### Features
