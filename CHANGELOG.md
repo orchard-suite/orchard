@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0](https://github.com/orchard-suite/orchard/compare/v0.1.11...v1.0.0) (2026-11-23)
+
+### ⚠ BREAKING CHANGES
+
+* **orchard:** name the suite orchard and open it ([c7bc545](https://github.com/orchard-suite/orchard/commit/c7bc545f8228ab5fd3932616185aaa6fa6c93e7b))
+
+### Features
+
+* **orchard:** name the suite orchard and open it ([c7bc545](https://github.com/orchard-suite/orchard/commit/c7bc545f8228ab5fd3932616185aaa6fa6c93e7b))
+
 ## [0.1.11](https://github.com/dsswift/project-almanac/compare/v0.1.10...v0.1.11) (2026-11-22)
 
 ### Features
