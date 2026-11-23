@@ -261,6 +261,11 @@ cost paid during an escape, when it hurts most. The bed's loop budget is
 the limit: what does not fit moves beside the path. In a low class nearly
 everything costly sits beside it.
 
+The suite's own pipelines work this way (decision 0026). The full check
+runs once in the path, on the machine that lands the change. In CI the
+tests are a witness: they run beside the build, from a clean checkout,
+and the class sets whether a deploy waits for them.
+
 ## What checking costs
 
 One change costs its owners this much:

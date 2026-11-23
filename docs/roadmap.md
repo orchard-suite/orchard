@@ -28,8 +28,8 @@ The sections below are in the order the work should go.
    and catches.
 4. **One shape.** The last four steps of the build order.
 
-Documents, Notices, Reports, Jobs, Inventory, Data, and the section on
-Muster and Tender come from decisions that stand alone. They wait on nothing
+Documents, Notices, Reports, Jobs, Inventory, Data, Pipelines, and the
+section on Muster and Tender come from decisions that stand alone. They wait on nothing
 above, so their members build them when they choose.
 
 ## Sense
@@ -174,6 +174,23 @@ Every member and the suite's own shed tools are public in
 | 47 | Keep a private register of its names and its zones, and run hedge on every machine its people and agents work on. | Each estate | 0024 | Owed | 2026-11-23 |
 | 48 | Judge hedge's findings in every repository it reads: `hedge audit --facts` through Trellis's command source, and a rule in its own pack. | Each estate | 0024 | Owed | 2026-11-23 |
 
+## Pipelines
+
+Tests run once in the path, and CI tests are a witness beside the build.
+One kit gives every member's pipeline one shape (decision 0026).
+
+| # | What is owed | Who owes it | From | State | Checked |
+| --- | --- | --- | --- | --- | --- |
+| 49 | Build the pipeline kit, `orchard-suite/pipelines`: reusable workflows per kind of bed, and one action that signs, attests, verifies, and tags an image. | A new shed tool | 0026 | Owed. No repository yet. | 2026-11-23 |
+| 50 | Call the kit in place of its own workflows, and run its tests as a witness beside the build. | Every member | 0026 | Owed. Every member runs test, then version, then build. | 2026-11-23 |
+| 51 | Move its toolchains or CLIs into a base image of its own, rebuilt on a schedule. | Graft and Tally | 0026 | Owed. Graft's image build took 524 seconds and Tally's 252. | 2026-11-23 |
+| 52 | Read triggers, concurrency, the order of jobs, cache settings, the kit's version, and each Dockerfile's stages, and judge them with a pipeline pack. | Trellis | 0026 | Owed. The delivery pack's two pipeline rules judge only whether a private repository has one. | 2026-11-23 |
+| 53 | Write each job's queue and run time, and each repository's time from landing to a published image. | Muster | 0026 | Owed | 2026-11-23 |
+| 54 | Offer landing-to-published time as a field an estate's model may name, with a budget. | Orrery | 0026 | Owed | 2026-11-23 |
+| 55 | Take a red witness as a request. | Graft | 0026 | Owed | 2026-11-23 |
+| 56 | Take a red witness on a middle- or top-class bed as an incident. | Dispatch | 0026 | Owed | 2026-11-23 |
+| 57 | Have its deploy tool take a middle- or top-class bed's image only with the witness's passing attestation. | Each estate | 0026 | Owed | 2026-11-23 |
+
 ## Open questions
 
 These are not owed work. Each needs a decision before it can become a row.
@@ -202,6 +219,8 @@ They are listed where they were left open.
 | Whether Vantage's work tracking takes a second database on the estate's server | 0023 |
 | What an estate brings for a member whose store is neither Postgres nor SQLite | 0023 |
 | Which backup proves that no data is lost, and how old it may be | 0023 |
+| Where the witness's attestation is checked when an estate's deploy tool cannot read one | 0026 |
+| Whether break-it runs join the witness | 0010, 0026 |
 
 One question is closed. Decision 0010 asked whether the standard takes the
 pillar on quality. It did, at version 2026.1120.2003. Decision 0016 has
