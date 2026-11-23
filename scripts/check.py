@@ -24,7 +24,10 @@ SKIP_DIRS = {".git", "node_modules"}
 def files() -> list[str]:
     out = []
     for folder, dirs, names in os.walk(ROOT):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        # A folder holding .git is another checkout, such as a worktree, and
+        # not this repository's documents.
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS
+                   and not os.path.exists(os.path.join(folder, d, ".git"))]
         for name in names:
             if name.endswith(TEXT):
                 out.append(os.path.join(folder, name))
