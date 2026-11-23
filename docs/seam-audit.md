@@ -20,7 +20,7 @@ The other rules: a read of each member's checkout over tracked files.
 
 No member does. Clean on 2026-11-23: Orrery 2.0.0, Vantage 4.0.0, My Apps
 1.0.0, Tally 1.0.0, Annals 1.0.1, Trellis 6.0.0, Dispatch 1.0.0, Graft
-7.0.0, and forgitten 1.0.0. redgreen moves next, by the same check.
+7.0.0, forgitten 1.0.0, and redgreen 2.0.1.
 
 ## Rule 2: an estate's deployment lives in the product
 

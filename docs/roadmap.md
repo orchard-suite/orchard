@@ -168,7 +168,7 @@ Every member and the suite's own shed tools are public in
 
 | # | What is owed | Who owes it | From | State | Checked |
 | --- | --- | --- | --- | --- | --- |
-| 46 | Move to a public repository in `orchard-suite`, from today's files with a fresh history, with its full CI on hosted runners. | redgreen | 0024 | Owed. Every other member is done: Orrery 2.0.0, Vantage 4.0.0, My Apps 1.0.0, Tally 1.0.0, Annals 1.0.0, Trellis 6.0.0, Dispatch 1.0.0, Graft 7.0.0, forgitten 1.0.0. | 2026-11-23 |
+| 46 | Move to a public repository in `orchard-suite`, from today's files with a fresh history, with its full CI on hosted runners. | Every member | 0024 | Done. Orrery 2.0.0, Vantage 4.0.0, My Apps 1.0.0, Tally 1.0.0, Annals 1.0.0, Trellis 6.0.0, Dispatch 1.0.0, Graft 7.0.0, forgitten 1.0.0, redgreen 2.0.1. | 2026-11-23 |
 | 47 | Keep a private register of its names and its zones, and run hedge on every machine its people and agents work on. | Each estate | 0024 | Owed | 2026-11-23 |
 | 48 | Judge hedge's findings in every repository it reads: `hedge audit --facts` through Trellis's command source, and a rule in its own pack. | Each estate | 0024 | Owed | 2026-11-23 |
 
