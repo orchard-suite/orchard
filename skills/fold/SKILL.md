@@ -68,6 +68,10 @@ so and stop.
    - Run `make check`. Fix what it names.
    - Commit the document changes as `feat(orchard): decide <what>` and land
      with `make land`. A decision that changes no document lands nothing.
+   - Each copied page has an `evidence` tie to its document. Move the tie
+     of every page this pass copied to the landed commit (`vantage_patch`,
+     `op: set`, `path: evidence.<n>.commit`), and check that
+     `<workspace>/orchard/stale` lists nothing.
    - Close the issue with a comment naming the record, and the commit when
      there is one.
 4. Keep the estate out. The proposal was written without names; the record
