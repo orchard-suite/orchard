@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.0](https://github.com/orchard-suite/orchard/compare/v1.7.0...v1.8.0) (2026-11-23)
+
+### Features
+
+* **orchard:** add the agent-first property ([fe60bc3](https://github.com/orchard-suite/orchard/commit/fe60bc34cd7f1043d76ddcc4d4cc43dda44115f2))
+
 ## [1.7.0](https://github.com/orchard-suite/orchard/compare/v1.6.0...v1.7.0) (2026-11-23)
 
 ### Features
