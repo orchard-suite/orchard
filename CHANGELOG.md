@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0](https://github.com/orchard-suite/orchard/compare/v1.3.1...v1.4.0) (2026-11-23)
+
+### Features
+
+* **orchard:** take the shared kit as a public module ([ea8934c](https://github.com/orchard-suite/orchard/commit/ea8934c4b395385d9b09414807c316055a71bb7d))
+
 ## [1.3.1](https://github.com/orchard-suite/orchard/compare/v1.3.0...v1.3.1) (2026-11-23)
 
 ### Bug Fixes
