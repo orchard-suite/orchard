@@ -86,8 +86,10 @@ at work.
   `new-capability-goes-to-a-standalone-product-not-the-house-vi`).
 - **Not an observability stack.** Bring Prometheus, Loki, Tempo, Grafana,
   or their equal. Orchard sends to it and reads from it.
-- **Not a deploy tool.** Bring Argo CD, Flux, or your pipelines. Orrery's
-  actions can ask them to act.
+- **No deploy tool you must use.** The suite offers one, Rootstock, on
+  the floor (decision 0028). Bring Argo CD, Flux, or your pipelines in its
+  place, and Orrery's actions can ask them to act. No member requires
+  Rootstock.
 - **Not a database server.** Bring one managed Postgres server. A member
   that needs Postgres takes a database and a role on it. A member that
   fits one writer keeps SQLite (decision 0023).
@@ -95,9 +97,9 @@ at work.
   agents do and shapes the beds they work in. Graft starts agent
   sessions on the runtime an estate brings, and the suite builds none
   (decision 0009).
-- **Not a test runner, an environment tool, or a code reviewer.** Bring
-  your test tools, your break-it engine, and the tool that stands up an
-  environment. The suite judges what they report. No member gates a change
+- **Not a test runner or a code reviewer.** Bring your test tools and
+  your break-it engine. Bring the tool that stands up an environment, or
+  take Rootstock's (decision 0028). The suite judges what they report. No member gates a change
   on a person's or a model's opinion of the code (decision 0010).
 - **Not a controller.** Nothing in the suite changes a repository on its
   own. A person or an agent starts an action, and the action is recorded.

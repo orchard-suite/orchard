@@ -36,11 +36,14 @@ reads them and fills the gaps the market leaves between them.
 
 ## The members
 
-Each member belongs to one of six pillars ([docs/pillars.md](docs/pillars.md),
-decision 0016). Six own a pillar. Four are parts of Catalog. redgreen is
-Muster now, and forgitten retires into it once Muster holds each estate's
-machine reports (decisions 0017 and 0025). Until then the suite has ten
-members, and after that nine.
+Each member but one belongs to one of six pillars
+([docs/pillars.md](docs/pillars.md), decision 0016). Six own a pillar.
+Four are parts of Catalog. redgreen is Muster now, and forgitten retires
+into it once Muster holds each estate's machine reports (decisions 0017
+and 0025). Rootstock belongs to no pillar. It stands on the floor, as the
+one deploy and environment tool the suite offers, and no member requires
+it (decision 0028). Until forgitten retires the suite has eleven members,
+and after that ten.
 
 | App | Pillar | What it answers | Its tending job |
 | --- | --- | --- | --- |
@@ -54,6 +57,7 @@ members, and after that nine.
 | [Dispatch](https://github.com/orchard-suite/dispatch) | Health (owner) | Which incidents are open, who owns them, and how long restores take. Also sends every product's notices, to channels and to people. | Trace: the postmortem. |
 | [Graft](https://github.com/orchard-suite/graft) | Change (owner) | How a request to change a repository becomes a tested change, landed, with an agent doing the work. | Fix: the hands that change a bed. |
 | [forgitten](https://github.com/orchard-suite/forgitten) | Catalog | Which work has not left the machine it was done on. It retires into Muster (decision 0025). | Sense and prune: stranded work. |
+| Rootstock, owed at `orchard-suite/rootstock` | The floor | Which version every landing zone and environment runs, what is ready to release, and how drift went. It deploys infrastructure with `infra` and applications and their environments with `dev` (decision 0028). | Sense: the whole fleet. It also plants: it deploys the platform itself. |
 
 Two tools in the shed are the suite's own:
 [platformkit](https://github.com/orchard-suite/platformkit), the Go module

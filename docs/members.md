@@ -6,7 +6,9 @@ doing one tending job first (`pillars.md` holds the six pillars, and
 Catalog: Vantage, My Apps, Muster, and forgitten (decision 0016).
 redgreen took the name Muster, and forgitten retires into it once Muster
 holds each estate's machine reports (decisions 0017 and 0025). Until then
-there are ten, and forgitten keeps its section here. Facts here were
+there are ten, and forgitten keeps its section here. One more member,
+Rootstock, belongs to no pillar and stands on the floor (decision 0028).
+Its section follows the apps. Facts here were
 read from each repository's `README.md`, `orrery.yaml`, and manifests on
 2026-11-05, the table below again on 2026-11-07, and each tending job and
 the shed on 2026-11-12. Orrery's ground was read on 2026-11-12, after it
@@ -45,6 +47,7 @@ is owed (the roadmap).
 | Dispatch | Orrery, Alertmanager, the events products send it | Annals, Orrery (every incident), an estate's chat, mail, and text services (each product's notices, to channels and to people) |
 | Graft | Orrery's actions and catalog, Dispatch's incidents, the forge (GitHub and GitLab), the agent runtime | Annals (every step of a request), Orrery (a lane's action, each plan's run, and each request as a record), Dispatch (its notices, and each release as a change), the forge (a ticket, and the commits it lands) |
 | forgitten | each machine's scans | none; it retires into Muster (decision 0025) |
+| Rootstock | each environment's apply record beside its state, each cluster's controller, the forge's release tags, the registry | Orrery (environments and landing zones as inventory, owed), Annals (every apply, rollback, and environment change, owed) |
 
 ## Where each keeps its data
 
@@ -316,6 +319,39 @@ and a device signs in with a code a person types.
 Tending job: sense and prune. Stranded work is what a gardener lands or
 clears away.
 
+## Rootstock: the floor
+
+Rootstock is the deploy tool and the environment tool the suite offers
+(decision 0028). It answers no pillar, and nothing requires it: no member
+needs it to run or to be deployed, and it needs no member to deploy
+anything. That is what lets it deploy the suite itself. It works on the
+forge, pipelines, builders, registries, and cloud an estate brings, and
+hosts none of them.
+
+It has three parts:
+
+- `infra` plans and applies Terraform from an image of the project's
+  commit, keeps an apply record beside each environment's state, and runs
+  a drift job that puts back what the last apply set. It asks Orrery for
+  approval when the estate runs it. Read on 2026-11-23, at v2.15.2, in its
+  own repository.
+- `dev` stands up an environment from one file, on a person's machine or
+  in a cluster, through a controller in the cluster that keeps the
+  cluster's record of environments. Read on 2026-11-23, at v4.12.0, in its
+  own repository.
+- The hub, one per estate, owed. It shows the whole fleet: every landing
+  zone, infrastructure environment, cluster, and application environment,
+  the version each runs, the version ready, its runs, its drift, and the
+  version of each shared module it runs. It reads the apply records and
+  the controllers, and replaces neither. It serves one `/v1` API and the
+  one web panel.
+
+The two programs move into one repository, `orchard-suite/rootstock`,
+each keeping its own version (the roadmap).
+
+Tending job: sense, for the fleet. It also plants: it is the hands that
+deploy the platform.
+
 ## The shed
 
 Tending tools that are installed on a machine, not run as a service. They
@@ -326,10 +362,9 @@ are not members and do not take the membership test (decision 0007,
 | --- | --- | --- |
 | climb | A CLI that improves one measured number in a repository, and keeps only real gains. | Stake and prune: it works against a fixed measurement. |
 | Rudder | A desktop app that maps, scores, and tunes a repository's agent instruction files. | Soil: it ranks what to delete as well as what to add. |
-| dev | A CLI that stands up a whole development environment from one file. | Loop: it shortens the wait before the first change. |
 | release-damnit | A release tool and a landing command with a commit check. | Fence and loop: every change lands the same way. |
 | Observatory | A local dashboard of events from agents as they work. | Sense: one machine's agents, live. |
-| platformkit | A library the members build on. Since v3.1.0 it holds the `device` package, the door a member puts in front of a device's posts (decision 0025). | Seed stock: the door, telemetry, and Annals client a new service starts with. |
+| platformkit | A library the members build on. Since v3.1.0 it holds the `device` package, the door a member puts in front of a device's posts (decision 0025). Every member, shed tool, and estate app takes it as a public module by version, and nothing vendors it ([[decision:ORC-5001]]). | Seed stock: the door, telemetry, and Annals client a new service starts with. |
 | hedge | A CLI and an agent hook that keep an estate's names out of every repository that may not hold them, on every write, commit, push, and post, against a register the estate keeps private (decision 0024). | Fence: the seam itself, in the path of work. |
 | pipelines | The pipeline kit, in `orchard-suite/pipelines`, owed. Reusable workflows per kind of bed, and one action that signs, attests, verifies, and tags an image. Every member calls it at a major version, and an estate may (decision 0026). | Fence and loop: every pipeline has one shape, and a release waits only for what its class needs. |
 | Tender | The suite's one device agent, in `orchard-suite/tender`, built, at v0.0.2. It runs as the person and carries Muster's reader. Each reader stays off until the estate gives it an address. It asks a member before it posts, signs each post with the device certificate's key from the operating system's store, saves its place, and sends again after a failure. An estate with no device management enrolls a machine by sign-in with a step-ca authority, and Tender renews only a certificate it enrolled. It never updates itself (decisions 0018 and 0025). | Sense: what exists only on a machine. |
@@ -345,7 +380,7 @@ above; the shed is a list of tending tools, not a kind of membership.
 | platformkit | A library, not a service. Five members build on it (My Apps and Tally on v1.3.2; Annals, Dispatch, and Graft on v3.0.0, read on 2026-11-23). Muster takes only its `device` package, at v3.1.0. In the shed. |
 | hedge | A guard installed on a machine, not a service. In the shed. |
 | release-damnit | A release tool for one way of working, not a platform service. In the shed. |
-| climb, Rudder, dev, Observatory | Installed tools, not services. In the shed. |
+| climb, Rudder, Observatory | Installed tools, not services. In the shed. |
 | Tender | An agent installed on a machine, not a service. In the shed (decisions 0018 and 0025). |
 | Ion | An agent runtime. Graft drives it today. An estate brings its own runtime (decision 0009). |
 | SlopDrop | A personal hand-off box. |

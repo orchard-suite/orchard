@@ -369,9 +369,10 @@ laws.
 
 ## Environments
 
-Rung 5 needs a place to run. The suite builds no environment tool and
-names no default (decision 0010). An estate brings one and registers an
-Orrery action that stands up an environment for a change. The standard
+Rung 5 needs a place to run. The suite offers one environment tool,
+Rootstock's `dev`, and requires it nowhere (decision 0028). An estate
+takes it or brings its own, and may register an Orrery action that stands
+up an environment for a change. The standard
 says how to name them, find them, and remove them (rule
 `ephemeral-environments-named-by-owner-discovered-through-a-r`).
 

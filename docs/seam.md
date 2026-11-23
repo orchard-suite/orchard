@@ -52,7 +52,10 @@ Only these. Each is a contract the product owns and documents.
    estate brings one managed Postgres server, and a member that needs
    Postgres takes its own database and role on it. No member brings a
    database cluster of its own as the way it is meant to run (decision
-   0023).
+   0023). The suite offers one piece of the floor itself, Rootstock, for
+   deploys and environments. It works on the forge, pipelines, builders,
+   and registries the estate brings, and an estate may bring its own
+   deploy tool in its place (decision 0028).
 4. **Every member runs in every estate.** A feature that only one estate
    can use is configuration that is off by default, or it belongs in that
    estate's own app.
@@ -93,6 +96,10 @@ A member passes all four:
 4. **It is built the suite's way.** It emits telemetry from its first
    release, describes itself to Orrery, posts what it does to Annals, and
    signs people in through the estate's front door.
+
+A member that stands on the floor passes the same four, and one more:
+nothing requires it. No member needs it to run or to be deployed, and it
+needs no member to do its work. Rootstock is the one (decision 0028).
 
 A tool that passes the first two is a candidate. It joins by a decision
 record, which lists what it must still change to pass the last two. Every

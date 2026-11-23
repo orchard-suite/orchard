@@ -11,7 +11,8 @@ own test.
 - **Three outcomes.** An outcome is a number read off the whole. No app
   owns one. The catalog shows it.
 
-Under all three sits the floor: what an estate brings.
+Under all three sits the floor: what an estate brings. The suite offers
+one piece of it, Rootstock, and requires it nowhere (decision 0028).
 
 ```text
 Outcomes     Flow          Quality          Adoption
@@ -71,7 +72,7 @@ findings and waivers. Today its rules reach one of the five.
 | Run as a product | Its use is measured, and it improves from what people say. | Partial | My Apps counts what people open. A request to Graft is how a person says what they need, and each gets one answer (decision 0011). | No rule judges it. Use is not measured pillar by pillar. |
 | Two doors | An agent can use every door a person can, in one shape. | Partial | Trellis's interfaces pack judges the shape of an HTTP API. Orrery, Vantage, Annals, and Dispatch each have a door for agents. | No one CLI shape, no generated SDKs, and no one docs site. No door for agents was found in the other six members. |
 | Self-service | No ticket and no person stands in the way, unless the risk says so. | Partial | Orrery's actions engine runs, approves, and records. A lane in Graft sets how far a request goes with no person in the way. | No rule judges whether a capability still needs a ticket. |
-| One kit | The platform's own software is built from one shared kit. | Partial | Five of ten members build on the kit: My Apps, Tally, Annals, Dispatch, and Graft. | Orrery, Trellis, Vantage, and forgitten do not. Muster takes only the kit's `device` door, and stays off the rest by decision 0004 (decision 0025). No rule judges it. |
+| One kit | The platform's own software is built from one shared kit. | Partial | Five of eleven members build on the kit: My Apps, Tally, Annals, Dispatch, and Graft. | Orrery, Trellis, Vantage, forgitten, and Rootstock do not. Muster takes only the kit's `device` door, and stays off the rest by decision 0004 (decision 0025). No rule judges it. |
 | Decided on purpose | Each choice is written down, with why, and what would reopen it. | Partial | Orrery, Vantage, and Graft keep decision records in their repositories. The suite keeps its own here. | Seven members keep none in their repositories. No rule judges it. |
 
 ## The three outcomes
@@ -96,6 +97,11 @@ A forge, pipelines, a deploy tool, sign-in, a vault, a telemetry stack, an
 agent runtime, and environments. An estate brings each one, and the suite
 reads it through an adapter. `seam.md` holds the full list and the line.
 None is a pillar, and none is rated here.
+
+The floor holds one member: Rootstock, the deploy tool and environment
+tool the suite offers (decision 0028). It answers no pillar's question,
+so it is rated under none. An estate may take it or bring its own, and no
+member requires it.
 
 ## Where the fourteen went
 

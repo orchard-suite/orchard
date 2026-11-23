@@ -16,6 +16,15 @@ write, commit, and push.
 
 The other rules: a read of each member's checkout over tracked files.
 
+## Rootstock, before it moves
+
+Rootstock joined by decision 0028 before its audit. Its two programs
+still live in their own repositories, so rules 1 and 2 are not measured
+for it yet. Read on 2026-11-23, `infra` at v2.15.2 and `dev` at v4.12.0:
+`infra` reads one cloud, Azure, in its core (its CLI, its registry, its
+vault, and blob state), against rule 4. The hub that carries its
+telemetry, its events to Annals, and front-door sign-in is not built.
+
 ## Rule 1: product code names an estate
 
 No member does. Clean on 2026-11-23: Orrery 2.0.0, Vantage 4.0.0, My Apps
