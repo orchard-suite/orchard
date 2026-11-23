@@ -57,7 +57,7 @@ suite has ten members.
 | [My Apps](https://github.com/orchard-suite/myapps) | Catalog | Which applications a person can open, and the landscape of everything the estate offers. | Sense: what people open. |
 | [Tally](https://github.com/orchard-suite/tally) | Cost (owner) | What each workload, host, agent, and job costs, in money and in capacity. | Sense cost. Prune: right-sizing. |
 | [Annals](https://github.com/orchard-suite/annals) | Record (owner) | What every person and agent did, across every product. | Sense and trace: who did what. |
-| [Trellis](https://github.com/orchard-suite/trellis) | Rules (owner) | Whether the estate meets its standards, rule by rule, with waivers. | Stake and fence: rules in the path of work. The suite's one judge, of its laws and of the map's five properties. |
+| [Trellis](https://github.com/orchard-suite/trellis) | Rules (owner) | Whether the estate meets its standards, rule by rule, with waivers. | Stake and fence: rules in the path of work. The suite's one judge, of its laws and of the map's six properties. |
 | [Muster](https://github.com/orchard-suite/muster) | Catalog | Where the code is and what state it is in: every forge's repositories, pipelines, and deployments in the catalog, which judges their health and the delivery measures, and each machine's work that has not left it. | Sense: each repository's loop and delivery, and stranded work. |
 | [Dispatch](https://github.com/orchard-suite/dispatch) | Health (owner) | Which incidents are open, who owns them, and how long restores take. Also sends every product's notices, to channels and to people. | Trace: the postmortem. |
 | [Graft](https://github.com/orchard-suite/graft) | Change (owner) | How a request to change a repository becomes a tested change, landed, with an agent doing the work. | Fix: the hands that change a bed. |
@@ -75,7 +75,7 @@ them. `docs/members.md` lists the whole shed.
 - [docs/strategy.md](docs/strategy.md): why the suite exists and what it will and will not become.
 - [docs/members.md](docs/members.md): each app, what it reads and writes, its tending job, and the shed of installed tools beside the suite.
 - [docs/quality.md](docs/quality.md): how an estate keeps what it ships good when agents write most changes. Laws, the ladder of proof, and what checking costs.
-- [docs/pillars.md](docs/pillars.md): the map. Six pillars, five properties, and three outcomes, with a rating for each and what is missing.
+- [docs/pillars.md](docs/pillars.md): the map. Six pillars, six properties, and three outcomes, with a rating for each and what is missing.
 - [docs/seam.md](docs/seam.md): the line between Orchard and an estate, and the test for joining the suite.
 - [docs/seam-audit.md](docs/seam-audit.md): where the apps cross that line today.
 

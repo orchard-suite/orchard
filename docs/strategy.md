@@ -48,10 +48,10 @@ at work.
   repository, release, and service. An estate runs the ones it needs.
 - **One job.** Every member helps sense, trace, fix, stake, fence, or
   prune. `garden.md` defines those words and rates what the suite covers.
-- **One map.** Six pillars, each with one owner among the members. Five
+- **One map.** Six pillars, each with one owner among the members. Six
   properties every pillar must have. Three outcomes the whole is for:
-  flow, quality, and adoption. `pillars.md` rates each one (decision
-  0016). The six pillars are the six questions this page opens with.
+  flow, quality, and adoption. `pillars.md` rates each one (decisions
+  0016 and 0030). The six pillars are the six questions this page opens with.
 - **Joined by the catalog.** Orrery is the spine. The others read it,
   describe themselves to it, and write their findings back to it. Each
   pushes an inventory of what it holds, and stays the home of its own
@@ -71,6 +71,13 @@ at work.
   member's one API. A member whose whole job fits its API may have no
   panel. Where a member has pages, they are as good as Orrery's, and
   members are the same wherever they can be (decision 0029).
+- **Built for the agent first.** An agent reaches a member through its
+  agent tools and its API, and a person through its pages. So every
+  member is held to the cost of a local disk: finding one fact, reading
+  one part, or changing one sentence costs an agent no more than the same
+  task on a file. A write sends what changed, a read answers what was
+  asked, and a benchmark in each member's own check holds the bar. This
+  is the map's sixth property (decision 0030).
 - **Actions, not a command line.** A command line that only calls a
   member's API is a tool for operations, and the console's actions take
   its place. A command line stays where it works on the files of the
@@ -253,6 +260,11 @@ command line that only calls an API. It leaves five: what the bar for a
 member's pages is and who judges it, whether Change stays Partial, which
 members offer their lists and actions through Orrery today, which
 members have no panel, and which commands of which members go.
+
+Decision 0030 adds a sixth property, built for the agent first, and holds
+every member to the cost of a local disk. It leaves three: where each
+member stands against the bar, how a script signs in with no command
+line, and what each member's tasks are.
 
 ## Built to the standard
 

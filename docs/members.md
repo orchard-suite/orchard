@@ -210,8 +210,8 @@ judges an Azure resource again (decision 0012). One engine per property.
 
 It is the suite's one judge (decision 0010). Its packs are an estate's
 laws. It does not yet read a repository's own laws. It also judges the
-map's five properties, and its rules reach one of them today (decision
-0016). Each of its 99 rules still names one of the old pillars.
+map's six properties, and its rules reach one of them today (decisions
+0016 and 0030). Each of its 99 rules still names one of the old pillars.
 
 ### Muster: Catalog, where the code is
 

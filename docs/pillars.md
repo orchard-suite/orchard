@@ -1,12 +1,12 @@
 # The map
 
 What a platform must answer, and how well the suite answers it. Decision
-0016 set this map on 2026-11-20. It has three lists, and each list has its
-own test.
+0016 set this map on 2026-11-20, and decision 0030 added a sixth property
+on 2026-11-23. It has three lists, and each list has its own test.
 
 - **Six pillars.** A pillar is something a platform has. One app answers
   its whole question.
-- **Five properties.** A property is something every pillar must be like.
+- **Six properties.** A property is something every pillar must be like.
   No app can own one. The suite's judge checks it.
 - **Three outcomes.** An outcome is a number read off the whole. No app
   owns one. The catalog shows it.
@@ -62,10 +62,10 @@ repository that day, at the version named.
 | Rules | Does everything stay inside what its owners said must hold? | Trellis | Partial | Graft's fences hold a change made through the desk. | Trellis reads one forge, its registry, and one cloud. It judges an estate's laws, its nine packs, and no repository's own laws (decision 0010). Its 99 rules still name the old pillars (v5.6.1). |
 | Record | Who, or which agent, did what, and on whose say-so? | Annals | Partial | None. | Only Orrery, Dispatch, and Graft say they post to it. |
 
-## The five properties
+## The six properties
 
 Trellis judges a property the way it judges any standard: by rule, with
-findings and waivers. Today its rules reach one of the five.
+findings and waivers. Today its rules reach one of the six.
 
 | Property | What it asks of every pillar | Rating | What holds today | What is missing |
 | --- | --- | --- | --- | --- |
@@ -74,6 +74,7 @@ findings and waivers. Today its rules reach one of the five.
 | Self-service | No ticket and no person stands in the way, unless the risk says so. | Partial | Orrery's actions engine runs, approves, and records. A lane in Graft sets how far a request goes with no person in the way. | No rule judges whether a capability still needs a ticket. |
 | One kit | The platform's own software is built from one shared kit. | Partial | Five of ten members build on the kit: My Apps, Tally, Annals, Dispatch, and Graft. | Orrery, Trellis, Vantage, and Rootstock do not. Muster takes only the kit's `device` door, and stays off the rest by decision 0004 (decision 0025). No rule judges it. |
 | Decided on purpose | Each choice is written down, with why, and what would reopen it. | Partial | Orrery, Vantage, and Graft keep decision records in their repositories. The suite keeps its own here. | Seven members keep none in their repositories. No rule judges it. |
+| Built for the agent first | An agent can afford every door: finding one fact, reading one part, or changing one sentence costs it no more than the same task on a local disk (decision 0030). | Partial | Vantage holds the bar by its own decision, with a benchmark in its check. Orrery bounds every answer an agent reads. | No other member was read against the bar. The kit has no wrapper that counts a tool call and no benchmark harness. No rule judges it. |
 
 ## The three outcomes
 
