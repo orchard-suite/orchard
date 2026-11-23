@@ -3,6 +3,7 @@
 - Status: Accepted
 - Date: 2026-11-23
 - Standard: 2026.1122.1851
+- Capture: 707b329b-8b67-49d3-8140-2906b3a768a7
 - Amends: 0017 (point 6: redgreen takes the name Muster now, and forgitten retires once Muster takes its first reports), 0004 (Muster takes one package from platformkit, the device door)
 
 ## Context
