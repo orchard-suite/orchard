@@ -1,0 +1,756 @@
+vantage: 1
+title: Orchard
+updated: 2026-11-22
+description: >
+  Orchard is a suite of ten platform services that help a small
+  team tend a platform. This document holds the suite's pictures and its
+  own pages: the map of six pillars, five properties, and three outcomes
+  (decision 0016), how the members fit together and reach an estate, how
+  quality is kept when agents write most changes, and the roadmap of what
+  is owed. The source is the suite's repository. A hub holds a copy and
+  it is never edited there. Facts were read from each member's repository
+  on the day each page names.
+
+types:
+  Pillar: { extends: component, icon: generic/flag, color: blue }
+  Property: { extends: component, icon: generic/check, color: violet }
+  Outcome: { extends: component, icon: generic/chart, color: green }
+
+nodes:
+  - id: people
+    name: People
+    type: users
+    description: The estate's people, signed in by the estate's front door.
+  - id: agents
+    name: Agents
+    type: agent
+    description: Agents that act in the estate and ask the suite what happened.
+
+  - id: owner
+    name: The Owner
+    type: users
+    subtitle: decides what the suite is
+    description: The person who answers for the suite. They decide in conversations with agents, in any estate.
+
+  - id: record
+    name: The Suite's Record
+    type: group
+    subtitle: the suite's repository, shipped as the orchard plugin
+    description: The suite's documents and decisions. An agent reads them through the plugin and never edits them in place.
+    children:
+      - id: proposals
+        name: Proposals
+        type: queue
+        subtitle: one issue per decision
+        facts: ["Labels: proposal, and its origin", "Names no estate"]
+        description: The mailbox. A decision made in any conversation lands here. It needs no machine of the owner's to be on.
+      - id: fold
+        name: Fold
+        type: worker
+        subtitle: on the owning machine, on a schedule
+        description: Turns a proposal into a decision record, the document changes, the roadmap rows, and the diagram changes, in one landing, and closes the issue.
+      - id: decisions
+        name: Decision Records
+        type: file
+        subtitle: one file each, never rewritten
+        description: The authority. A later record amends or supersedes an earlier one and says so.
+      - id: roadmap
+        name: Roadmap
+        type: file
+        subtitle: what decisions say is owed
+        facts: ["From: decision records and the build order", "Done: only with a version read from the member"]
+        description: One row per thing a decision leaves a member owing. No row exists without a decision.
+      - id: plugin
+        name: orchard Plugin
+        type: package
+        subtitle: consult, propose, fold
+        description: The repository as an agent plugin. Every machine reads the version it installed.
+
+  - id: map
+    name: The Map
+    type: group
+    subtitle: what a platform must answer
+    description: Three lists, each with its own test. Decision 0016 set it. The page The Map rates every row.
+    children:
+      - id: outcomes
+        name: Outcomes
+        type: group
+        subtitle: read off the whole, owned by no app
+        description: What the platform is for. Orrery shows each one where an estate's model names its numbers.
+        children:
+          - id: o-flow
+            name: Flow
+            type: Outcome
+            subtitle: How fast and how smoothly does work move?
+            facts: ["Numbers: deploy frequency, lead time, the loop, friction"]
+          - id: o-quality
+            name: Quality
+            type: Outcome
+            subtitle: Is what ships good, and what does knowing that cost?
+            facts: ["Numbers: change failure rate, rework rate, time to restore, laws that hold, weeds, cost of checking, catches"]
+          - id: o-adoption
+            name: Adoption
+            type: Outcome
+            subtitle: Do people and agents choose it?
+            facts: ["Numbers: who uses what, and what they ask for"]
+      - id: pillars
+        name: Pillars
+        type: group
+        subtitle: each a question one app answers
+        description: Something a platform has. A pillar passes when one app answers its whole question.
+        children:
+          - id: p-catalog
+            name: Catalog
+            type: Pillar
+            subtitle: What do we have, who owns it, and how does it connect?
+            facts: ["Owner: Orrery"]
+          - id: p-change
+            name: Change
+            type: Pillar
+            subtitle: How does a change get asked for, shipped, and undone?
+            facts: ["Owner: Graft"]
+          - id: p-health
+            name: Health
+            type: Pillar
+            subtitle: Is it working, and does it come back when it breaks?
+            facts: ["Owner: Dispatch"]
+          - id: p-cost
+            name: Cost
+            type: Pillar
+            subtitle: What does each thing cost, in money and in capacity?
+            facts: ["Owner: Tally"]
+          - id: p-rules
+            name: Rules
+            type: Pillar
+            subtitle: Does everything stay inside what its owners said must hold?
+            facts: ["Owner: Trellis"]
+          - id: p-record
+            name: Record
+            type: Pillar
+            subtitle: Who, or which agent, did what, and on whose say-so?
+            facts: ["Owner: Annals"]
+      - id: properties
+        name: Properties
+        type: group
+        subtitle: what every pillar must be like
+        description: No app can own a property. Trellis judges each one by rule.
+        children:
+          - id: q-product
+            name: Run as a Product
+            type: Property
+            subtitle: Its use is measured, and it improves from what people say.
+          - id: q-doors
+            name: Two Doors
+            type: Property
+            subtitle: An agent can use every door a person can, in one shape.
+          - id: q-self-service
+            name: Self-Service
+            type: Property
+            subtitle: No ticket and no person in the way, unless the risk says so.
+          - id: q-kit
+            name: One Kit
+            type: Property
+            subtitle: The platform's own software is built from one shared kit.
+          - id: q-decided
+            name: Decided on Purpose
+            type: Property
+            subtitle: Each choice is written down, with why, and what would reopen it.
+      - id: floor
+        name: The Floor
+        type: group
+        subtitle: what an estate brings
+        style: { frame: dashed }
+        description: A forge, pipelines, a deploy tool, sign-in, a vault, a telemetry stack, an agent runtime, and environments. None is a pillar. The view Through the Seam draws each one.
+
+  - id: tender
+    name: Tender
+    type: worker
+    subtitle: the device agent, not built
+    style: { dashed: true }
+    description: The suite's one device agent, in the shed. It holds a reader for each member that reads from a machine. A reader stays off until the estate gives it an address. It proves itself with a certificate the estate issues, only reports, and never writes to the catalog. Decision 0018.
+
+  - id: friction-source
+    name: Friction Source
+    type: worker
+    subtitle: not admitted yet
+    style: { dashed: true }
+    description: A small source that counts where growers get stuck. Decision 0008 says it will exist. No record admits it yet.
+
+  - id: orchard
+    name: Orchard
+    type: system
+    subtitle: the suite
+    description: The ten members. Each lives in its own repository and runs in any estate with configuration alone.
+    children:
+      - id: orrery
+        name: Orrery
+        type: service
+        subtitle: catalog and self-service actions
+        size: large
+        style: { emphasis: high }
+        facts: ["Pillar: Catalog (owner)", "Ports: UI, machine (ingest)", "Agents: MCP"]
+        description: One graph of everything an estate owns and runs, with live status, and the engine that runs self-service actions.
+        children:
+          - id: orrery-catalog
+            name: Catalog
+            type: database
+            subtitle: entities, blueprints, relations
+            description: What exists, how it connects, and how it is doing. Sources write; people and apps read.
+          - id: orrery-actions
+            name: Actions Engine
+            type: service
+            subtitle: runs, approvals, records
+            description: A button hands a payload to a backend the estate runs (a webhook, a GitHub workflow, or a runner job) and records the result.
+          - id: orrery-forwarder
+            name: Annals Forwarder
+            type: worker
+            subtitle: every 30 seconds
+            facts: ["Event key: change:<id>", "Token source: orrery"]
+            description: Sends the activity log to Annals, one event per row. An Annals that is down loses nothing; the mark moves only past rows a minute old.
+          - id: entra-pusher
+            name: Entra Pusher
+            type: worker
+            subtitle: pusher-entra
+            description: Pushes an Entra tenant's enterprise apps, their role assignments, groups, and users into the catalog. It runs inside the estate and only connects out.
+          - id: access-runner
+            name: Access Runner
+            type: worker
+            subtitle: orrery-access-runner
+            description: A runner image with entra-grant. It claims action jobs and grants and removes access in Entra (an app role, a group), and runs an access review that removes and signs off in one go.
+      - id: vantage
+        name: Vantage
+        type: app
+        subtitle: diagrams and living documents
+        facts: ["Pillar: Catalog, its picture"]
+        description: A system's diagrams, written in YAML, laid out and scored by the engine, and kept true by live inventory from Orrery. Its living documents sit beside them. It never reads a repository to work out what a system is.
+      - id: myapps
+        name: My Apps
+        type: web
+        subtitle: the front page
+        facts: ["Pillar: Catalog, its front page", "Store: none; its list lives in Orrery"]
+        description: One tile per application a person may open, and a landscape of everything the estate offers.
+      - id: tally
+        name: Tally
+        type: service
+        subtitle: cost
+        facts: ["Pillar: Cost (owner)"]
+        description: What each workload, host, agent, and job costs, in money and in capacity.
+      - id: trellis
+        name: Trellis
+        type: service
+        subtitle: standards as data
+        facts: ["Pillar: Rules (owner)", "Judges: the five properties", "Packs: security, telemetry, build, interfaces, catalog, access, alerts, delivery, graft"]
+        description: One judge over an estate's standards, and the suite's one judge of quality (decision 0010) and of the map's five properties (decision 0016). The same packs run on the board, by hand, and in a pipeline.
+      - id: redgreen
+        name: redgreen
+        type: worker
+        subtitle: the forge source, headless
+        facts: ["Pillar: Catalog, its forge feed", "Pages: none (decision 0004)"]
+        description: Reads every forge's repositories, pipelines, deployments, and issues into Orrery. The health rules and DORA measures are calculated fields in Orrery. It will become Muster, with forgitten (decision 0017).
+      - id: dispatch
+        name: Dispatch
+        type: service
+        subtitle: incidents and notices
+        facts: ["Pillar: Health (owner)", "Agents: MCP"]
+        description: Incidents with an owner, a state, and a timeline. Exports time to acknowledge and time to restore. It is also the one place a product's notices go out from, to channels and to people (decision 0015).
+      - id: graft
+        name: Graft
+        type: service
+        subtitle: requests become changes
+        facts: ["Pillar: Change (owner)", "Works in: the repositories its program file lists", "Agent: holds no credential"]
+        description: A request desk for software that exists. A request enters a lane. One agent investigates and plans, approvers answer the plan, a second agent builds it, and Graft lands it and watches the pipeline. Decision 0009.
+      - id: forgitten
+        name: forgitten
+        type: app
+        subtitle: unpushed work
+        facts: ["Pillar: Catalog, its stranded work", "Writes: nothing outside itself"]
+        description: Work that has not left the machine it was done on. A CLI scans each machine; a hub shows them on one page. It only reads. It will become part of Muster, with redgreen, and its own hub goes away (decision 0017).
+      - id: annals
+        name: Annals
+        type: service
+        subtitle: the record of every act
+        size: large
+        facts: ["Pillar: Record (owner)", "Store: ClickHouse, append-only", "Delete: retention only"]
+        description: One record of what every actor (person, agent, or system) did, across every product. Shapes and ids, never content or a secret.
+        children:
+          - id: annals-api
+            name: API Port
+            type: api
+            subtitle: "8081"
+            bullets: ["POST /v1/events, idempotent by source and event_key", "GET /v1/events, /v1/stats", "/mcp for agents"]
+            facts: ["Trusts: a bearer token Annals issued", "Never: identity from a header"]
+          - id: annals-board
+            name: Board Port
+            type: web
+            subtitle: "8080"
+            bullets: ["Timeline, record, actor, and target pages", "Approvals view", "Tokens (admin)"]
+            facts: ["Trusts: X-Forwarded-Email and -Groups", "Never: a bearer token"]
+          - id: annals-people
+            name: People Mask
+            type: component
+            subtitle: internal/people
+            facts: ["Reader: each person as a ref", "PiiReader: the person", "Admin: everything, plus tokens"]
+            description: Every read on both ports goes through it. A reader's filters match refs only.
+          - id: annals-store
+            name: Records
+            type: database
+            subtitle: ClickHouse
+            bullets: ["Who did what, to what, with whom", "Names and ids only", "A correction is a new record"]
+          - id: annals-m365
+            name: M365 Collector
+            type: worker
+            subtitle: annals-m365, same image
+            facts: ["Holds: an Annals token, nothing more", "Signs in: federated workload token"]
+            description: Reads the Microsoft 365 unified audit log through Graph's audit log query API (sharing and Copilot today), maps it to events, and posts them in batches like any sender.
+
+  - id: estate
+    name: An Estate
+    type: group
+    subtitle: brought by the estate, read through the seam
+    description: Everything true only of one estate. Orchard builds none of it and reads it through adapters.
+    children:
+      - id: front-door
+        name: Front Door
+        type: gateway
+        subtitle: sign-in proxy
+        description: Signs people in and passes X-Forwarded-Email and X-Forwarded-Groups. Each member gives its own roles.
+      - id: identity
+        name: Identity Provider
+        type: identity
+        subtitle: Entra ID or another
+        description: The estate's sign-in, users, groups, and app assignments.
+      - id: forges
+        name: Forges
+        type: repo
+        subtitle: GitHub, GitLab, Azure DevOps
+        description: Repositories, pipelines, deployments, and issues. Reached through one adapter per forge.
+      - id: deploy-tool
+        name: Deploy Tool
+        type: gitops
+        subtitle: such as Argo CD
+        description: The estate's control plane for what runs in its clusters.
+      - id: observability
+        name: Observability Stack
+        type: monitoring
+        subtitle: OTLP collector, Prometheus, Loki, Tempo
+        description: The estate's metrics, logs, and traces. Members send telemetry in and read queries out.
+      - id: alertmanager
+        name: Alertmanager
+        type: monitoring
+        subtitle: alert webhooks
+      - id: vault
+        name: Vault
+        type: secret
+        subtitle: the estate's secrets store
+        description: Secrets reach members through the estate's own secret operator. Trellis also reads it to judge it.
+      - id: database-server
+        name: Database Server
+        type: database
+        subtitle: one managed Postgres
+        description: One server the estate brings, with backups. Each member that needs Postgres takes its own database and its own role on it, and signs in as its pod's workload identity. No member brings a database cluster of its own (decision 0023).
+      - id: device-management
+        name: Device Management
+        type: service
+        subtitle: brought by the estate
+        description: Installs software on an estate's machines, pushes their settings, and issues their certificates. It will install Tender, give it a certificate, and list the members it posts to (decision 0018).
+      - id: machines
+        name: Machines
+        type: device
+        subtitle: where work is done
+        description: Each machine where people and agents work. forgitten's CLI scans them.
+      - id: agent-runtime
+        name: Agent Runtime
+        type: agent
+        subtitle: brought by the estate
+        description: Where an agent session runs. Graft starts sessions on it. The suite builds none (decision 0009).
+      - id: code-analyzer
+        name: Code Analyzer
+        type: worker
+        subtitle: an estate's own runner
+        description: Reads a repository with its own access, writes a specification, and publishes a first set of pages and a diagram to the hub. Later it only reports where the documents and the code disagree. It never overwrites (decision 0014).
+      - id: products
+        name: Estate Products
+        type: app
+        subtitle: an estate's own apps
+        description: Apps the estate runs that consume the suite and post their acts to Annals with an Annals token. They are never members.
+      - id: chat
+        name: Chat Service
+        type: external
+        subtitle: Teams or another
+        description: Where an estate's people already talk. Dispatch posts to its channels and messages a person one to one, as a bot the estate registers (decision 0015).
+      - id: m365
+        name: Microsoft 365
+        type: external
+        subtitle: unified audit log
+        description: A system that keeps its own audit log, read by a collector.
+
+relations:
+  # The suite web: who reads whom, who writes to whom.
+  - { from: vantage, to: orrery-catalog, label: reads inventory, kind: data, tags: [web, core] }
+  - { from: myapps, to: orrery-catalog, label: "reads apps, writes its list", kind: sync, tags: [web, core] }
+  - { from: myapps, to: orrery-actions, label: lists a person's actions, kind: sync, tags: [web, core] }
+  - { from: tally, to: orrery-catalog, label: "reads the bill, writes namespace cost", kind: sync, tags: [web, core] }
+  - { from: trellis, to: orrery-catalog, label: "reads subjects, writes open findings", kind: sync, tags: [web, core] }
+  - { from: redgreen, to: orrery-catalog, label: "writes repos, pipelines, deploys, issues", kind: sync, tags: [web, core], description: It also reads Argo CD syncs and Dispatch's incidents back from the catalog. }
+  - { from: dispatch, to: orrery-catalog, label: pushes incidents, kind: sync, tags: [web, core] }
+  - { from: orrery-actions, to: dispatch, label: tells every run, kind: async, tags: [web, core], description: "Orrery's notices pass, with DISPATCH_URL and DISPATCH_TOKEN." }
+  - { from: orrery-forwarder, to: annals, label: forwards the activity log, kind: async, tags: [web, core], weight: 2 }
+  - { from: dispatch, to: annals, label: posts every decision, kind: async, tags: [web, core], weight: 2 }
+  - { from: graft, to: orrery-actions, label: "declares actions, reports runs", kind: sync, tags: [web, core], description: "The hub starts a job by calling Graft's token port with its run id." }
+  - { from: graft, to: annals, label: posts job steps, kind: async, tags: [web, core], weight: 2 }
+  - { from: graft, to: forges, label: "lands commits, GitHub and GitLab", kind: manage, tags: [web, seam] }
+  - { from: graft, to: dispatch, label: "reads open incidents, sends notices", kind: sync, tags: [web, core] }
+  - { from: graft, to: agent-runtime, label: starts agent sessions, kind: manage, tags: [web, seam] }
+  - { from: redgreen, to: forges, label: reads, kind: data, tags: [web, seam] }
+  - { from: redgreen, to: identity, label: signs in to Azure DevOps, kind: auth, tags: [web, seam] }
+  - { from: trellis, to: forges, label: reads GitHub and its registry, kind: data, tags: [web, seam] }
+  - { from: trellis, to: observability, label: "queries Prometheus, Loki, Tempo", kind: observe, tags: [web, seam] }
+  - { from: trellis, to: vault, label: judges, kind: data, tags: [web, seam] }
+  - { from: tally, to: observability, label: queries Prometheus, kind: observe, tags: [web, seam] }
+  - { from: alertmanager, to: dispatch, label: opens incidents, kind: async, tags: [web, seam] }
+  - { from: alertmanager, to: orrery-catalog, label: fires alerts, kind: async, tags: [web, seam] }
+  - { from: entra-pusher, to: identity, label: reads tenant, kind: data, tags: [web, seam] }
+  - { from: deploy-tool, to: orrery-catalog, label: "apps and syncs, via Kubernetes pusher", kind: data, tags: [web, seam] }
+  - { from: orrery-actions, to: forges, label: starts workflows, kind: manage, tags: [web, seam] }
+  - { from: machines, to: forgitten, label: scans posted, kind: data, tags: [web, seam] }
+  - { from: products, to: dispatch, label: send notices as events, kind: async, tags: [web, seam] }
+  - { from: dispatch, to: chat, label: "posts to channels, messages people", kind: async, tags: [web, seam], description: "Mail and text messages go out the same way. Decision 0015." }
+  - { from: code-analyzer, to: forges, label: reads a repository, kind: data, tags: [web, seam] }
+  - { from: code-analyzer, to: vantage, label: "publishes a first set, then reports drift", kind: data, tags: [web, seam], description: "Through the hub's own document format, the way a connector pushes facts in. Decision 0014." }
+  - { from: [orrery, vantage, trellis], to: database-server, label: each keeps its own database, kind: data, tags: [web, seam], description: "Orrery, Vantage, and Trellis. Each has its own database and its own role, and signs in as its pod's workload identity. Trellis keeps one only when an estate turns on its history. Decision 0023." }
+  - { from: front-door, to: orchard, label: signs people in, kind: auth, tags: [web, seam] }
+  - { from: vault, to: orchard, label: secrets via the estate's operator, kind: auth, tags: [web, seam] }
+  - { from: orchard, to: observability, label: "OTLP telemetry, JSON logs", kind: observe, tags: [web, seam] }
+
+  # The audit system: how every act reaches Annals, and who reads it.
+  - { from: orrery-actions, to: orrery-forwarder, label: every run and change, kind: data, tags: [audit] }
+  - { from: orrery-forwarder, to: annals-api, label: "posts, token source: orrery", kind: async, tags: [audit], weight: 2 }
+  - { from: dispatch, to: annals-api, label: posts each decision, kind: async, tags: [audit], weight: 2 }
+  - { from: graft, to: annals-api, label: posts each job step and decision, kind: async, tags: [audit], weight: 2 }
+  - { from: products, to: annals-api, label: post with an Annals token, kind: async, tags: [audit], weight: 2 }
+  - { from: m365, to: annals-m365, label: audit log read, kind: data, tags: [audit] }
+  - { from: annals-m365, to: annals-api, label: posts in batches, kind: async, tags: [audit], weight: 2 }
+  - { from: annals-api, to: annals-store, label: "validates, appends", kind: data, tags: [audit] }
+  - { from: annals-store, to: annals-people, label: every read, kind: data, tags: [audit] }
+  - { from: annals-people, to: annals-board, label: masked by role, kind: data, tags: [audit] }
+  - { from: annals-people, to: annals-api, label: masked by token level, kind: data, tags: [audit] }
+  - { from: people, to: front-door, label: sign in, kind: auth, tags: [audit] }
+  - { from: front-door, to: annals-board, label: "Reader, PiiReader, Admin", kind: auth, tags: [audit] }
+  - { from: agents, to: annals-api, label: ask over MCP, kind: sync, tags: [audit] }
+
+  # Access reviews (decision 0005).
+  - { from: identity, to: entra-pusher, label: "users, groups, app assignments", kind: data, tags: [access] }
+  - { from: entra-pusher, to: orrery-catalog, label: "pushes grants, linked to person and it_application", kind: data, tags: [access], weight: 2 }
+  - { from: trellis, to: orrery-catalog, label: "judges grants, writes findings", kind: sync, tags: [access] }
+  - { from: people, to: orrery-actions, label: review an application, kind: sync, tags: [access] }
+  - { from: orrery-actions, to: access-runner, label: queues the removal, kind: async, tags: [access] }
+  - { from: access-runner, to: identity, label: removes access, kind: manage, tags: [access] }
+  - { from: orrery-actions, to: orrery-catalog, label: writes it_access_review, kind: data, tags: [access], weight: 2 }
+  - { from: orrery-forwarder, to: annals-api, label: forwards every run, kind: async, tags: [access] }
+  - { from: annals-m365, to: annals-api, label: "posts what an audit log shows", kind: async, tags: [access] }
+
+  # How a decision reaches the suite (decision 0013).
+  - { from: owner, to: agents, label: decides in a conversation with, kind: sync, tags: [decide] }
+  - { from: agents, to: proposals, label: file the decision as a proposal, kind: async, tags: [decide] }
+  - { from: proposals, to: fold, label: are read by, kind: async, tags: [decide] }
+  - { from: fold, to: decisions, label: writes the next record in, kind: data, tags: [decide] }
+  - { from: fold, to: roadmap, label: adds a row for what is owed to, kind: data, tags: [decide] }
+  - { from: proposals, to: owner, label: wait for a ruling when they change a decision, color: amber, tags: [decide] }
+  - { from: [decisions, roadmap], to: plugin, label: ship in, kind: deploy, tags: [decide] }
+  - { from: plugin, to: agents, label: tells what the suite is, kind: sync, tags: [decide] }
+
+  # What is owed next: one arrow per roadmap row that changes a flow.
+  - { from: friction-source, to: orrery-catalog, label: "row 1: will count where growers get stuck", color: amber, kind: data, tags: [next] }
+  - { from: redgreen, to: orrery-catalog, label: "row 5: will write which check failed", color: amber, kind: data, tags: [next] }
+  - { from: tally, to: orrery-catalog, label: "row 6: will tell a checking session from a building one", color: amber, kind: data, tags: [next] }
+  - { from: trellis, to: forges, label: "row 7: will read a repository's laws", color: amber, kind: sync, tags: [next] }
+  - { from: graft, to: orrery-catalog, label: "row 8: will read a bed's class", color: amber, kind: sync, tags: [next] }
+  - { from: dispatch, to: trellis, label: "row 11: a postmortem will name the law", color: amber, kind: sync, tags: [next] }
+  - { from: dispatch, to: products, label: "row 19: will tell a sender how each delivery went", color: amber, kind: sync, tags: [next] }
+  - { from: dispatch, to: chat, label: "row 20: will speak as more than one bot", color: amber, kind: async, tags: [next] }
+  - { from: redgreen, to: orrery-catalog, label: "row 25: will count rework rate", color: amber, kind: data, tags: [next] }
+  - { from: vantage, to: orrery-catalog, label: "row 41: will push its workspaces and their members", color: amber, kind: data, tags: [next] }
+
+  # From a machine to a member (decisions 0017 and 0018). None of it is built.
+  - { from: forgitten, to: redgreen, label: "rows 27 and 28: will fold into one member, Muster", color: amber, kind: data, tags: [device] }
+  - { from: device-management, to: tender, label: "row 32: will give a certificate and the addresses", color: amber, kind: auth, tags: [device] }
+  - { from: machines, to: tender, label: "row 29: will run on each machine", color: amber, kind: data, tags: [device] }
+  - { from: tender, to: tally, label: "row 30: will carry what agents used", color: amber, kind: async, tags: [device] }
+  - { from: tender, to: redgreen, label: "row 31: will carry unpushed work", color: amber, kind: async, tags: [device] }
+  - { from: [tally, redgreen], to: orrery-catalog, label: "write it; a machine never does", color: amber, kind: data, tags: [device] }
+  - { from: orrery-catalog, to: outcomes, label: "row 26: will show the three outcomes", color: amber, kind: data, tags: [next] }
+  - { from: trellis, to: properties, label: "row 24: will judge all five properties", color: amber, kind: sync, tags: [next] }
+
+  # The map (decision 0016): its shape, and who answers what.
+  - { from: pillars, to: outcomes, label: together produce, tags: [map] }
+  - { from: properties, to: pillars, label: must hold in every one of, tags: [map] }
+  - { from: floor, to: pillars, label: sits under, tags: [map] }
+  - { from: orrery-actions, to: p-change, label: runs every other change for, tags: [engine], description: "Change has one owner and one engine. The engine stays in Orrery, so Change is rated Partial (decision 0016)." }
+  - { from: trellis, to: properties, label: judges, color: violet, tags: [map] }
+  - { from: orrery-catalog, to: outcomes, label: shows, color: green, tags: [map] }
+
+views:
+  - id: map
+    title: The Map
+    group: The Map
+    question: What must a platform answer, and what is each answer for?
+    include: { tags: [map], nodes: [o-flow, o-quality, o-adoption, p-catalog, p-change, p-health, p-cost, p-rules, p-record, q-product, q-doors, q-self-service, q-kit, q-decided] }
+    collapse: [orrery]
+    direction: right
+    arrange:
+      - { node: map, as: column, order: [outcomes, pillars, properties, floor] }
+      - { node: orchard, as: column, order: [orrery, trellis] }
+      - { node: outcomes, as: row, order: [o-flow, o-quality, o-adoption] }
+      - { node: pillars, as: row, order: [p-catalog, p-change, p-health, p-cost, p-rules, p-record] }
+      - { node: properties, as: row, order: [q-product, q-doors, q-self-service, q-kit, q-decided] }
+    annotations:
+      - { text: "Six pillars, five properties, three outcomes", kind: heading }
+      - { text: "A pillar is something a platform has, and one app answers its whole question. A property is something every pillar must be like, so no app can own it and the judge checks it. An outcome is a number read off the whole. Decision 0016 replaced fourteen pillars with these three lists, because six of the fourteen could never pass the one-app test." }
+      - { text: "The three lists are closed. A new item joins only by a decision that says which test it passes." }
+
+  - id: owners
+    title: Who Answers What
+    group: The Map
+    question: Which member owns each pillar, and which members are parts of one?
+    include: { tags: [engine], nodes: [p-catalog, p-change, p-health, p-cost, p-rules, p-record, orrery, vantage, myapps, redgreen, forgitten, graft, dispatch, tally, trellis, annals] }
+    reparent: { orrery: p-catalog, vantage: p-catalog, myapps: p-catalog, redgreen: p-catalog, forgitten: p-catalog, graft: p-change, dispatch: p-health, tally: p-cost, trellis: p-rules, annals: p-record }
+    collapse: [annals, orrery]
+    direction: right
+    arrange:
+      - { node: pillars, as: row, order: [p-catalog, p-change, p-health, p-cost, p-rules, p-record] }
+      - { node: p-catalog, as: column, order: [orrery, vantage, myapps, redgreen, forgitten] }
+    highlights:
+      - { nodes: [orrery, graft, dispatch, tally, trellis, annals], label: The six owners, color: blue }
+    annotations:
+      - { text: "One owner per pillar. Four members are parts of Catalog.", kind: heading }
+      - { text: "Each member sits in the one pillar it belongs to. Vantage is the catalog's picture, My Apps its front page, redgreen its forge feed, and forgitten finds work that never reached a forge. redgreen and forgitten will become one member, Muster (decision 0017)." }
+      - { text: "Change has one owner and one engine: Graft changes a repository, and Orrery's actions engine runs every other change. So Change is rated Partial. Members still name the old pillars in their own files until roadmap rows 21 and 22 are done." }
+
+  - id: suite
+    title: The Suite Web
+    group: Orchard
+    question: How do the ten members and the estate's own tools fit together?
+    include: { tags: [web, seam], nodes: [forgitten] }
+    collapse: [annals, orrery]
+    direction: right
+    legend: true
+    arrange:
+      - { node: orchard, as: ring, center: orrery }
+      - { node: estate, as: column, order: [front-door, identity, forges, code-analyzer, agent-runtime, database-server, deploy-tool, observability, alertmanager, products, chat, vault, machines] }
+    annotations:
+      - { text: Orrery is the spine. Seven members read it or write into it., at: orrery, kind: callout, side: top }
+      - { text: "Only Orrery, Dispatch, and Graft post to Annals today.", at: annals }
+      - { text: "This is every link at once. Around the Spine shows the members alone; Through the Seam shows each member's reach into the estate." }
+      - { text: What crosses the seam, kind: heading }
+      - { text: "Configuration, secrets, and sign-in come in from the estate. Telemetry, self-description, and audit go out to it. Alerts come in as Alertmanager's webhook, and each forge and each agent runtime is reached through its own adapter. Orchard builds no forge, identity provider, secrets store, observability stack, agent runtime, or database server." }
+
+  - id: spine
+    title: Around the Spine
+    group: Orchard
+    question: Which members read Orrery, which write into it, and which post to Annals?
+    include: { tags: [core], nodes: [forgitten] }
+    collapse: [annals, orrery]
+    direction: right
+    legend: true
+    arrange:
+      - { node: orchard, as: ring, center: orrery, order: [annals, vantage, myapps, tally, trellis, redgreen, forgitten, dispatch, graft] }
+    highlights:
+      - { nodes: [orrery], label: The spine, color: blue, style: band }
+    annotations:
+      - { text: forgitten stands alone. Its CLI posts scans to its own hub., at: forgitten }
+      - { text: Orrery is the spine, kind: heading }
+      - { text: "Five members write into the catalog: My Apps its list of applications, Tally namespace cost, trellis open findings, redgreen the forges' records, Dispatch its incidents. Orrery tells Dispatch every action run. Graft declares its actions on Orrery and reports each run there. Only Orrery, Dispatch, and Graft post to Annals today." }
+
+  - id: seam
+    title: Through the Seam
+    group: Orchard
+    question: Which of the estate's own tools does each member read or write?
+    include: { tags: [seam] }
+    collapse: [annals, orrery]
+    direction: right
+    legend: true
+    arrange:
+      - { node: orchard, as: column, order: [redgreen, vantage, graft, orrery, trellis, tally, dispatch, forgitten] }
+      - { node: estate, as: column, order: [front-door, identity, forges, code-analyzer, agent-runtime, database-server, deploy-tool, observability, alertmanager, products, chat, vault, machines] }
+    annotations:
+      - { text: "Orchard builds no forge, identity provider, secrets store, observability stack, agent runtime, or database server. Each is the estate's own.", kind: heading }
+      - { text: "An estate brings one managed Postgres server. Orrery, Vantage, and Trellis each keep their own database on it. The other members keep one SQLite file or no database, and Annals keeps ClickHouse (decision 0023)." }
+
+  - id: audit
+    title: The Audit System
+    group: Orchard
+    question: How does every act reach Annals, and who reads it?
+    include: { tags: [audit] }
+    expand: [annals]
+    direction: down
+    legend: true
+    arrange:
+      - { node: annals, direction: right }
+      - { node: root, order: [agents, people] }
+      - { node: estate, order: [m365, products, front-door] }
+      - { node: orchard, order: [graft, dispatch, orrery, annals] }
+    highlights:
+      - { nodes: [annals], label: The record, color: violet, style: band }
+    annotations:
+      - { text: "Never holds content (a prompt, a message, a file) or a secret.", at: annals-store, kind: callout, side: bottom }
+      - { text: A token posts as one source and reads at one level. Tokens never administer., at: annals-api }
+      - { text: How an act reaches Annals, kind: heading }
+      - { text: "Orrery forwards its activity log: every action run, approval, and change a person or token made. Dispatch posts each decision it makes. Graft posts each job step and each approval or decline. An estate's own products post with a token Annals issued for their source. A collector reads a system that keeps its own audit log, such as Microsoft 365, and posts it the same way." }
+      - { text: Who reads it, kind: heading }
+      - { text: "People read the board through the front door, by role: a Reader sees each person as a ref, a PiiReader sees the person, an Admin also issues tokens. Agents ask over MCP on the API port, with a token that reads as reader or pii. Records are append-only; a correction is a new record and the only delete is retention." }
+
+  - id: access
+    title: Access Reviews
+    group: Orchard
+    question: Who has access to a system, at what level, and when was it last reviewed?
+    include: { tags: [access] }
+    direction: down
+    legend: true
+    paths:
+      - title: One review of one application
+        color: green
+        steps:
+          - { from: identity, to: entra-pusher, text: "The Entra pusher reads the tenant's users, groups, and app role assignments." }
+          - { from: entra-pusher, to: orrery-catalog, text: "It pushes each grant as entra_app_role_assignment, linked to the core person and, through the shared relation application, to the it_application it opens." }
+          - { from: trellis, to: orrery-catalog, text: "Trellis's access pack judges the grants. Tier hygiene: no grant to a gone or disabled account, admin roles only through a group, guests flagged. Tier reviewed: a review within access_review_days. Findings go back to Orrery." }
+          - { from: people, to: orrery-actions, text: A person runs the review action on the application and keeps or removes each holder. }
+          - { from: orrery-actions, to: access-runner, id: 5a, text: "For a system Orrery can change, the access runner removes what the reviewer took away." }
+          - { from: access-runner, to: identity, id: 5b, text: "It removes the access in Entra, the same runner that grants." }
+          - { from: orrery-actions, to: orrery-catalog, text: "The sign-off is written as one it_access_review record: who reviewed, what was kept, what was removed. For a system Orrery cannot change, the review only records the decision and the removal is done in the system by hand." }
+          - { from: orrery-forwarder, to: annals-api, text: "Orrery forwards every action run to Annals, so each review and removal is already an event." }
+          - { from: annals-m365, to: annals-api, text: "A collector that reads a system's own audit log posts what it shows. The Microsoft 365 collector posts sharing and Copilot today; access.grant and access.revoke are the verbs for access changed between reviews." }
+    annotations:
+      - { text: "Inventory: who holds what, now. Pushed, never typed.", at: entra-pusher, kind: callout }
+      - { text: "Judgment: tiers hygiene and reviewed.", at: Trellis, kind: callout }
+      - { text: "History: every grant, removal, and review over time.", at: annals-api, kind: callout }
+      - { text: "All built. Where Orrery cannot change the system, such as an ERP no pusher reads yet, the review is recorded by hand and the application is marked for review so Trellis still judges it.", at: access-runner }
+      - { text: Orrery answers what is true now. Annals answers what happened over time., kind: heading }
+      - { text: "A system with no pusher has no grants in the catalog, and its rules say no data. Which roles count as admin (admin_roles) and how often a review is due (access_review_days) are the estate's own tuning in Trellis." }
+
+  - id: decide
+    title: How a Decision Reaches the Suite
+    group: Orchard
+    question: How does a decision made in any conversation become a record, a roadmap row, and something every agent can read?
+    include: { tags: [decide] }
+    direction: down
+    legend: true
+    arrange:
+      - { node: record, direction: right, order: [proposals, fold, decisions, roadmap, plugin] }
+    paths:
+      - title: From a conversation to a record
+        steps:
+          - { from: owner, to: agents, text: "The owner decides something about the suite, in any conversation, in any estate." }
+          - { from: agents, to: proposals, text: "The agent files it as one issue, with no estate named. Nothing waits on it." }
+          - { from: proposals, to: fold, text: "On a schedule, the machine that owns the repository reads the open proposals." }
+          - { from: fold, to: decisions, text: "A proposal that adds becomes the next decision record, with the documents it changes." }
+          - { from: fold, to: roadmap, text: "What the decision leaves a member owing becomes a roadmap row." }
+          - { from: decisions, to: plugin, text: "The landing releases. The plugin carries the new record to every machine." }
+          - { from: plugin, to: agents, text: "The next agent, on any machine, builds to it." }
+      - title: When a proposal changes a decision
+        color: amber
+        steps:
+          - { from: proposals, to: owner, text: "A proposal that amends or supersedes an accepted record is not written. It waits for the owner's ruling." }
+    annotations:
+      - { text: "A record is never rewritten. A new one amends or supersedes it and says so.", at: decisions, kind: callout, side: bottom }
+      - { text: "Only a change to an accepted decision waits for a person. Everything else lands without asking." }
+
+  - id: next
+    title: What Is Owed Next
+    group: Orchard
+    question: Which flows do the decisions say are owed and not built?
+    include: { tags: [next] }
+    collapse: [annals, orrery, outcomes, properties]
+    direction: right
+    legend: true
+    highlights:
+      - { nodes: [friction-source], label: Not admitted yet, color: amber }
+    annotations:
+      - { text: "Every amber arrow is a row of roadmap.md that is owed and not built. Nothing on this view runs today.", kind: heading }
+      - { text: "Rows 2 to 4 and 10 change no flow: fields on each repository, the ground view opened to everyone, and the gate saying which checks it ran. Row 17 changes none either: a pointer file in a repository. Rows 9, 16, and 18 are done." }
+      - { text: "Rows 21 to 23 only rename: Trellis's rules, each member's own file, and each estate's pillar records take the names of the map (decision 0016)." }
+      - { text: "Rows 27 to 32 are drawn on their own view, From a Machine to a Member." }
+      - { text: "Rows 33 to 38 change no flow: who may read a report in Orrery's catalog, and how its owner shares it (decision 0019)." }
+      - { text: "Rows 39 and 40 are not drawn yet: the actions engine starts one job for each run, through a starter the estate runs (decision 0020)." }
+      - { text: "Rows 12 to 15 are owed by every member: one CLI shape, the shared kit, a forge adapter in Trellis, and every act posted to Annals." }
+      - { text: "Row 42 is owed by every other member that holds records of its own: an inventory of them in the catalog (decision 0022)." }
+      - { text: "Rows 44 and 45 change no flow: an estate brings one Postgres server, and Vantage's chart takes it as the way it is meant to run (decision 0023). Row 43 is done." }
+
+  - id: device
+    title: From a Machine to a Member
+    group: Orchard
+    question: How will what exists only on a person's machine reach the suite, with no token on the machine?
+    include: { tags: [device] }
+    collapse: [annals, orrery]
+    direction: right
+    legend: true
+    arrange:
+      - { node: estate, as: column, order: [device-management, machines] }
+      - { node: orchard, as: column, order: [tally, redgreen, forgitten, orrery] }
+    highlights:
+      - { nodes: [tender], label: "In the shed, not built", color: amber }
+      - { nodes: [redgreen, forgitten], label: Will become Muster, color: amber }
+    paths:
+      - title: One report, once Tender is built
+        color: amber
+        steps:
+          - { from: device-management, to: tender, text: "The estate's device management installs Tender, gives the machine a certificate, and lists one address for each member the estate runs." }
+          - { from: machines, to: tender, text: "Tender runs on the machine. Each reader reads what only that machine holds. A reader with no address stays off." }
+          - { from: tender, to: tally, id: 3a, text: "Tender asks the member whether it takes this reader. Then it sends names and counts, never contents, and shows its certificate." }
+          - { from: tender, to: redgreen, id: 3b, text: "The same for work that has not left the machine. An estate without this member lists no address, so this reader never runs." }
+          - { from: redgreen, to: orrery-catalog, id: 4, text: "Only the member writes to the catalog. The machine holds no catalog token." }
+    annotations:
+      - { text: "Nothing on this view is built. Every arrow is a roadmap row, 27 to 32.", kind: heading }
+      - { text: "Tender only reports. Nothing in the suite sends it a command, and no member's server is installed on a person's machine (decision 0018)." }
+
+  - id: page-map
+    kind: doc
+    title: The Map, Rated
+    group: Documents
+    question: How well does the suite answer each pillar, property, and outcome, and where did the fourteen pillars go?
+    file: pillars.md
+    beside: owners
+  - id: page-roadmap
+    kind: doc
+    title: Roadmap
+    group: Documents
+    question: What does the suite still owe, who owes it, and in what order?
+    file: roadmap.md
+    beside: next
+  - id: page-quality
+    kind: doc
+    title: Quality
+    group: Documents
+    question: How does an estate keep what it ships good when agents write most changes, and what does checking cost?
+    file: quality.md
+  - id: page-strategy
+    kind: doc
+    title: Strategy
+    group: Documents
+    question: Why does the suite exist, and what will it never become?
+    file: strategy.md
+  - id: page-garden
+    kind: doc
+    title: The Garden
+    group: Documents
+    question: What does tending a platform mean, and which jobs need tools?
+    file: garden.md
+  - id: page-members
+    kind: doc
+    title: The Members
+    group: Documents
+    question: What does each member read, write, and tend?
+    file: members.md
+    beside: suite
+  - id: page-seam
+    kind: doc
+    title: The Seam
+    group: Documents
+    question: Where is the line between the suite and an estate, and what is the test for joining?
+    file: seam.md
+    beside: seam
+  - id: page-seam-audit
+    kind: doc
+    title: Seam Audit
+    group: Documents
+    question: Where do the members still cross the line?
+    file: seam-audit.md

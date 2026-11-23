@@ -1,0 +1,16 @@
+name: Test
+
+on:
+  pull_request:
+  # The release calls this first, so a push to main runs it once.
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 scripts/check.py

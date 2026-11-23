@@ -1,0 +1,81 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [0.1.11](https://github.com/dsswift/project-almanac/compare/v0.1.10...v0.1.11) (2026-11-22)
+
+### Features
+
+* **almanac:** decide members push an inventory ([1b96844](https://github.com/dsswift/project-almanac/commit/1b96844ee108c962f58523fb98c6f5af55e3ec87))
+* **almanac:** decide one postgres per estate ([4614963](https://github.com/dsswift/project-almanac/commit/4614963cc8553633996631b141d9a78d6e799ffd))
+
+### Bug Fixes
+
+* **almanac:** mark vantage's document rows ([53eaa5f](https://github.com/dsswift/project-almanac/commit/53eaa5f0b9f8336fe4257746e11905615b93face))
+
+## [0.1.10](https://github.com/dsswift/project-almanac/compare/v0.1.9...v0.1.10) (2026-11-22)
+
+### Features
+
+* **almanac:** decide the deploy tool stands outside ([ce08b6e](https://github.com/dsswift/project-almanac/commit/ce08b6e0148ddd5a5cace9944871a170083f2522))
+
+## [0.1.9](https://github.com/dsswift/project-almanac/compare/v0.1.8...v0.1.9) (2026-11-21)
+
+### Bug Fixes
+
+* **almanac:** mark the job backend built ([94d5fce](https://github.com/dsswift/project-almanac/commit/94d5fcec6eba2f40bdf4109c25835e1f6f1b970f))
+
+## [0.1.8](https://github.com/dsswift/project-almanac/compare/v0.1.7...v0.1.8) (2026-11-21)
+
+### Features
+
+* **almanac:** decide a run outlives its asker ([2f30884](https://github.com/dsswift/project-almanac/commit/2f30884174fc710e6718d84378454b87c725a25f))
+
+## [0.1.7](https://github.com/dsswift/project-almanac/compare/v0.1.6...v0.1.7) (2026-11-21)
+
+### Features
+
+* **almanac:** decide reports are private ([8c8e0da](https://github.com/dsswift/project-almanac/commit/8c8e0da6d94c4ec1d9105726d6fea27d7d2daee8))
+
+## [0.1.6](https://github.com/dsswift/project-almanac/compare/v0.1.5...v0.1.6) (2026-11-21)
+
+### Features
+
+* **almanac:** decide redgreen, forgitten merge ([5cfad00](https://github.com/dsswift/project-almanac/commit/5cfad00e2021e61dad1238a8a825dc8cc9daf44e))
+* **almanac:** decide one device agent, tender ([c1c1a70](https://github.com/dsswift/project-almanac/commit/c1c1a70807647c8fce6ad660a28b1da39226a98e))
+
+## [0.1.5](https://github.com/dsswift/project-almanac/compare/v0.1.4...v0.1.5) (2026-11-21)
+
+### Features
+
+* **almanac:** decide six pillars, not fourteen ([0d05387](https://github.com/dsswift/project-almanac/commit/0d05387612f93cdb154906d89572ce58dc976642))
+
+## [0.1.4](https://github.com/dsswift/project-almanac/compare/v0.1.3...v0.1.4) (2026-11-20)
+
+### Bug Fixes
+
+* **almanac:** publish the diagram to home only ([17eab37](https://github.com/dsswift/project-almanac/commit/17eab37c7cd4fdeea477c5e245ed181657856824))
+
+## [0.1.3](https://github.com/dsswift/project-almanac/compare/v0.1.2...v0.1.3) (2026-11-20)
+
+### Features
+
+* **almanac:** decide vantage holds documents ([db5e7a3](https://github.com/dsswift/project-almanac/commit/db5e7a31beea16ad2008003ac1ec3f183b952885))
+* **almanac:** decide dispatch delivers notices ([5c1dcd1](https://github.com/dsswift/project-almanac/commit/5c1dcd1acb8f478d49d4e9ba41de58f6256f83c5))
+
+### Bug Fixes
+
+* **almanac:** check five roadmap rows again ([8e37c14](https://github.com/dsswift/project-almanac/commit/8e37c1423394a6e391ebadbc10438ada5c1e2081))
+
+## [0.1.2](https://github.com/dsswift/project-almanac/compare/v0.1.1...v0.1.2) (2026-11-19)
+
+### Bug Fixes
+
+* **almanac:** check the roadmap weekly, not nightly ([94e90e6](https://github.com/dsswift/project-almanac/commit/94e90e62a9d0592306dad47e3ffc4709ef5aaa05))
+
+## [0.1.1](https://github.com/dsswift/project-almanac/compare/v0.1.0...v0.1.1) (2026-11-19)
+
+### Features
+
+* **almanac:** decide how decisions arrive ([04b2356](https://github.com/dsswift/project-almanac/commit/04b23561d6516d8baa6139795edaa0131e1cac77))
+
