@@ -2,9 +2,9 @@
 """Check this repository's documents: python3 scripts/check.py.
 
 Fails, naming each problem, on:
-- an em-dash or en-dash in a document, a skill, or the diagram source;
-- a decision number used twice or skipped;
-- a roadmap row that names no decision and no build order step;
+- an em-dash or en-dash in a document, a skill, or the pointer;
+- a records folder, a roadmap file, or a diagram file back in the repository;
+- a vantage.yaml that is missing, lacks a key the skills read, or names a hub;
 - a relative link to a file that is not there.
 
 An estate's names are hedge's to find: the Makefile runs it beside this.
@@ -21,7 +21,7 @@ TEXT = (".md", ".yaml", ".yml", ".json", ".py")
 SKIP_DIRS = {".git", "node_modules"}
 
 
-def files() -> list[str]:
+def files(suffixes: tuple[str, ...] = TEXT) -> list[str]:
     out = []
     for folder, dirs, names in os.walk(ROOT):
         # A folder holding .git is another checkout, such as a worktree, and
@@ -29,7 +29,7 @@ def files() -> list[str]:
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS
                    and not os.path.exists(os.path.join(folder, d, ".git"))]
         for name in names:
-            if name.endswith(TEXT):
+            if name.endswith(suffixes):
                 out.append(os.path.join(folder, name))
     return sorted(out)
 
@@ -45,33 +45,29 @@ def dashes(path: str, text: str) -> list[str]:
             if "—" in line or "–" in line]
 
 
-def decisions() -> list[str]:
-    folder = os.path.join(ROOT, "docs", "decisions")
-    numbers = sorted(int(m.group(1)) for name in os.listdir(folder) if (m := re.match(r"(\d{4})-", name)))
-    problems = [f"docs/decisions: number {n:04d} is used twice" for n in sorted(set(numbers)) if numbers.count(n) > 1]
-    want = list(range(1, len(set(numbers)) + 1))
-    if sorted(set(numbers)) != want:
-        problems.append(f"docs/decisions: numbers are not 0001 to {len(set(numbers)):04d} with none skipped")
-    return problems
+# The records, the roadmap, and the pictures live in a hub, and this
+# repository only points to them (decision ORC-0027).
+GONE = ["docs/decisions", "docs/adr", "adr", "docs/roadmap.md", "docs/diagrams"]
+POINTER_KEYS = ("document", "decisions", "roadmap", "watch")
 
 
-def roadmap() -> list[str]:
-    path = os.path.join(ROOT, "docs", "roadmap.md")
+def pointer() -> list[str]:
+    problems = [f"{p} is back; the suite keeps it in the hub, not here" for p in GONE
+                if os.path.exists(os.path.join(ROOT, p))]
+    problems += [f"{rel(p)}: a diagram file is back; the suite's pictures live in the hub"
+                 for p in files((".vantage.yaml",))]
+    path = os.path.join(ROOT, "vantage.yaml")
     if not os.path.exists(path):
-        return ["docs/roadmap.md is missing"]
-    problems = []
-    known = {name[:4] for name in os.listdir(os.path.join(ROOT, "docs", "decisions"))}
+        return problems + ["vantage.yaml is missing: it names the suite's document, registry, and roadmap"]
+    keys = {}
     with open(path, encoding="utf-8") as f:
-        for n, line in enumerate(f, 1):
-            cells = [c.strip() for c in line.strip().strip("|").split("|")]
-            if len(cells) != 6 or not cells[0].isdigit():
-                continue
-            source = cells[3]
-            numbers = re.findall(r"\b\d{4}\b", source)
-            if not numbers and "Build order" not in source:
-                problems.append(f"docs/roadmap.md:{n}: row {cells[0]} names no decision and no build order step")
-            problems += [f"docs/roadmap.md:{n}: row {cells[0]} names decision {d}, which does not exist"
-                         for d in numbers if d not in known]
+        for line in f:
+            m = re.match(r"([a-z]+):\s*(.*?)\s*$", line)
+            if m:
+                keys[m.group(1)] = m.group(2)
+    problems += [f"vantage.yaml has no {k}" for k in POINTER_KEYS if not keys.get(k)]
+    problems += [f"vantage.yaml names a {k}; an estate maps this repository to its own"
+                 for k in ("hub", "workspace") if k in keys]
     return problems
 
 
@@ -92,7 +88,7 @@ def links(path: str, text: str) -> list[str]:
 
 
 def main() -> None:
-    problems = decisions() + roadmap()
+    problems = pointer()
     for path in files():
         with open(path, encoding="utf-8") as f:
             text = f.read()

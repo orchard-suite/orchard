@@ -137,10 +137,11 @@ at work.
 8. **Admit carefully.** A new member passes the test in `seam.md` and
    joins by a decision record. Most tools will not.
 
-`roadmap.md` lists each thing these steps and the decisions leave owed, who
+The roadmap lists each thing these steps and the decisions leave owed, who
 owes it, and whether it is done. A decision made in any conversation
 reaches this repository as a proposal and is folded into a record without
-the owner carrying it (decision 0013).
+the owner carrying it (decision 0013). The records and the roadmap live in
+a hub, and `vantage.yaml` names them (decision 0027).
 
 ## What is still open
 

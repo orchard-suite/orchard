@@ -7,8 +7,10 @@ description: Send a decision about Orchard, the suite of core platform services,
 
 The suite's documents learn from the work. Each proposal is one GitHub
 issue on `orchard-suite/orchard`. The machine that owns that repository
-folds each one into a decision record, the documents, the roadmap, and the
-diagrams, and closes it with what it became.
+folds each one into a decision record and roadmap items in the suite's
+hub, the documents in the repository, and the diagrams, and closes it with
+what it became. A proposal is still an issue, so it needs no access to the
+hub.
 
 ## When
 

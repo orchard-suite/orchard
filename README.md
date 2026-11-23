@@ -18,7 +18,7 @@ runs; the rest of the suite shows where each repository needs a gardener.
 
 Every member is open source, under the MIT license, at
 [github.com/orchard-suite](https://github.com/orchard-suite)
-([decision 0024](docs/decisions/0024-the-suite-is-orchard-and-its-source-is-open.md)).
+(decision 0024).
 
 ## Who it is for
 
@@ -70,14 +70,23 @@ them. `docs/members.md` lists the whole shed.
 - [docs/pillars.md](docs/pillars.md): the map. Six pillars, five properties, and three outcomes, with a rating for each and what is missing.
 - [docs/seam.md](docs/seam.md): the line between Orchard and an estate, and the test for joining the suite.
 - [docs/seam-audit.md](docs/seam-audit.md): where the apps cross that line today.
-- [docs/decisions/](docs/decisions/): the decisions, one record each.
-- [docs/roadmap.md](docs/roadmap.md): what the suite still owes, row by row, each from a decision.
-- [docs/diagrams/orchard.html](docs/diagrams/orchard.html): the suite as diagrams, with these documents as pages beside them: the map, how the members fit, the audit system, access reviews, and what is owed next (source `docs/orchard.vantage.yaml`).
+
+## Records, roadmap, and pictures
+
+The suite's decision records, its roadmap, and its diagrams live in a
+Vantage hub, not in this repository (decision 0027). `vantage.yaml` names
+them: the registry `ORC`, where decision 0016 is `ORC-0016`; the roadmap
+kind `ORCR`; and the document `orchard`, whose pages are the documents in
+`docs/`. It names no hub: the estate that keeps them maps this repository
+to its hub in its own settings, and nothing is copied to another hub. This
+repository's history still holds the records and the roadmap as they stood
+before the move.
 
 ## For agents
 
 This repository installs as an agent plugin named `orchard`. Its `consult`
-skill finds the document that answers a question. Its `propose` skill sends
-a suite decision back here as an issue, from any machine. Its `fold` skill
-turns those issues into decision records on the machine that owns this
-repository ([decision 0013](docs/decisions/0013-decisions-reach-the-suite-on-their-own.md)).
+skill finds the document or the record that answers a question. Its
+`propose` skill sends a suite decision back here as an issue, from any
+machine. Its `fold` skill turns those issues into decision records and
+roadmap items in the hub, and document changes here, on the machine that
+owns this repository (decisions 0013 and 0027).

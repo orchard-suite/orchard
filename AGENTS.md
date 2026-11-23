@@ -8,17 +8,35 @@ send a decision back.
 
 ## What goes here
 
-- The suite's strategy, its members, its pillar coverage, and its seam.
-- Decisions, one file each in `docs/decisions/`, numbered in order. A
-  decision is never rewritten once accepted; a new one supersedes it and
-  says so.
-- `docs/roadmap.md`: what the suite still owes. A row comes only from a
-  decision record or the build order. Mark a row done only with a version
-  or a commit read from the member's repository.
+- The suite's strategy, its members, its pillar coverage, and its seam, as
+  the documents in `docs/`.
 - The plugin: `.claude-plugin/` and `skills/` (`consult`, `propose`,
-  `fold`). A skill here says how to read or change these documents. It
-  never repeats what a document says.
+  `fold`). A skill here says how to read or change the suite. It never
+  repeats what a document or a record says.
+- `vantage.yaml`: the pointer to what lives in the hub. It names no hub.
 - Anything an app's own repository already says stays there. Link to it.
+
+## What lives in the hub
+
+The suite's decision records, its roadmap, and its diagrams live in a
+Vantage hub (decision `ORC-0027`). `vantage.yaml` names them, and the
+estate's own Vantage settings map the repository to its hub and workspace.
+Never bring a records folder, a roadmap file, or a diagram file back here;
+`make check` fails on each.
+
+- **Decision records**: the registry `ORC`. A record is cited `ORC-0016`;
+  a document here may say "decision 0016". Write and change records with
+  the `vantage:decide` skill. A record is never rewritten once accepted; a
+  new one supersedes or amends it, and the old one's status note says so.
+- **The roadmap**: items of the kind `ORCR`. An item comes only from a
+  record or the build order, carries `owes`, `from`, `section`, and
+  `checked` labels, and links its records. Report one done only with a
+  version or a commit read from the member's repository. The roadmap's
+  page, `roadmap.md` in the document, lives only in the hub.
+- **The diagrams**: the document `orchard`. Its views are edited in the
+  hub. Its other pages are copies of `docs/*.md`: when a document here
+  changes, save the same text as its page in the same pass, and never
+  edit those pages in the hub.
 
 ## How a decision arrives
 
@@ -26,8 +44,9 @@ A decision made in any conversation, on any machine, arrives as a proposal:
 an issue labelled `proposal` (the `propose` skill). The `fold` skill turns
 proposals into records on a schedule. A proposal that changes an accepted
 decision is labelled `needs-ruling` and waits for the owner. A decision
-made in a conversation in this repository is written here directly, the
-same way a fold writes one.
+made in a conversation in this repository is written the same way a fold
+writes one: the record and the roadmap items in the hub, the documents
+here.
 
 ## The seam
 
@@ -60,10 +79,12 @@ app, never a member.
 ## Check
 
 `make check` must pass before a commit. It runs `python3 scripts/check.py`,
-which fails on an em-dash or en-dash, a decision number used twice or
-skipped, a roadmap row that names no decision or build order step, and a
-link to a file that is not there. It then runs `hedge audit`, which fails on
-any estate's name; hedge's hooks also check every write, commit, and push.
+which fails on an em-dash or en-dash, a records folder, a roadmap file, or
+a diagram file back in the repository, a `vantage.yaml` that is missing, lacks
+a key, or names a hub, and a link to a file that is not there. The hub
+numbers records and refuses a citation to one that does not exist. It then
+runs `hedge audit`, which fails on any estate's name; hedge's hooks also
+check every write, commit, and push.
 
 ## Delivery
 
@@ -71,8 +92,9 @@ Agents push to main. Land with `make land` (`make land BRANCH=<branch>`
 from a worktree): it runs `make check`, then `release-damnit land`. Commit
 as `<type>(orchard): <description>`:
 
-- `feat`: a decision record, or a change to what the suite is.
-- `fix`: a corrected fact, a roadmap row that moved.
+- `feat`: the document changes a decision makes, or a change to what the
+  suite is.
+- `fix`: a corrected fact.
 - `docs`: wording only.
 
 A landed `feat` or `fix` releases. CI runs the document check, then

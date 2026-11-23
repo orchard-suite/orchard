@@ -31,7 +31,7 @@ write back to it. Annals is the record: the members that act post to it.
 Every member pushes an inventory of what it holds into the catalog
 (decision 0022). The catalog lists those things, and the member stays
 their home. Six members write to the catalog today. Vantage's inventory
-is owed (`roadmap.md`).
+is owed (the roadmap).
 
 | App | Reads | Writes to |
 | --- | --- | --- |
@@ -57,7 +57,7 @@ writer pod on one volume keeps SQLite, and that is not a lesser choice
 | App | Store | Read at |
 | --- | --- | --- |
 | Orrery | Postgres, on a server it takes by setting. It signs in as the pod's workload identity. | v1.158.1 |
-| Vantage | Postgres. It signs in as the pod's workload identity. Its chart's default is still a database cluster of its own, and taking the estate's server is the other mode (`roadmap.md`). | v3.1.0 |
+| Vantage | Postgres. It signs in as the pod's workload identity. Its chart's default is still a database cluster of its own, and taking the estate's server is the other mode (the roadmap). | v3.1.0 |
 | Trellis | Postgres, only when an estate turns on its history. It signs in as the pod's workload identity. | v5.7.1 |
 | Dispatch | One SQLite file. | v0.0.40 |
 | Graft | One SQLite file. | v6.6.0 |
@@ -104,14 +104,14 @@ report's recipients through Dispatch. At v1.156.3 whoever may see a
 report's home sees the report. Decision 0019 says a report is private to
 its owner and admins, and the owner shares it with people, a team, or an
 audience, as a saved query is shared. Naming a recipient is a share. That
-is owed (`roadmap.md`).
+is owed (the roadmap).
 
 Decision 0020 says work that waits for a person, or runs long, is never
 held by the thing that asked. Since v1.157.0 the engine can start one job
 for each run: a starter the estate runs starts one container the moment
 the run is approved, and the job holds its own identity. A run is given
 up only when the hub has not heard from it, never because a fixed time
-ran out. Each estate still owes its own starter (`roadmap.md`).
+ran out. Each estate still owes its own starter (the roadmap).
 
 ### Vantage: Catalog, its picture
 
@@ -133,13 +133,13 @@ fresh, and the analyzer only reports where they and the code disagree.
 Read on 2026-11-22, on its main branch after v3.1.0: a document keeps
 files it never draws, a repository points at its document with one small
 file, and an onboarding skill offers to write a project's first set. No
-other skill reads that pointer yet (`roadmap.md`).
+other skill reads that pointer yet (the roadmap).
 
 Decision 0022 says a hub pushes an inventory of its workspaces into the
 catalog: the members of each, how many documents and diagrams it holds,
 and the storage it uses. A person sees there only the workspaces they own
 or belong to. At v3.1.0 a hub reads the catalog and writes nothing to it.
-That is owed (`roadmap.md`).
+That is owed (the roadmap).
 
 Tending job: sense. It shows the shape of the system, so a trace can
 follow a problem across it.
@@ -252,7 +252,7 @@ it got. A product keeps no chat or mail code of its own.
 It speaks as one bot today. Decision 0015 says it will speak as more than
 one: a product whose readers are not the platform team gets a bot named
 for the product. A sender cannot yet read how each of its deliveries
-went. Both are owed (`roadmap.md`).
+went. Both are owed (the roadmap).
 
 Tending job: trace. An incident is a weed, and its postmortem is the
 trace back to what caused it.

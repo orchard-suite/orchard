@@ -1,0 +1,9 @@
+# Where the suite's records, roadmap, and pictures live (decision ORC-0027).
+# It names no hub and no workspace: each estate maps this repository to its
+# hub and workspace in its own Vantage settings. The document is the diagram
+# set, and this repository's documents are its pages. The decisions are a
+# registry, and the roadmap is a kind of item, both in the same workspace.
+document: orchard
+decisions: ORC
+roadmap: ORCR
+watch: [docs/, README.md]

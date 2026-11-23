@@ -88,7 +88,7 @@ defines cost of checking and catches.
 
 Orrery shows an outcome only where an estate's model names its numbers.
 The hub ships no model. Showing the three for a whole estate is owed
-(`roadmap.md`).
+(the roadmap).
 
 ## The floor
 
@@ -153,4 +153,4 @@ steps keep their numbers. Their names follow the new map.
 Moving the members to the new map is not a step in this order. It builds
 nothing new. It is renaming, and it gets dearer with every rule written to
 the old names, so it goes first among the work that is only renaming
-(`roadmap.md`, rows 21 to 23).
+(the roadmap, ORCR-21 to ORCR-23).

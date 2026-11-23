@@ -347,7 +347,7 @@ checking and sees its change failure rate or its rework rate rise has cut
 too far. Decision 0016 made the guard five measures: rework rate is the
 share of deployments that are unplanned and happen because of an incident
 in production. It catches a defect that reached people without failing a
-deployment. Nothing counts it yet (`roadmap.md`).
+deployment. Nothing counts it yet (the roadmap).
 
 ## At every size
 
