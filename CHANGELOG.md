@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/orchard-suite/orchard/compare/v1.2.0...v1.3.0) (2026-11-23)
+
+### Features
+
+* **orchard:** move records and roadmap to the hub ([158c7f8](https://github.com/orchard-suite/orchard/commit/158c7f8b0cafc31d7dac98aafe224b191cc8a3fe))
+
 ## [1.2.0](https://github.com/orchard-suite/orchard/compare/v1.1.2...v1.2.0) (2026-11-23)
 
 ### Features
