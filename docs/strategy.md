@@ -71,6 +71,11 @@ at work.
   member's one API. A member whose whole job fits its API may have no
   panel. Where a member has pages, they are as good as Orrery's, and
   members are the same wherever they can be (decision 0029).
+- **Actions, not a command line.** A command line that only calls a
+  member's API is a tool for operations, and the console's actions take
+  its place. A command line stays where it works on the files of the
+  machine it runs on, or runs inside a container for a pipeline or a
+  workflow (decision 0029).
 - **One board.** Orrery shows the whole estate as a sky, and each
   repository as a bed on the ground beneath it. The ground is in preview:
   an admin opens it to the people named. The suite builds no master app
@@ -157,7 +162,9 @@ at work.
    estate or depend on one forge. Each row is fixed in the member's own
    repository.
 7. **One shape.** Once the kit gives every member's API the same shape,
-   build one CLI and generated SDKs over all of them, and one docs site.
+   build generated SDKs over all of them, and one docs site. No command
+   line is built over them: the console's actions do that job (decision
+   0029).
 8. **Admit carefully.** A new member passes the test in `seam.md` and
    joins by a decision record. Most tools will not.
 
@@ -241,10 +248,11 @@ Postgres nor SQLite, and which backup proves no data is lost.
 Decision 0029 says what Orrery is: the estate's control plane, and the
 console for the people who run the platform. A member is an engine behind
 it and keeps a panel of its own. A business builds its own portal on top,
-and no business logic lives in Orrery. It leaves four: what the bar for a
+and no business logic lives in Orrery. The console takes the place of a
+command line that only calls an API. It leaves five: what the bar for a
 member's pages is and who judges it, whether Change stays Partial, which
-members offer their lists and actions through Orrery today, and which
-members have no panel.
+members offer their lists and actions through Orrery today, which
+members have no panel, and which commands of which members go.
 
 ## Built to the standard
 
