@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/orchard-suite/orchard/compare/v1.1.2...v1.2.0) (2026-11-23)
+
+### Features
+
+* **orchard:** decide tests run once as a witness ([f25fb40](https://github.com/orchard-suite/orchard/commit/f25fb40a8a1c7ea649a7dc1c36645e5ef11b7dfa))
+
 ## [1.1.2](https://github.com/orchard-suite/orchard/compare/v1.1.1...v1.1.2) (2026-11-23)
 
 ### Bug Fixes
