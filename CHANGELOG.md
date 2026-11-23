@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0](https://github.com/orchard-suite/orchard/compare/v1.4.0...v1.5.0) (2026-11-23)
+
+### Features
+
+* **orchard:** retire forgitten into muster ([28e05ba](https://github.com/orchard-suite/orchard/commit/28e05baf1bc9d85df71f069ea47b3807bbc026fc))
+
 ## [1.4.0](https://github.com/orchard-suite/orchard/compare/v1.3.1...v1.4.0) (2026-11-23)
 
 ### Features
