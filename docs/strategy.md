@@ -56,11 +56,27 @@ at work.
   describe themselves to it, and write their findings back to it. Each
   pushes an inventory of what it holds, and stays the home of its own
   records (decision 0022).
+- **One control plane, and one console.** Orrery is the estate's control
+  plane: the one service that holds the state of an estate's things and
+  carries out changes to them. It holds the model, the inventory, the
+  actions, the approvals, the schedules, the reports, and the scores, in
+  one product. It is also the console: the desk where the people who run
+  the platform see everything they own and act on it. In the console
+  everything is a list or an action (decision 0029).
+- **Engines, each with a panel of its own.** A member feeds Orrery what
+  it holds and offers what it can do as actions there. It also keeps its
+  own pages, shaped for its purpose: its data, its settings, its
+  analytics, its administration, and the views a list and an action
+  cannot give. The console's action and the member's panel call the
+  member's one API. A member whose whole job fits its API may have no
+  panel. Where a member has pages, they are as good as Orrery's, and
+  members are the same wherever they can be (decision 0029).
 - **One board.** Orrery shows the whole estate as a sky, and each
   repository as a bed on the ground beneath it. The ground is in preview:
   an admin opens it to the people named. The suite builds no master app
-  above its members. A gardener acts on many beds through Orrery's
-  actions.
+  that replaces its members' own pages. A gardener acts on many beds
+  through Orrery's actions, and opens a member for what only its panel
+  shows (decision 0029).
 - **One pair of hands.** Graft takes a request to change a repository
   that exists. An agent makes the change, and Graft lands it and watches
   it ship (decision 0009).
@@ -109,6 +125,12 @@ at work.
   reports (decisions 0018 and 0025).
 - **Not a home for personal apps.** An app for one person or one family is
   a private app that may use the suite. It never joins it.
+- **Not a portal for a business, and not an ERP.** An app an estate
+  builds for its business has its own pages and its own rules. It uses
+  Orrery as an API, an inventory, an action runner, and an approval
+  system. No business logic lives in Orrery: it knows that a thing
+  exists, who owns it, how it is doing, and what may be done to it
+  (decision 0029).
 
 ## How it grows
 
@@ -215,6 +237,14 @@ instance with backups, until what an estate builds on the suite becomes
 mission critical. It leaves three: whether Vantage's work tracking takes
 a second database, what an estate brings for a store that is neither
 Postgres nor SQLite, and which backup proves no data is lost.
+
+Decision 0029 says what Orrery is: the estate's control plane, and the
+console for the people who run the platform. A member is an engine behind
+it and keeps a panel of its own. A business builds its own portal on top,
+and no business logic lives in Orrery. It leaves four: what the bar for a
+member's pages is and who judges it, whether Change stays Partial, which
+members offer their lists and actions through Orrery today, and which
+members have no panel.
 
 ## Built to the standard
 

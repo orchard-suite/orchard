@@ -34,6 +34,11 @@ store. You bring those: GitHub, GitLab, Azure DevOps, Bitbucket, your
 pipelines, your sign-in, your vault, your observability stack. Orchard
 reads them and fills the gaps the market leaves between them.
 
+Orchard is not a portal for a business, and not an ERP. An app an estate
+builds for its business has its own pages and its own rules, and uses
+Orrery as an API, an inventory, an action runner, and an approval system
+(decision 0029).
+
 ## The members
 
 Each member but one belongs to one of six pillars
@@ -47,7 +52,7 @@ suite has ten members.
 
 | App | Pillar | What it answers | Its tending job |
 | --- | --- | --- | --- |
-| [Orrery](https://github.com/orchard-suite/orrery) | Catalog (owner) | What exists, how it connects, and whether it is healthy. Also runs self-service actions. | The one board. Sense, and act on many repositories at once. |
+| [Orrery](https://github.com/orchard-suite/orrery) | Catalog (owner), and the estate's control plane and console (decision 0029) | What exists, how it connects, and whether it is healthy. It holds the model, the actions, and the approvals, and it is where the people who run the platform see and act. | The one board. Sense, and act on many repositories at once. |
 | [Vantage](https://github.com/orchard-suite/vantage) | Catalog | What a system looks like and what is written about it: diagrams as code, kept true by the catalog, with the system's living documents beside them. | Sense: the shape of the system. |
 | [My Apps](https://github.com/orchard-suite/myapps) | Catalog | Which applications a person can open, and the landscape of everything the estate offers. | Sense: what people open. |
 | [Tally](https://github.com/orchard-suite/tally) | Cost (owner) | What each workload, host, agent, and job costs, in money and in capacity. | Sense cost. Prune: right-sizing. |

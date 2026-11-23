@@ -20,7 +20,10 @@ server (decision 0023), its catalog model and pushers, its code analyzers (decis
 small certificate authority of its own, and the list of addresses its
 device agent posts to (decisions 0018 and 0025), its Trellis packs and waivers, its classes, its lanes
 and protected paths, each bed's own laws, its telemetry declarations, its
-dashboards and alert rules, and its own apps.
+dashboards and alert rules, and its own apps. An app an estate builds
+for its business keeps its own pages and its own rules, and reaches
+Orrery through Orrery's API, as an inventory, an action runner, and an
+approval system. No business logic lives in Orrery (decision 0029).
 
 ## What crosses the seam
 

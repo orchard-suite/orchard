@@ -28,7 +28,10 @@ consumes.
 
 ## How they fit together
 
-Orrery is the spine and the one board. Most members read it, and several
+Orrery is the spine and the one board. It is the estate's control plane
+and the console for the people who run the platform, and every other
+member is an engine behind it that keeps a panel of its own (decision
+0029). Most members read it, and several
 write back to it. Annals is the record: the members that act post to it.
 
 Every member pushes an inventory of what it holds into the catalog
@@ -71,7 +74,16 @@ writer pod on one volume keeps SQLite, and that is not a lesser choice
 
 ## Each app
 
-### Orrery: Catalog
+### Orrery: Catalog, and the control plane
+
+Orrery owns Catalog. It is also the estate's control plane and its
+console, which is no pillar (decision 0029). The control plane is the one
+service that holds the state of an estate's things and carries out
+changes to them. The console is where the people who run the platform see
+everything they own and act on it, as lists and actions. A member's
+common lists and actions are reached here. A business app builds its own
+portal and uses Orrery as an API, an inventory, an action runner, and an
+approval system. No business logic lives in Orrery.
 
 One graph of everything an estate owns and runs, with live status on top.
 Blueprints (typed schemas for one kind of thing) define every list, page,

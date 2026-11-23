@@ -91,6 +91,16 @@ Orrery shows an outcome only where an estate's model names its numbers.
 The hub ships no model. Showing the three for a whole estate is owed
 (the roadmap).
 
+## What the pillars are reached through
+
+Orrery owns Catalog. It is also the estate's control plane and the
+console for the people who run the platform (decision 0029). That work is
+not a seventh pillar: it is what the other pillars are reached through.
+Each member feeds Orrery what it holds and offers what it can do as
+actions there, and keeps a panel of its own. The actions engine sits in
+Orrery, where the buttons are, by design. Whether that still makes Change
+Partial is open, and the rating above was not changed.
+
 ## The floor
 
 A forge, pipelines, a deploy tool, sign-in, a vault, a telemetry stack, an
