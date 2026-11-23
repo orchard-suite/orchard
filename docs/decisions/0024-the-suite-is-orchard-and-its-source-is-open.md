@@ -4,6 +4,7 @@
 - Date: 2026-11-23
 - Standard: 2026.1122.1851
 - Supersedes: the suite's name in 0001 to 0023, and the estate word check of 0002
+- Capture: e3da785f-6a02-41b5-a56e-05dc1593730c
 
 ## Context
 
