@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.0](https://github.com/orchard-suite/orchard/compare/v1.6.0...v1.7.0) (2026-11-23)
+
+### Features
+
+* **orchard:** let the console replace api-only clis ([fa154cc](https://github.com/orchard-suite/orchard/commit/fa154cce86fded7fcd51e83e63e5c1d20079feca))
+
 ## [1.6.0](https://github.com/orchard-suite/orchard/compare/v1.5.0...v1.6.0) (2026-11-23)
 
 ### Features
