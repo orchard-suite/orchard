@@ -78,6 +78,10 @@ at work.
   task on a file. A write sends what changed, a read answers what was
   asked, and a benchmark in each member's own check holds the bar. This
   is the map's sixth property (decision 0030).
+- **One gate.** Sign-in, sessions, tokens, and the agent door's sign-in
+  server are written once, in Go, in the kit. A Go member links the gate
+  in. A TypeScript member runs it in front, in the same image. Orrery
+  and Vantage stay TypeScript (decision 0033).
 - **Actions, not a command line.** A command line that only calls a
   member's API is a tool for operations, and the console's actions take
   its place. A command line stays where it works on the files of the
@@ -121,6 +125,14 @@ at work.
 - **Not a database server.** Bring one managed Postgres server. A member
   that needs Postgres takes a database and a role on it. A member that
   fits one writer keeps SQLite (decision 0023).
+- **Not a message broker.** Bring one once two members are joined:
+  Azure Service Bus, RabbitMQ, or their equal. Every event travels on
+  it. A member saves each event with the change that made it, so none is
+  lost, and a new reader subscribes with no change to a sender. Orrery
+  holds what is, and the broker carries what happened (decision 0032).
+- **Not a home for several organizations.** The estate is the tenant.
+  One copy serves one organization. Inside it, a scope is the owner of a
+  thing, the same in every member (decision 0031).
 - **Not an agent runtime.** Bring the runtime. The suite senses what
   agents do and shapes the beds they work in. Graft starts agent
   sessions on the runtime an estate brings, and the suite builds none
@@ -266,6 +278,21 @@ every member to the cost of a local disk. It leaves three: where each
 member stands against the bar, how a script signs in with no command
 line, and what each member's tasks are.
 
+Decision 0031 says the estate is the tenant, and that a scope inside it
+is one shared owner. It leaves three: whether one view across estates is
+ever wanted, how a member alone names an owner, and the claim's shape in
+a token.
+
+Decision 0032 has an estate bring a message broker once two members are
+joined, and puts every event on it. The crossings of the seam become ten.
+It leaves six: the wire, the envelope, the topics and who owns each,
+order, an estate's own senders, and sign-in to a broker with no workload
+identity.
+
+Decision 0033 writes the gate once, in Go, and stands it in front of the
+TypeScript members. It leaves three: where the gate keeps tokens and
+sessions, what the hop costs, and whether Vantage gains from a Go core.
+
 ## Built to the standard
 
 This strategy builds to these rules of the platform standard. The list
@@ -301,7 +328,7 @@ fourth, and decision 0018 for the seventh:
   test of one app per pillar. The other eight are properties and outcomes.
 - `keep-every-estate-on-its-own-side-of-a-seam-with-a-closed-li`: the
   rule closes the list of crossings at eight. The suite adds a ninth, the
-  agent runtime.
+  agent runtime, and a tenth, events on a message broker (decision 0032).
 - `the-platform-s-own-software-is-a-pillar-kit-engine-interface`: the
   rule treats the kit, the engine, and interfaces as three pillars. Here
   the kit and the interface shape are properties, and the engine is a

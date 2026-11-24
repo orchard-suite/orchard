@@ -104,8 +104,8 @@ Partial is open, and the rating above was not changed.
 
 ## The floor
 
-A forge, pipelines, a deploy tool, sign-in, a vault, a telemetry stack, an
-agent runtime, and environments. An estate brings each one, and the suite
+A forge, pipelines, a deploy tool, sign-in, a vault, a telemetry stack, a
+message broker (decision 0032), an agent runtime, and environments. An estate brings each one, and the suite
 reads it through an adapter. `seam.md` holds the full list and the line.
 None is a pillar, and none is rated here.
 

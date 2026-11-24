@@ -31,7 +31,8 @@ configuration, and its code and docs name neither.
 
 Orchard is not a forge, a build system, an identity provider, or a secrets
 store. You bring those: GitHub, GitLab, Azure DevOps, Bitbucket, your
-pipelines, your sign-in, your vault, your observability stack. Orchard
+pipelines, your sign-in, your vault, your observability stack, and, once
+two members are joined, your message broker (decision 0032). Orchard
 reads them and fills the gaps the market leaves between them.
 
 Orchard is not a portal for a business, and not an ERP. An app an estate

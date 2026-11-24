@@ -15,7 +15,7 @@ docs, and fictional examples.
 
 **An estate** holds everything that is true only of it: its hosts and
 domains, its deploy overlays, its configuration and secrets, its database
-server (decision 0023), its catalog model and pushers, its code analyzers (decision 0014), its chat bots
+server (decision 0023), its message broker (decision 0032), its catalog model and pushers, its code analyzers (decision 0014), its chat bots
 (decision 0015), its device certificates, from its device management or a
 small certificate authority of its own, and the list of addresses its
 device agent posts to (decisions 0018 and 0025), its Trellis packs and waivers, its classes, its lanes
@@ -36,10 +36,22 @@ Only these. Each is a contract the product owns and documents.
 | Sign-in | estate to product | the estate's front door says who the person is in `X-Forwarded-Email` and `X-Forwarded-Groups`; the product gives roles. A machine's agent is named by a certificate the estate issues (decision 0018) |
 | Telemetry | product to estate | OTLP to the estate's collector, JSON logs to stdout |
 | Self-description | product to estate | the product's `orrery.yaml`, read by the estate's Orrery |
-| Audit | product to estate | events in Annals's shape, posted to the estate's Annals |
+| Audit | product to estate | events in Annals's shape, for the estate's Annals |
+| Events | product to estate | what a member did, its notices, its usage, and its changes, on the message broker the estate brings, once two members are joined (decision 0032) |
 | Alerts | estate to product | Alertmanager's webhook, into Dispatch |
 | The forge | product to estate | through an adapter per forge, never one forge's API in the core |
 | The agent runtime | product to estate | through an adapter per runtime; the estate brings the runtime and the suite builds none (decision 0009) |
+
+## The tenant and the scope
+
+The estate is the tenant. One copy of the suite serves one organization,
+and a second organization takes its own copy. No member keeps a wall
+inside its tables between organizations.
+
+Inside an estate the unit is a scope: the owner of a thing, a team named
+by its record in the catalog. Each thing a member holds may name an
+owner, and a token may be narrowed to the things of the owners it names.
+Empty means the whole estate (decision 0031).
 
 ## Rules
 
@@ -55,7 +67,9 @@ Only these. Each is a contract the product owns and documents.
    estate brings one managed Postgres server, and a member that needs
    Postgres takes its own database and role on it. No member brings a
    database cluster of its own as the way it is meant to run (decision
-   0023). The suite offers one piece of the floor itself, Rootstock, for
+   0023). It runs no message broker. An estate brings one once it joins
+   two members, and every event travels on it; a member alone needs none
+   (decision 0032). The suite offers one piece of the floor itself, Rootstock, for
    deploys and environments. It works on the forge, pipelines, builders,
    and registries the estate brings, and an estate may bring its own
    deploy tool in its place (decision 0028).
