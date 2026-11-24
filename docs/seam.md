@@ -64,8 +64,8 @@ Empty means the whole estate (decision 0031).
 3. **Bring your own foundations.** The suite builds no forge, build
    system, identity provider, secrets store, or observability stack. It
    reads them through adapters. It runs no database server either. An
-   estate brings one managed Postgres server, and a member that needs
-   Postgres takes its own database and role on it. No member brings a
+   estate brings one managed Postgres server, and every member that holds
+   data takes its own database and role on it (decision 0036). No member brings a
    database cluster of its own as the way it is meant to run (decision
    0023). It runs no message broker. An estate brings one once it joins
    two members, and every event travels on it; a member alone needs none

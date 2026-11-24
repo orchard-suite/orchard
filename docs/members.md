@@ -54,11 +54,12 @@ is owed (the roadmap).
 
 ## Where each keeps its data
 
-An estate brings one managed Postgres server. A member that needs
-Postgres takes its own database and its own role on it, and signs in as
-its pod's workload identity, with no password. A member that fits one
-writer pod on one volume keeps SQLite, and that is not a lesser choice
-(decision 0023). Read from each repository on 2026-11-22.
+An estate brings one managed Postgres server (decision 0023). Every
+member that holds data takes its own database and its own role on it, and
+signs in as its pod's workload identity, with no password (decision
+0036). No member supports two stores. Four members keep one SQLite file
+today and owe a move: each ships a mover that checks every row and leaves
+the file as it was. Read from each repository on 2026-11-22.
 
 | App | Store | Read at |
 | --- | --- | --- |

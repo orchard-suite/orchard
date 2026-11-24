@@ -131,9 +131,10 @@ at work.
   the floor (decision 0028). Bring Argo CD, Flux, or your pipelines in its
   place, and Orrery's actions can ask them to act. No member requires
   Rootstock.
-- **Not a database server.** Bring one managed Postgres server. A member
-  that needs Postgres takes a database and a role on it. A member that
-  fits one writer keeps SQLite (decision 0023).
+- **Not a database server.** Bring one managed Postgres server. Every
+  member that holds data takes a database and a role on it, so any member
+  can run two copies and roll with no downtime. No member supports two
+  stores (decisions 0023 and 0036).
 - **Not a message broker.** Bring one once two members are joined:
   Azure Service Bus, RabbitMQ, or their equal. Every event travels on
   it. A member saves each event with the change that made it, so none is
@@ -311,6 +312,10 @@ changes no behavior, after a freeze, with the store left as it is. It
 leaves four: which hub goes first, how exact the same picture is for
 Vantage, how long a freeze may last, and whether shared code could ship
 to the browser as WebAssembly.
+
+Decision 0036 puts every member's data in Postgres, and has each member
+on SQLite move once. It leaves three: Annals's store, whether Trellis
+holds data when its history is off, and a member run alone on a laptop.
 
 ## Built to the standard
 
