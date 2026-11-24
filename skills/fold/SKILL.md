@@ -33,23 +33,24 @@ so and stop.
      reading it against the records shows a clash it did not name. Do not
      fold it. Add the label `needs-ruling` and a comment that quotes the
      record and the clash in a few lines. It waits for the owner.
-   - **Not the suite's.** It is about one app, or a practice for any
-     platform. Close it with a comment saying where it belongs.
+   - **Not the suite's.** It is about one app, one estate, or a way to
+     decide for any platform. Close it with a comment saying where it
+     belongs: that program's or estate's own decision records, or, rarely,
+     the platform standard.
 3. Fold one proposal as one pass:
-   - Look up the platform standard for the rules the decision builds to
-     (its `consult` skill), and cite them by id with the standard's version.
+   - Where the platform standard is installed, read its north star and
+     the brief of each chapter the decision touches (its `consult` skill).
+     Say in the record's Context where the decision departs from a
+     principle, and why. The record is never sent to the standard.
    - Write the record with the `vantage:decide` skill: a `vantage_write`
      to `ORC`, category 0, the owner as its decision maker. It takes the
      next number. Give it the shape of the records there: Context opens
-     with `- Standard:` and the lines that say what it amends or
-     supersedes; Decision holds `What members owe`, `Left open`, and
+     with the lines that say what it amends or supersedes; Decision holds `What members owe`, `Left open`, and
      `Rules`; then Consequences and Alternatives considered. Set `related`
      and `governs` (the boxes and views of `orchard` it decides about).
    - A record it amends or supersedes in part keeps its body. Patch the
      status note at the top of that record's Context ("Accepted, amended
      by 0027 (...)"), and add the new record to its `related`.
-   - Hand the record to `platform-standard:capture`, and add the
-     `- Capture:` line it returns to the record's Context.
    - Change every document in `docs/` the decision makes wrong.
    - Add an `ORCR` item for each thing a member or an estate now owes: a
      `vantage_write` to `ORCR` with the labels `owes`, `from` (the

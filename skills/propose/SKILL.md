@@ -21,8 +21,8 @@ hub.
 - A decision left a member owing something.
 
 One decision per issue. A decision about how one app behaves goes in that
-app's own repository, not here. A practice that holds on any platform goes
-to the platform standard, not here. One conversation can produce both.
+app's own decision records, not here. A way to decide that holds on any
+platform goes to the platform standard, rarely, and not here.
 
 ## Steps
 
