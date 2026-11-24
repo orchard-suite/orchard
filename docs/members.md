@@ -75,7 +75,7 @@ the file as it was. Read from each repository on 2026-11-22.
 | Muster | One SQLite file. | v3.1.0 |
 | Tally | One SQLite file for what agents used, only when an estate sets it. | v0.0.45 |
 | My Apps | None. Its list lives in Orrery. | v0.0.47 |
-| Annals | ClickHouse. Decision 0023 does not cover it. | v0.0.27 |
+| Annals | ClickHouse today. It owes a move to Postgres: the events add-only and split by month behind a port of their own, with a columnar store as a later step on a measurement (decision 0040). | v1.0.2 |
 
 ## Each app
 

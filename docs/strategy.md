@@ -281,9 +281,10 @@ Vantage holds work items.
 Decision 0023 says an estate brings one managed Postgres server, and
 each member that needs Postgres takes a database on it. The server is one
 instance with backups, until what an estate builds on the suite becomes
-mission critical. It leaves three: whether Vantage's work tracking takes
+mission critical. It left three: whether Vantage's work tracking takes
 a second database, what an estate brings for a store that is neither
-Postgres nor SQLite, and which backup proves no data is lost.
+Postgres nor SQLite, and which backup proves no data is lost. Decisions
+0036 and 0040 have closed the second: no member keeps such a store.
 
 Decision 0029 says what Orrery is: the estate's control plane, and the
 console for the people who run the platform. A member is an engine behind
@@ -325,7 +326,8 @@ Vantage, how long a freeze may last, and whether shared code could ship
 to the browser as WebAssembly.
 
 Decision 0036 puts every member's data in Postgres, and has each member
-on SQLite move once. It leaves three: Annals's store, whether Trellis
+on SQLite move once. Decision 0040 has since settled Annals's store. It
+leaves two: whether Trellis
 holds data when its history is off, and a member run alone on a laptop.
 
 Decision 0037 keeps one shared Postgres server for an estate, and lets a
@@ -341,6 +343,12 @@ Decision 0039 has an estate deploy every member under the member's name
 and move in one staged cutover. It leaves two: how long the old stays
 after a cutover, and whether a mover can run while the member still
 writes.
+
+Decision 0040 has Annals keep the record in Postgres, with the events
+add-only and split by month behind a port of their own. A columnar store
+is a later step, taken on a measurement at the scale target. It leaves
+two: how many events the scale target really means, and how long an event
+is kept whole.
 
 ## Built to the standard
 
