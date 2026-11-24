@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.10.0](https://github.com/orchard-suite/orchard/compare/v1.9.0...v1.10.0) (2026-11-24)
+
+### Features
+
+* **orchard:** set a scale target and a go core ([ed6b562](https://github.com/orchard-suite/orchard/commit/ed6b56219ac17896c65ec090c5d356d84dcd6b71))
+
 ## [1.9.0](https://github.com/orchard-suite/orchard/compare/v1.8.0...v1.9.0) (2026-11-24)
 
 ### Features
