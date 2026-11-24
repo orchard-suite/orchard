@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.13.0](https://github.com/orchard-suite/orchard/compare/v1.12.0...v1.13.0) (2026-11-24)
+
+### Features
+
+* **orchard:** stage one cutover, hold the split ([8b5bee6](https://github.com/orchard-suite/orchard/commit/8b5bee65f65e5a57e084eae53d4d4afb82163d5b))
+
 ## [1.12.0](https://github.com/orchard-suite/orchard/compare/v1.11.0...v1.12.0) (2026-11-24)
 
 ### Features
