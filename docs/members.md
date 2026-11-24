@@ -7,9 +7,11 @@ Catalog: Vantage, My Apps, and Muster (decision 0016). redgreen took the
 name Muster, and forgitten retired into it on 2026-11-23, once Muster
 held each estate's machine reports through Tender (decisions 0017 and
 0025). Its hub, store, page, and CLI are gone from each estate, and its
-repository is archived. One more member,
-Rootstock, belongs to no pillar and stands on the floor (decision 0028).
-Its section follows the apps. Facts here were
+repository is archived. Two more members
+belong to no pillar and stand on the floor: Rootstock (decision 0028) and
+Toolshed (decision 0042). A floor member puts the platform in place, works
+first, and nothing needs it (decision 0043). Their sections follow the
+apps. Facts here were
 read from each repository's `README.md`, `orrery.yaml`, and manifests on
 2026-11-05, the table below again on 2026-11-07, and each tending job and
 the shed on 2026-11-12. Orrery's ground was read on 2026-11-12, after it
@@ -23,7 +25,9 @@ decision 0019, and its actions engine the same day, at v1.156.4 and
 again at v1.157.0, for decision 0020. Vantage was read again on
 2026-11-22, at v3.1.0, for decision 0022, and each member's store the
 same day, for decision 0023. Muster, forgitten, Tender, and platformkit
-were read on 2026-11-23, for decision 0025. "Reads" lists the APIs an app's `orrery.yaml` says it
+were read on 2026-11-23, for decision 0025. Tender, Orrery, and Trellis
+were read again on 2026-11-24, at v0.0.6, v2.1.1, and v6.0.0, for
+decision 0042. "Reads" lists the APIs an app's `orrery.yaml` says it
 consumes.
 
 ## How they fit together
@@ -51,6 +55,7 @@ is owed (the roadmap).
 | Dispatch | Orrery, Alertmanager, the events products send it | Annals, Orrery (every incident), an estate's chat, mail, and text services (each product's notices, to channels and to people) |
 | Graft | Orrery's actions and catalog, Dispatch's incidents, the forge (GitHub and GitLab), the agent runtime | Annals (every step of a request), Orrery (a lane's action, each plan's run, and each request as a record), Dispatch (its notices, and each release as a change), the forge (a ticket, and the commits it lands) |
 | Rootstock | each environment's apply record beside its state, each cluster's controller, the forge's release tags, the registry | Orrery (environments and landing zones as inventory, owed), Annals (every apply, rollback, and environment change, owed) |
+| Toolshed | the shed file in the estate's repository, each tool's source and its proof, the estate's registry, what each machine holds through Tender (owed) | the estate's registry (every tool and pack it serves), the estate's installers (each pack, rendered), Orrery (admitted tools, packs, and installs as inventory in the `ai_` pack, owed), Annals (owed) |
 
 ## Where each keeps its data
 
@@ -360,11 +365,45 @@ each keeping its own version (the roadmap).
 Tending job: sense, for the fleet. It also plants: it is the hands that
 deploy the platform.
 
+## Toolshed: the floor
+
+Toolshed delivers tools to machines, as Rootstock delivers software to
+environments (decision 0042). It answers one question: what may run on
+an estate's machines, where it came from, and whether it is on every
+machine that should have it. It answers no pillar, and nothing requires
+it. It is owed: `orchard-suite/toolshed` does not exist yet, and its hub
+is built to the suite architecture from its first commit (decision 0041).
+
+- **The shed file** is the estate's desired state. One reviewed file in
+  the estate's own repository lists every admitted tool (plugin, skill,
+  MCP server, CLI, image) with its source, its signer or forge project,
+  and its version, and lists the packs. It replaces the recipes list of
+  decision 0006.
+- **A pack** is a signed lockfile of exact tools at exact digests for one
+  kind of machine: a person's laptop, a headless agent host, a pipeline
+  sandbox. It has a version and rings, a canary ring and then everyone. A
+  tool goes into a pack only once a second person needs it.
+- **Intake** checks the strongest proof each source offers and records
+  which. An estate that sets a signing key also re-signs everything it
+  serves, through the pipeline kit's signing action. Everything is served
+  from the estate's own registry, and the marketplace stays at one fixed
+  address.
+- **It installs nothing.** It renders each pack into the installers the
+  estate already uses: device management and the harness's managed
+  settings for laptops, the configuration tool for hosts, and a layer in
+  the pipeline kit's base image for sandboxes. Tender reports what each
+  machine really holds, and Trellis judges drift and proof.
+
+Tending job: fence, for machines. It also plants: every tool on a machine
+comes through the shed.
+
 ## The shed
 
 Tending tools that are installed on a machine, not run as a service. They
 are not members and do not take the membership test (decision 0007,
-`seam.md`). Each is listed with the tending job it does.
+`seam.md`). Each is listed with the tending job it does. This list is the
+suite's first pack in Toolshed's terms: the tools a person's machine
+holds to tend an estate with the suite (decision 0042).
 
 | Tool | What it is | Tending job |
 | --- | --- | --- |
@@ -375,7 +414,7 @@ are not members and do not take the membership test (decision 0007,
 | platformkit | A library the members build on. Since v3.1.0 it holds the `device` package, the door a member puts in front of a device's posts (decision 0025). Every member, shed tool, and estate app takes it as a public module by version, and nothing vendors it ([[decision:ORC-5001]]). | Seed stock: the door, telemetry, and Annals client a new service starts with. |
 | hedge | A CLI and an agent hook that keep an estate's names out of every repository that may not hold them, on every write, commit, push, and post, against a register the estate keeps private (decision 0024). | Fence: the seam itself, in the path of work. |
 | pipelines | The pipeline kit, in `orchard-suite/pipelines`, owed. Reusable workflows per kind of bed, and one action that signs, attests, verifies, and tags an image. Every member calls it at a major version, and an estate may (decision 0026). | Fence and loop: every pipeline has one shape, and a release waits only for what its class needs. |
-| Tender | The suite's one device agent, in `orchard-suite/tender`, built, at v0.0.2. It runs as the person and carries Muster's reader. Each reader stays off until the estate gives it an address. It asks a member before it posts, signs each post with the device certificate's key from the operating system's store, saves its place, and sends again after a failure. An estate with no device management enrolls a machine by sign-in with a step-ca authority, and Tender renews only a certificate it enrolled. It never updates itself (decisions 0018 and 0025). | Sense: what exists only on a machine. |
+| Tender | The suite's one device agent, in `orchard-suite/tender`, built, at v0.0.6 (read 2026-11-24). It runs as the person and carries Muster's reader, and owes an agent-tooling reader that reports to Toolshed (decision 0042). Each reader stays off until the estate gives it an address. It asks a member before it posts, signs each post with the device certificate's key from the operating system's store, saves its place, and sends again after a failure. An estate with no device management enrolls a machine by sign-in with a step-ca authority, and Tender renews only a certificate it enrolled. It never updates itself (decisions 0018 and 0025). | Sense: what exists only on a machine. |
 
 ## What is not a member
 

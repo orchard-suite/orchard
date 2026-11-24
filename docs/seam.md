@@ -75,10 +75,13 @@ Empty means the whole estate (decision 0031).
    database cluster of its own as the way it is meant to run (decision
    0023). It runs no message broker. An estate brings one once it joins
    two members, and every event travels on it; a member alone needs none
-   (decision 0032). The suite offers one piece of the floor itself, Rootstock, for
-   deploys and environments. It works on the forge, pipelines, builders,
-   and registries the estate brings, and an estate may bring its own
-   deploy tool in its place (decision 0028).
+   (decision 0032). The suite offers two members on the floor itself. Rootstock deploys
+   and runs environments, on the forge, pipelines, builders, and
+   registries the estate brings, and an estate may bring its own deploy
+   tool in its place (decision 0028). Toolshed delivers tools to
+   machines, from the estate's own registry through the estate's own
+   installers, and an estate may bring its own way instead (decision
+   0042).
 4. **Every member runs in every estate.** A feature that only one estate
    can use is configuration that is off by default, or it belongs in that
    estate's own app.
@@ -123,9 +126,21 @@ A member passes all four:
    and signing people in through the estate's front door, each joined
    only when the estate gives it an address.
 
-A member that stands on the floor passes the same four, and one more:
-nothing requires it. No member needs it to run or to be deployed, and it
-needs no member to do its work. Rootstock is the one (decision 0028).
+A member that stands on the floor, under the pillars and answering none
+of them, passes the same four and the floor test (decision 0043):
+
+1. **It puts the platform in place.** It delivers software,
+   infrastructure, or tools into environments or onto machines. It does
+   not answer a question about what is there; that is a pillar's job.
+2. **It works first.** It runs in a new estate before any other member
+   exists, so the estate can be built with it alone.
+3. **Nothing needs it.** No member needs it to run or to be deployed,
+   and an estate may bring its own instead.
+
+A tool that answers a pillar's question goes to that pillar, however
+important it is. A tool that fails the second or third point is a
+feature of a member, or a shed tool. Rootstock and Toolshed pass all
+three (decisions 0028 and 0042).
 
 A tool that passes the first two is a candidate. It joins by a decision
 record, which lists what it must still change to pass the last two. Every

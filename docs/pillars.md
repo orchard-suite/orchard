@@ -12,7 +12,8 @@ on 2026-11-23. It has three lists, and each list has its own test.
   owns one. The catalog shows it.
 
 Under all three sits the floor: what an estate brings. The suite offers
-one piece of it, Rootstock, and requires it nowhere (decision 0028).
+two members there, Rootstock and Toolshed, and requires neither
+(decisions 0028 and 0042).
 
 ```text
 Outcomes     Flow          Quality          Adoption
@@ -72,7 +73,7 @@ findings and waivers. Today its rules reach one of the six.
 | Run as a product | Its use is measured, and it improves from what people say. | Partial | My Apps counts what people open. A request to Graft is how a person says what they need, and each gets one answer (decision 0011). | No rule judges it. Use is not measured pillar by pillar. |
 | Two doors | An agent can use every door a person can, in one shape. | Partial | Trellis's interfaces pack judges the shape of an HTTP API. Orrery, Vantage, Annals, and Dispatch each have a door for agents. | No one CLI shape, no generated SDKs, and no one docs site. No door for agents was found in the other five members. |
 | Self-service | No ticket and no person stands in the way, unless the risk says so. | Partial | Orrery's actions engine runs, approves, and records. A lane in Graft sets how far a request goes with no person in the way. | No rule judges whether a capability still needs a ticket. |
-| One kit | The platform's own software is built from one shared kit. | Partial | Five of ten members build on the kit: My Apps, Tally, Annals, Dispatch, and Graft. | Orrery, Trellis, Vantage, and Rootstock do not. Muster takes only the kit's `device` door, and stays off the rest by decision 0004 (decision 0025). No rule judges it. |
+| One kit | The platform's own software is built from one shared kit. | Partial | Five of eleven members build on the kit: My Apps, Tally, Annals, Dispatch, and Graft. | Orrery, Trellis, Vantage, and Rootstock do not, and Toolshed is not built yet. Muster takes only the kit's `device` door, and stays off the rest by decision 0004 (decision 0025). No rule judges it. |
 | Decided on purpose | Each choice is written down, with why, and what would reopen it. | Partial | Orrery, Vantage, and Graft keep decision records in their repositories. The suite keeps its own here. | Seven members keep none in their repositories. No rule judges it. |
 | Built for the agent first | An agent can afford every door: finding one fact, reading one part, or changing one sentence costs it no more than the same task on a local disk (decision 0030). | Partial | Vantage holds the bar by its own decision, with a benchmark in its check. Orrery bounds every answer an agent reads. | No other member was read against the bar. The kit has no wrapper that counts a tool call and no benchmark harness. No rule judges it. |
 
@@ -109,10 +110,27 @@ message broker (decision 0032), an agent runtime, and environments. An estate br
 reads it through an adapter. `seam.md` holds the full list and the line.
 None is a pillar, and none is rated here.
 
-The floor holds one member: Rootstock, the deploy tool and environment
-tool the suite offers (decision 0028). It answers no pillar's question,
-so it is rated under none. An estate may take it or bring its own, and no
-member requires it.
+The floor holds two members. Rootstock is the deploy tool and
+environment tool the suite offers, and delivers software to environments
+(decision 0028). Toolshed delivers tools to machines: it says what may
+run on an estate's machines, where it came from, and whether it is on
+every machine that should have it (decision 0042). Neither answers a
+pillar's question, so neither is rated. An estate may take each or bring
+its own, and no member requires either.
+
+A member stands on the floor only when all three hold (decision 0043):
+
+1. **It puts the platform in place.** It delivers software,
+   infrastructure, or tools into environments or onto machines. It does
+   not answer a question about what is there; that is a pillar's job.
+2. **It works first.** It runs in a new estate before any other member
+   exists, so the estate can be built with it alone.
+3. **Nothing needs it.** No member needs it to run or to be deployed,
+   and an estate may bring its own instead.
+
+The test leaves importance out. A tool that answers a pillar's question
+goes to that pillar, however important it is. A tool that fails the
+second or third point is a feature of a member, or a shed tool.
 
 ## Where the fourteen went
 

@@ -42,14 +42,16 @@ Orrery as an API, an inventory, an action runner, and an approval system
 
 ## The members
 
-Each member but one belongs to one of six pillars
+Each member but two belongs to one of six pillars
 ([docs/pillars.md](docs/pillars.md), decision 0016). Six own a pillar.
 Three are parts of Catalog. redgreen is Muster now, and forgitten retired
 into it on 2026-11-23, once Muster held each estate's machine reports
-(decisions 0017 and 0025); its repository is archived. Rootstock belongs
-to no pillar. It stands on the floor, as the one deploy and environment
-tool the suite offers, and no member requires it (decision 0028). The
-suite has ten members.
+(decisions 0017 and 0025); its repository is archived. Rootstock and
+Toolshed belong to no pillar. They stand on the floor: Rootstock deploys
+software to environments (decision 0028), and Toolshed delivers tools to
+machines (decision 0042). A floor member puts the platform in place,
+works first, and nothing needs it (decision 0043). The suite has eleven
+members.
 
 | App | Pillar | What it answers | Its tending job |
 | --- | --- | --- | --- |
@@ -63,6 +65,7 @@ suite has ten members.
 | [Dispatch](https://github.com/orchard-suite/dispatch) | Health (owner) | Which incidents are open, who owns them, and how long restores take. Also sends every product's notices, to channels and to people. | Trace: the postmortem. |
 | [Graft](https://github.com/orchard-suite/graft) | Change (owner) | How a request to change a repository becomes a tested change, landed, with an agent doing the work. | Fix: the hands that change a bed. |
 | Rootstock, owed at `orchard-suite/rootstock` | The floor | Which version every landing zone and environment runs, what is ready to release, and how drift went. It deploys infrastructure with `infra` and applications and their environments with `dev` (decision 0028). | Sense: the whole fleet. It also plants: it deploys the platform itself. |
+| Toolshed, owed at `orchard-suite/toolshed` | The floor | What may run on an estate's machines, where it came from, and whether it is on every machine that should have it. It verifies each tool, serves it from the estate's registry, and renders signed packs into the estate's own installers (decision 0042). | Fence and plant: every tool on a machine comes through the shed. |
 
 Two tools in the shed are the suite's own:
 [platformkit](https://github.com/orchard-suite/platformkit), the Go module

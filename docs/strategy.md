@@ -131,6 +131,11 @@ at work.
   the floor (decision 0028). Bring Argo CD, Flux, or your pipelines in its
   place, and Orrery's actions can ask them to act. No member requires
   Rootstock.
+- **No tool installer you must use.** The suite offers one, Toolshed, on
+  the floor (decision 0042). It says what may run on each kind of
+  machine, and hands signed packs to the device management,
+  configuration tool, and base images the estate already runs. It
+  installs nothing itself, and no member requires it.
 - **Not a database server.** Bring one managed Postgres server. Every
   member that holds data takes a database and a role on it, so any member
   can run two copies and roll with no downtime. No member supports two
@@ -350,6 +355,12 @@ is a later step, taken on a measurement at the scale target. It leaves
 two: how many events the scale target really means, and how long an event
 is kept whole.
 
+Decision 0042 puts Toolshed on the floor. It leaves three: where the shed
+file's format is published and whether an estate may keep more than one,
+how Toolshed learns that a ring's machines are in the installer's group
+when the installer cannot say, and whether a pack may name a tool that no
+machine of its kind can run.
+
 ## Built to the standard
 
 This strategy builds to these rules of the platform standard. The list
@@ -413,7 +424,10 @@ an owner judges a brief of the plan and never the code, or for the kind of
 a change as a dial beside its class. Decision 0011 sets those. Nor has it
 a rule that sorts what a platform must answer into pillars, properties,
 and outcomes, for a member that names one pillar, or for adoption as an
-outcome. Decision 0016 sets those. The standard has since taken the
+outcome. Decision 0016 sets those. Nor has it a rule for a signed pack
+of tools per kind of machine, rolled out in rings through the estate's
+own installers, or for a test that tells which of the platform's own
+software stands under the pillars. Decisions 0042 and 0043 set those. The standard has since taken the
 pillars on growing conditions and quality, and several rules on quality.
 The membership test of decision 0001 and the
 seam of decision 0002 were new to the standard when they were written.
