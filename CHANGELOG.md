@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.16.0](https://github.com/orchard-suite/orchard/compare/v1.15.0...v1.16.0) (2026-11-24)
+
+### Features
+
+* **orchard:** decide toolshed and the floor test ([880e039](https://github.com/orchard-suite/orchard/commit/880e0393864b1f7a68674c1c0956573a870e4b6d))
+
 ## [1.15.0](https://github.com/orchard-suite/orchard/compare/v1.14.0...v1.15.0) (2026-11-24)
 
 ### Features
