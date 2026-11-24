@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.0](https://github.com/orchard-suite/orchard/compare/v1.8.0...v1.9.0) (2026-11-24)
+
+### Features
+
+* **orchard:** add scope, a broker, and one gate ([6928d93](https://github.com/orchard-suite/orchard/commit/6928d93683572d0e2d218d22e06992eed7107ea2))
+
 ## [1.8.0](https://github.com/orchard-suite/orchard/compare/v1.7.0...v1.8.0) (2026-11-23)
 
 ### Features
