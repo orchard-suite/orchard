@@ -133,7 +133,8 @@ of them, passes the same four and the floor test (decision 0043):
    infrastructure, or tools into environments or onto machines. It does
    not answer a question about what is there; that is a pillar's job.
 2. **It works first.** It runs in a new estate before any other member
-   exists, so the estate can be built with it alone.
+   exists, so the estate can be built with it alone. It needs no member
+   to do its work.
 3. **Nothing needs it.** No member needs it to run or to be deployed,
    and an estate may bring its own instead.
 
