@@ -78,10 +78,19 @@ at work.
   task on a file. A write sends what changed, a read answers what was
   asked, and a benchmark in each member's own check holds the bar. This
   is the map's sixth property (decision 0030).
+- **One core.** Every member's server is Go. Orrery and Vantage are
+  TypeScript today, and each is re-cored in Go in one release that
+  changes no behavior, after a freeze. Their web apps stay TypeScript
+  (decision 0035).
 - **One gate.** Sign-in, sessions, tokens, and the agent door's sign-in
-  server are written once, in Go, in the kit. A Go member links the gate
-  in. A TypeScript member runs it in front, in the same image. Orrery
-  and Vantage stay TypeScript (decision 0033).
+  server are written once, in Go, in the kit, and every member links
+  them in (decisions 0033 and 0035).
+- **Sized for a company, not a household.** Every member is designed and
+  measured for one estate of 150 people after ten years: a million things
+  in the catalog, a hundred changes a second, a hundred thousand diagrams.
+  A small estate is where a change is tried, never proof that a member is
+  fast enough. Every kind of record says whether it levels off or grows
+  without end, and if it grows, how it ages out (decision 0034).
 - **Actions, not a command line.** A command line that only calls a
   member's API is a tool for operations, and the console's actions take
   its place. A command line stays where it works on the files of the
@@ -289,9 +298,19 @@ It leaves six: the wire, the envelope, the topics and who owns each,
 order, an estate's own senders, and sign-in to a broker with no workload
 identity.
 
-Decision 0033 writes the gate once, in Go, and stands it in front of the
-TypeScript members. It leaves three: where the gate keeps tokens and
-sessions, what the hop costs, and whether Vantage gains from a Go core.
+Decision 0033 writes the gate once, in Go. Decision 0035 has since made
+it a library every member links, and closed its question on a Go core.
+It leaves one: where the gate keeps tokens and sessions.
+
+Decision 0034 sets the scale target: one estate of 150 people after ten
+years. It leaves three: each member's speed limits at the target, how
+often the benchmark runs, and the target for the record and for usage.
+
+Decision 0035 re-cores Orrery and Vantage in Go, each in one release that
+changes no behavior, after a freeze, with the store left as it is. It
+leaves four: which hub goes first, how exact the same picture is for
+Vantage, how long a freeze may last, and whether shared code could ship
+to the browser as WebAssembly.
 
 ## Built to the standard
 

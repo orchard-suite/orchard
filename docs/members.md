@@ -85,6 +85,10 @@ common lists and actions are reached here. A business app builds its own
 portal and uses Orrery as an API, an inventory, an action runner, and an
 approval system. No business logic lives in Orrery.
 
+Its server is TypeScript on Node, read at v2.1.1 on 2026-11-23. It is
+owed in Go, in one release that changes no behavior, after a freeze; its
+web app stays TypeScript (decision 0035).
+
 One graph of everything an estate owns and runs, with live status on top.
 Blueprints (typed schemas for one kind of thing) define every list, page,
 and form. The hub ships no model of its own; pushers run inside the estate
@@ -128,6 +132,10 @@ up only when the hub has not heard from it, never because a fixed time
 ran out. Each estate still owes its own starter (the roadmap).
 
 ### Vantage: Catalog, its picture
+
+Its server is TypeScript on Bun, read at v4.3.0 on 2026-11-23. It is owed
+in Go, in one release that changes no behavior, after a freeze; its web
+app stays TypeScript (decision 0035).
 
 Diagrams written in YAML, laid out and scored by the engine, rendered to
 SVG, PNG, or interactive HTML. A hub keeps every version, merges edits, and
