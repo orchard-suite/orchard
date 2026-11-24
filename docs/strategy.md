@@ -137,8 +137,15 @@ at work.
   stores (decisions 0023 and 0036). The server is shared, and a member
   takes a managed server apart only for one of two reasons: it must stay
   up when the shared server is down or busy, or its load, measured at the
-  scale target, starves the others. Dispatch sits apart for the first
-  (decision 0037).
+  scale target, starves the others (decision 0037). A server apart is a
+  step on the scaling path: no estate brings one until the need is real
+  or near, and Dispatch, the first expected to take it, stays on the
+  shared server until then (decision 0038).
+- **One name, and one staged move.** Everything an estate deploys for a
+  member carries the member's name, and an older name is retired. An
+  estate builds the new beside the old, moves data by a checked copy,
+  and cuts over in one short planned window. The old stays untouched as
+  the way back (decision 0039).
 - **Not a message broker.** Bring one once two members are joined:
   Azure Service Bus, RabbitMQ, or their equal. Every event travels on
   it. A member saves each event with the change that made it, so none is
@@ -322,10 +329,18 @@ on SQLite move once. It leaves three: Annals's store, whether Trellis
 holds data when its history is off, and a member run alone on a laptop.
 
 Decision 0037 keeps one shared Postgres server for an estate, and lets a
-member sit apart only for one of two named reasons. Dispatch does. It
-leaves four: whether Orrery or Annals sits apart, whether members connect
+member sit apart only for one of two named reasons. Decision 0038 has
+since said no estate takes that step until the need is real or near, so
+Dispatch stays on the shared server. Decision 0037 leaves four: whether Orrery or Annals sits apart, whether members connect
 through a pooler, when the shared server gets a second instance, and what
 apart means in an estate with one cluster and no cloud.
+
+Decision 0038 leaves two: the numbers that mean near, and who watches.
+
+Decision 0039 has an estate deploy every member under the member's name
+and move in one staged cutover. It leaves two: how long the old stays
+after a cutover, and whether a mover can run while the member still
+writes.
 
 ## Built to the standard
 

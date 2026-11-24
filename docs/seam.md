@@ -67,8 +67,11 @@ Empty means the whole estate (decision 0031).
    estate brings one managed Postgres server, and every member that holds
    data takes its own database and role on it, named for the member
    (decision 0036). A member takes a managed server apart from the shared
-   one only by a decision that names one of two reasons, as Dispatch
-   does (decision 0037). No member brings a
+   one only by a decision that names one of two reasons, and only when
+   the need is real or near (decisions 0037 and 0038). Everything an
+   estate deploys for a member carries the member's name, and an estate
+   moves onto new names and stores in one staged cutover, with the old
+   left untouched as the way back (decision 0039). No member brings a
    database cluster of its own as the way it is meant to run (decision
    0023). It runs no message broker. An estate brings one once it joins
    two members, and every event travels on it; a member alone needs none
