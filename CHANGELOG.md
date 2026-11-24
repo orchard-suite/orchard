@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.16.1](https://github.com/orchard-suite/orchard/compare/v1.16.0...v1.16.1) (2026-11-24)
+
+### Bug Fixes
+
+* **orchard:** keep needs-no-member in the floor test ([c232e73](https://github.com/orchard-suite/orchard/commit/c232e733c8b9c62ab10dd0e4a3cef77ec3f6d931))
+
 ## [1.16.0](https://github.com/orchard-suite/orchard/compare/v1.15.0...v1.16.0) (2026-11-24)
 
 ### Features
