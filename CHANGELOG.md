@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.14.0](https://github.com/orchard-suite/orchard/compare/v1.13.0...v1.14.0) (2026-11-24)
+
+### Features
+
+* **orchard:** move annals to postgres ([0fc601d](https://github.com/orchard-suite/orchard/commit/0fc601d7ad09b4a70529d3218dd685cc3c57d3d4))
+
 ## [1.13.0](https://github.com/orchard-suite/orchard/compare/v1.12.0...v1.13.0) (2026-11-24)
 
 ### Features
