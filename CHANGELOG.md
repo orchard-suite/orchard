@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.16.2](https://github.com/orchard-suite/orchard/compare/v1.16.1...v1.16.2) (2026-11-24)
+
+### Bug Fixes
+
+* **orchard:** keep a suite record in the suite ([7c6792c](https://github.com/orchard-suite/orchard/commit/7c6792c01ead0246149a402c53e91f4cb5882cc6))
+
 ## [1.16.1](https://github.com/orchard-suite/orchard/compare/v1.16.0...v1.16.1) (2026-11-24)
 
 ### Bug Fixes
