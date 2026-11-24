@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.12.0](https://github.com/orchard-suite/orchard/compare/v1.11.0...v1.12.0) (2026-11-24)
+
+### Features
+
+* **orchard:** share one server, dispatch apart ([0aee349](https://github.com/orchard-suite/orchard/commit/0aee349dbea872d2d472097e981356f2dcabb9bf))
+
 ## [1.11.0](https://github.com/orchard-suite/orchard/compare/v1.10.0...v1.11.0) (2026-11-24)
 
 ### Features
