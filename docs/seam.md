@@ -65,7 +65,10 @@ Empty means the whole estate (decision 0031).
    system, identity provider, secrets store, or observability stack. It
    reads them through adapters. It runs no database server either. An
    estate brings one managed Postgres server, and every member that holds
-   data takes its own database and role on it (decision 0036). No member brings a
+   data takes its own database and role on it, named for the member
+   (decision 0036). A member takes a managed server apart from the shared
+   one only by a decision that names one of two reasons, as Dispatch
+   does (decision 0037). No member brings a
    database cluster of its own as the way it is meant to run (decision
    0023). It runs no message broker. An estate brings one once it joins
    two members, and every event travels on it; a member alone needs none

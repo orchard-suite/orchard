@@ -57,7 +57,9 @@ is owed (the roadmap).
 An estate brings one managed Postgres server (decision 0023). Every
 member that holds data takes its own database and its own role on it, and
 signs in as its pod's workload identity, with no password (decision
-0036). No member supports two stores. Four members keep one SQLite file
+0036), named for the member. No member supports two stores. Dispatch's
+database sits on a managed server apart from the shared one, so the
+incident desk stays up when the shared server does not (decision 0037). Four members keep one SQLite file
 today and owe a move: each ships a mover that checks every row and leaves
 the file as it was. Read from each repository on 2026-11-22.
 

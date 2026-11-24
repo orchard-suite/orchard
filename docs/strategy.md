@@ -134,7 +134,11 @@ at work.
 - **Not a database server.** Bring one managed Postgres server. Every
   member that holds data takes a database and a role on it, so any member
   can run two copies and roll with no downtime. No member supports two
-  stores (decisions 0023 and 0036).
+  stores (decisions 0023 and 0036). The server is shared, and a member
+  takes a managed server apart only for one of two reasons: it must stay
+  up when the shared server is down or busy, or its load, measured at the
+  scale target, starves the others. Dispatch sits apart for the first
+  (decision 0037).
 - **Not a message broker.** Bring one once two members are joined:
   Azure Service Bus, RabbitMQ, or their equal. Every event travels on
   it. A member saves each event with the change that made it, so none is
@@ -316,6 +320,12 @@ to the browser as WebAssembly.
 Decision 0036 puts every member's data in Postgres, and has each member
 on SQLite move once. It leaves three: Annals's store, whether Trellis
 holds data when its history is off, and a member run alone on a laptop.
+
+Decision 0037 keeps one shared Postgres server for an estate, and lets a
+member sit apart only for one of two named reasons. Dispatch does. It
+leaves four: whether Orrery or Annals sits apart, whether members connect
+through a pooler, when the shared server gets a second instance, and what
+apart means in an estate with one cluster and no cloud.
 
 ## Built to the standard
 
