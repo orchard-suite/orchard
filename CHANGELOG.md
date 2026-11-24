@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.11.0](https://github.com/orchard-suite/orchard/compare/v1.10.0...v1.11.0) (2026-11-24)
+
+### Features
+
+* **orchard:** put every member on postgres ([bdff4e3](https://github.com/orchard-suite/orchard/commit/bdff4e36348b829f6e148fe50b5035425f2de552))
+
 ## [1.10.0](https://github.com/orchard-suite/orchard/compare/v1.9.0...v1.10.0) (2026-11-24)
 
 ### Features
