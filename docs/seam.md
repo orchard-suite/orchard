@@ -116,9 +116,12 @@ A member passes all four:
    estate brings it instead.
 3. **It is estate-neutral.** It runs in any estate with configuration
    alone, by the rules above.
-4. **It is built the suite's way.** It emits telemetry from its first
-   release, describes itself to Orrery, posts what it does to Annals, and
-   signs people in through the estate's front door.
+4. **It is built the suite's way.** It is built to the suite
+   architecture (decision 0041), and Trellis's verdict on the shared
+   contract tests is the proof. That covers telemetry from its first
+   release, describing itself to Orrery, posting what it does to Annals,
+   and signing people in through the estate's front door, each joined
+   only when the estate gives it an address.
 
 A member that stands on the floor passes the same four, and one more:
 nothing requires it. No member needs it to run or to be deployed, and it
