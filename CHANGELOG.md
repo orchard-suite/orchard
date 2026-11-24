@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.15.0](https://github.com/orchard-suite/orchard/compare/v1.14.0...v1.15.0) (2026-11-24)
+
+### Features
+
+* **orchard:** build every member to one architecture ([996c5b0](https://github.com/orchard-suite/orchard/commit/996c5b010e4ad6edcd08a1794e1eb5d9ebd4d76f))
+
 ## [1.14.0](https://github.com/orchard-suite/orchard/compare/v1.13.0...v1.14.0) (2026-11-24)
 
 ### Features
