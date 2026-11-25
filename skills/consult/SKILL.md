@@ -48,9 +48,10 @@ cannot be read here.
 
 ## Steps
 
-1. Read `README.md` for the map. Then read the document or the record the
-   question belongs to, in full. Search `docs/` and the registry by
-   keyword when the table does not make it plain.
+1. Read `README.md` for the map. Then read the part the question belongs
+   to: search `docs/` for its heading, or `vantage_find` the registry, and
+   read that section, not the whole document or record. Read a whole one
+   only when the question is about all of it.
 2. The decision records are the authority. Where a document and a record
    disagree, the record wins. A later record amends or supersedes an
    earlier one, and the earlier one's status note, at the top of its

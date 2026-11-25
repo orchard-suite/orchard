@@ -194,7 +194,10 @@ token use, the bill from Orrery, and AI subscription limits.
 
 Tending job: sense cost, and prune. Its right-sizing says what to cut
 back. A shipper on each machine already posts every agent conversation's
-tokens and the work it belongs to.
+tokens and the work it belongs to. Work a system starts on a model, a
+stage, a job, or a schedule, is owed a second intake: one record per run,
+by operation and unit, from which Tally watches the five shapes that waste
+it (decision 0044).
 
 ### Annals: Record
 

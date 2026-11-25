@@ -128,7 +128,7 @@ parts of quality the same way.
 | Job | Covered by | Rating | What is missing |
 | --- | --- | --- | --- |
 | Sense what exists and its health | Orrery, Muster, Dispatch | Covered | |
-| Sense what it costs | Tally | Covered | |
+| Sense what it costs | Tally | Partial | Model work is counted by conversation, not by its unit, and nothing watches its shapes. Judged again on 2026-11-25, by decision 0044. |
 | Sense what growers did | Annals | Partial | Only Orrery, Dispatch, and Graft say they post to it. |
 | Sense friction | Nothing | Gap | No member counts retries, stops, or failed tool calls. A new, small source will, and Orrery will show its numbers (decision 0008). It is not built. |
 | Trace a weed to its stem | Dispatch's postmortems, Annals | Partial | A postmortem traces an incident. Nothing links a weed in code to what taught it. |

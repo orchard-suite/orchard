@@ -22,9 +22,12 @@ so and stop.
 1. List the open proposals, oldest first:
    `gh issue list -R orchard-suite/orchard --label proposal --state open --json number,title,labels,createdAt`.
    Leave out any that carry `needs-ruling`. With none, go to step 5.
-2. Read each proposal and the records and documents it touches
-   (`vantage_find` with `in: ORC`, then `vantage_read` the section). Sort
-   it:
+2. Read every proposal in the list before you sort any, so each is
+   judged beside the others (decision `ORC-0044`). Two that say the same
+   thing fold into one record. Two that clash with each other both wait
+   for a ruling, as below. Then, for each, read the records and documents
+   it touches (`vantage_find` with `in: ORC`, then `vantage_read` the
+   section). Sort it:
    - **Already decided.** An accepted record says the same thing. Close the
      issue with a comment naming the record. Nothing else changes.
    - **Adds.** It says `new ground` or `extends`, and contradicts no
