@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.17.0](https://github.com/orchard-suite/orchard/compare/v1.16.2...v1.17.0) (2026-11-25)
+
+### Features
+
+* **orchard:** price model work by its unit ([2bba7a6](https://github.com/orchard-suite/orchard/commit/2bba7a6180f3722ec332ec3794506acbd16e808d))
+
 ## [1.16.2](https://github.com/orchard-suite/orchard/compare/v1.16.1...v1.16.2) (2026-11-24)
 
 ### Bug Fixes
