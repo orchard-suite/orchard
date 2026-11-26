@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.18.0](https://github.com/orchard-suite/orchard/compare/v1.17.0...v1.18.0) (2026-11-26)
+
+### Features
+
+* **orchard:** gate a change by what it does ([e9d3c93](https://github.com/orchard-suite/orchard/commit/e9d3c93b1e1907cb6683c7866ff85c7679111443))
+
 ## [1.17.0](https://github.com/orchard-suite/orchard/compare/v1.16.2...v1.17.0) (2026-11-25)
 
 ### Features
