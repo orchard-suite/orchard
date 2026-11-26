@@ -266,6 +266,30 @@ runs once in the path, on the machine that lands the change. In CI the
 tests are a witness: they run beside the build, from a clean checkout,
 and the class sets whether a deploy waits for them.
 
+### Who must see a change before it runs
+
+A person's approval is rung 8: the scarcest time there is. So it goes only
+where a change needs it, and the change itself says whether it does
+(decisions 0045 and 0046).
+
+- **Judge a change by its effect, never its verb.** An effect is what a
+  change does to a live thing: it stops it, cuts its callers, opens it to
+  more of the network, grants more access, loses data, or moves the bill.
+  "Add" and "change" are a tool's words, not risk. In one estate's 250
+  applies, 12 of the plans with no destroy restarted a live app.
+- **Every change states its effects,** from any tool, in one shape. The
+  estate's judge, Trellis, answers a route: no one, or who must look, how
+  many, and by when.
+- **Default is wait.** An effect with no proof goes to a person. Proof is
+  earned: claimed by a table, rehearsed in a lower environment, or
+  measured over many changes.
+- **The outcome teaches the gate, never the approval.** A person who says
+  yes to nearly every ask teaches nothing. What each change did, watched
+  apart from it, is the label: a needless ask, or a miss.
+- **Each repeated ask points at a missing safe path.** A restart that a
+  watched swap absorbs needs no person. Build the path once, and the asks
+  stop.
+
 ## What checking costs
 
 One change costs its owners this much:
@@ -407,6 +431,7 @@ This table rates the parts that produce it.
 | A bed's laws | Nothing | Gap | No member reads which of a repository's checks are laws, or judges whether an owner changed them. |
 | The door | Graft | Partial | A build that touches a protected path its plan did not name stops, and Graft asks again. A grower outside the desk has no door but a person. |
 | Class | Trellis's catalog pack | Partial | The pack checks that an app in the catalog has a tier: how much it matters when the app is down. No member reads a class to set the rigor of a change. |
+| Who must see a change | Orrery's approvals | Partial | Orrery asks a person by an action's rules alone. Nothing reads what a change does, so every apply asks, whatever it does. Decisions 0045 and 0046 owe the statement, the judge, and the watch. |
 | Red, then green | Graft | Partial | Asked of every small fix. Not asked of a feature. Since v6.6.0 every criterion of a plan needs a proof before a build lands: a test that shows it, or a screenshot, or an approver's waiver. |
 | Break-it runs | Nothing | Bring your own | The engines are open and free. No member reads what they find. |
 | Proof in an environment | Graft's sandbox | Partial | Each agent session runs in a sandbox of its own. Graft's gate runs the check a repository names in its own file, or its `make check`. A failed gate names the command. A gate that passes does not say what ran. A build lands only when its builder says it is finished and each criterion is proven. A preview of a change is the estate's own. |
