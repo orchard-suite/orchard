@@ -22,7 +22,7 @@ hub.
 
 One decision per issue. A decision about how one app behaves goes in that
 app's own decision records, not here. A way to decide that holds on any
-platform goes to the platform standard, rarely, and not here.
+platform goes to the platform guide, rarely, and not here.
 
 ## Steps
 

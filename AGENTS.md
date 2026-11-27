@@ -73,8 +73,11 @@ app, never a member.
 - No em-dashes or en-dashes.
 - Every fact about an app is checked against its repository at the time of
   writing. A rating or a judgment is labeled as one.
-- Decisions cite the rules of the platform standard they build to, by id,
-  with the standard's version.
+- Decisions name no estate, so they cite neither estate's platform
+  standard, and never the book as law. A decision may name a principle of
+  the platform guide it leans on, by id, with the guide's version. Older
+  records keep their lines that cite the standard's rule ids; those are
+  history.
 
 ## Check
 

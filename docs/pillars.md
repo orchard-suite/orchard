@@ -29,8 +29,8 @@ there.
 
 ## Why the map changed
 
-Until 2026-11-20 this page listed fourteen pillars. The standard tests a
-pillar one way: one app answers its whole question (rule
+Until 2026-11-20 this page listed fourteen pillars. The platform guide tests
+a pillar one way: one app answers its whole question (principle
 `map-the-platform-as-pillars-each-one-a-question-it-must-answ`). Six of
 the fourteen could never pass that test, because they were not things an
 app can own. Decision 0016 holds the evidence. In short:

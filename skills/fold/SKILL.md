@@ -39,12 +39,13 @@ so and stop.
    - **Not the suite's.** It is about one app, one estate, or a way to
      decide for any platform. Close it with a comment saying where it
      belongs: that program's or estate's own decision records, or, rarely,
-     the platform standard.
+     the platform guide.
 3. Fold one proposal as one pass:
-   - Where the platform standard is installed, read its north star and
-     the brief of each chapter the decision touches (its `consult` skill).
-     Say in the record's Context where the decision departs from a
-     principle, and why. The record is never sent to the standard.
+   - Where the platform guide is installed, read its north star and the
+     brief of each chapter the decision touches (its `consult` skill). The
+     guide advises; it is not law. The record may name a principle of the
+     guide it leans on, or one it chooses against and why. It cites no
+     estate's platform standard, and it is never sent to the guide.
    - Write the record with the `vantage:decide` skill: a `vantage_write`
      to `ORC`, category 0, the owner as its decision maker. It takes the
      next number. Give it the shape of the records there: Context opens

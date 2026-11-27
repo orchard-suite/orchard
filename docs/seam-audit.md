@@ -70,6 +70,6 @@ adapter per runtime.
 
 The kit is a Go module today. Vantage is TypeScript, and
 forgitten is a TypeScript hub with a .NET CLI, so the kit cannot reach
-them until it has sides in those languages; the standard expects that order (rule
+them until it has sides in those languages; the platform guide advises that order (principle
 `the-platform-s-own-software-is-a-pillar-kit-engine-interface`). Orrery
 and Trellis are Go and could move now.

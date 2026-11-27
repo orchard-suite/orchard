@@ -396,8 +396,8 @@ laws.
 Rung 5 needs a place to run. The suite offers one environment tool,
 Rootstock's `dev`, and requires it nowhere (decision 0028). An estate
 takes it or brings its own, and may register an Orrery action that stands
-up an environment for a change. The standard
-says how to name them, find them, and remove them (rule
+up an environment for a change. The platform
+guide advises how to name them, find them, and remove them (principle
 `ephemeral-environments-named-by-owner-discovered-through-a-r`).
 
 Whether a bed needs one follows how it ships. A person who can run the

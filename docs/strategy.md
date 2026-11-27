@@ -123,8 +123,8 @@ at work.
 - **Not a forge or a build system.** Bring GitHub, GitLab, Azure DevOps,
   or Bitbucket, and their pipelines.
 - **Not an identity provider or a secrets store.** Bring your sign-in and
-  your vault. The standard forbids building either (rule
-  `new-capability-goes-to-a-standalone-product-not-the-house-vi`).
+  your vault. The platform guide advises against building
+  either (principle `new-capability-goes-to-a-standalone-product-not-the-house-vi`).
 - **Not an observability stack.** Bring Prometheus, Loki, Tempo, Grafana,
   or their equal. Orchard sends to it and reads from it.
 - **No deploy tool you must use.** The suite offers one, Rootstock, on
@@ -238,7 +238,7 @@ question.
 Decision 0010 sets how the suite answers for quality and leaves four:
 where the one list of law paths lives, how a pipeline knows an owner
 changed a law, whether break-it runs get a source, and whether the
-standard takes the pillar.
+guide takes the pillar.
 
 Decision 0011 puts the start of quality at the request and leaves two: how
 a request is weighed outside the desk, and which checks a desk's gate can
@@ -246,8 +246,8 @@ run.
 
 Decision 0016 replaces the fourteen pillars with six pillars, five
 properties, and three outcomes. It closes one question of decision 0010:
-the standard took the pillar on quality, and the suite has since made
-quality an outcome. It left four: whether the standard takes the new
+the guide took the pillar on quality, and the suite has since made
+quality an outcome. It left four: whether the guide takes the new
 map, how adoption is counted, whether Health gets a proof of recovery,
 and whether Change keeps two apps. Decision 0020 has closed the last.
 
@@ -361,11 +361,15 @@ how Toolshed learns that a ring's machines are in the installer's group
 when the installer cannot say, and whether a pack may name a tool that no
 machine of its kind can run.
 
-## Built to the standard
+## What it leans on in the guide
 
-This strategy builds to these rules of the platform standard. The list
-was read at version 2026.1107.1839, and the three rules decision 0016
-departs from were read again at version 2026.1120.2003:
+The book behind the suite now publishes a guide: it teaches how to decide
+and prescribes nothing, so the suite builds to no standard of the book's.
+The suite names no estate, so it cites neither estate's own platform
+standard. It leans on these principles of the guide. The list was read at
+version 2026.1107.1839, when the guide was still called the standard, and
+the three principles decision 0016 chooses against were read again at
+version 2026.1120.2003:
 
 - `map-the-platform-as-pillars-each-one-a-question-it-must-answ`
 - `the-platform-s-own-software-is-a-pillar-kit-engine-interface`
@@ -383,7 +387,7 @@ departs from were read again at version 2026.1120.2003:
 - `set-rigor-by-what-a-failure-costs-in-a-few-named-classes`
 - `respond-to-an-escape-by-turning-it-off-then-closing-exactly-`
 
-It departs from seven rules. Decision 0007 says why for the first two,
+It chooses against seven principles. Decision 0007 says why for the first two,
 decision 0016 for the third, fifth, and sixth, decision 0009 for the
 fourth, and decision 0018 for the seventh:
 
@@ -392,43 +396,43 @@ fourth, and decision 0018 for the seventh:
 - `build-the-platform-s-nine-positions-in-dependency-order-star`: sensing
   friction goes first.
 - `map-the-platform-as-pillars-each-one-a-question-it-must-answ`: the
-  rule maps fourteen pillars. The suite maps six, and keeps the rule's
+  principle maps fourteen pillars. The suite maps six, and keeps the principle's
   test of one app per pillar. The other eight are properties and outcomes.
 - `keep-every-estate-on-its-own-side-of-a-seam-with-a-closed-li`: the
-  rule closes the list of crossings at eight. The suite adds a ninth, the
+  principle closes the list of crossings at eight. The suite adds a ninth, the
   agent runtime, and a tenth, events on a message broker (decision 0032).
 - `the-platform-s-own-software-is-a-pillar-kit-engine-interface`: the
-  rule treats the kit, the engine, and interfaces as three pillars. Here
+  principle treats the kit, the engine, and interfaces as three pillars. Here
   the kit and the interface shape are properties, and the engine is a
   part of Change.
-- `delivery-outcomes-as-a-sibling-of-ci-health`: the rule computes four
+- `delivery-outcomes-as-a-sibling-of-ci-health`: the principle computes four
   delivery measures. The suite adds rework rate.
 - `enroll-an-installed-agent-through-device-management-s-own-sc`: the
-  rule enrolls an agent with a token made on the machine. The suite's
+  principle enrolls an agent with a token made on the machine. The suite's
   device agent holds a certificate the estate issues, and no token.
 
-New to the standard: the standard has no rule for the three materials, the
+New to the guide: the guide has no principle for the three materials, the
 ladder of remedies, a loop budget per repository, counting friction or
 weeds, or a class of installed tending tools. Decision 0007 sets those
-here. Nor has it a rule for a pillar on growing conditions, for templates
+here. Nor has it a principle for a pillar on growing conditions, for templates
 that stay with an estate, or for opening a new view to named people first.
-Decision 0008 sets those. Nor has it a rule for the one question that
+Decision 0008 sets those. Nor has it a principle for the one question that
 tells a member from an estate's own app, for a member that changes
 repositories, or for an agent runtime reached through an adapter.
-Decision 0009 sets those. Nor has it a rule that defines quality, for
+Decision 0009 sets those. Nor has it a principle that defines quality, for
 bounding a change in place of inspecting it, for a law as a check its
 grower cannot change, for a ladder of proof, for counting what checking
 costs and catches, or for a pillar on quality. Decision 0010 sets those.
-Nor has it a rule that a request is evidence and not a specification, that
+Nor has it a principle that a request is evidence and not a specification, that
 an owner judges a brief of the plan and never the code, or for the kind of
 a change as a dial beside its class. Decision 0011 sets those. Nor has it
-a rule that sorts what a platform must answer into pillars, properties,
+a principle that sorts what a platform must answer into pillars, properties,
 and outcomes, for a member that names one pillar, or for adoption as an
-outcome. Decision 0016 sets those. Nor has it a rule for a signed pack
+outcome. Decision 0016 sets those. Nor has it a principle for a signed pack
 of tools per kind of machine, rolled out in rings through the estate's
 own installers, or for a test that tells which of the platform's own
-software stands under the pillars. Decisions 0042 and 0043 set those. The standard has since taken the
-pillars on growing conditions and quality, and several rules on quality.
+software stands under the pillars. Decisions 0042 and 0043 set those. The guide has since taken the
+pillars on growing conditions and quality, and several principles on quality.
 The membership test of decision 0001 and the
-seam of decision 0002 were new to the standard when they were written.
-Both are rules of it now.
+seam of decision 0002 were new to the guide when they were written.
+Both are principles of it now.
