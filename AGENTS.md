@@ -43,7 +43,9 @@ Never bring a records folder, a roadmap file, or a diagram file back here;
 A decision made in any conversation, on any machine, arrives as a proposal:
 an issue labelled `proposal` (the `propose` skill). The `fold` skill turns
 proposals into records on a schedule. A proposal that changes an accepted
-decision is labelled `needs-ruling` and waits for the owner. A decision
+decision is labelled `needs-ruling` and waits for the owner. The owner rules
+with a comment on the issue that starts with `Ruling:`, from anywhere, and
+the next fold carries it out. A decision
 made in a conversation in this repository is written the same way a fold
 writes one: the record and the roadmap items in the hub, the documents
 here.
