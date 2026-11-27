@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.19.1](https://github.com/orchard-suite/orchard/compare/v1.19.0...v1.19.1) (2026-11-27)
+
+### Bug Fixes
+
+* **orchard:** stop taking rulings from github ([69ea135](https://github.com/orchard-suite/orchard/commit/69ea135bdca6483c82af6fa5e6add676582d82f3))
+
 ## [1.19.0](https://github.com/orchard-suite/orchard/compare/v1.18.0...v1.19.0) (2026-11-27)
 
 ### Features
