@@ -21,12 +21,7 @@ so and stop.
 
 1. List the open proposals, oldest first:
    `gh issue list -R orchard-suite/orchard --label proposal --state open --json number,title,labels,createdAt`.
-   Leave out any that carry `needs-ruling` and have no ruling yet. A
-   ruling is a comment on the issue that starts with `Ruling:`, posted
-   after the `needs-ruling` comment, by someone with `admin` on the
-   repository (`gh api repos/orchard-suite/orchard/collaborators/<login>/permission --jq .permission`).
-   A ruled proposal stays in the list and skips the sort in step 2. With
-   none, go to step 5.
+   Leave out any that carry `needs-ruling`. With none, go to step 5.
 2. Read every proposal in the list before you sort any, so each is
    judged beside the others (decision `ORC-0044`). Two that say the same
    thing fold into one record. Two that clash with each other both wait
@@ -40,15 +35,7 @@ so and stop.
    - **Changes a decision.** It amends or supersedes an accepted record, or
      reading it against the records shows a clash it did not name. Do not
      fold it. Add the label `needs-ruling` and a comment that quotes the
-     record and the clash in a few lines, then the choices, and ends:
-     "Rule with a comment that starts with `Ruling:`." It waits for the
-     owner.
-   - **Ruled.** The owner's ruling decides it, and its words win over the
-     proposal's where they differ. A ruling that keeps the accepted record
-     closes the issue with a comment naming that record. Any other ruling
-     folds it (step 3): the record's Context quotes the ruling, and the
-     record amends or supersedes what the ruling says it does. Remove
-     `needs-ruling`.
+     record and the clash in a few lines. It waits for the owner.
    - **Not the suite's.** It is about one app, one estate, or a way to
      decide for any platform. Close it with a comment saying where it
      belongs: that program's or estate's own decision records, or, rarely,
