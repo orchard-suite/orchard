@@ -26,8 +26,10 @@ Never bring a records folder, a roadmap file, or a diagram file back here;
 
 - **Decision records**: the registry `ORC`. A record is cited `ORC-0016`;
   a document here may say "decision 0016". Write and change records with
-  the `vantage:decide` skill. A record is never rewritten once accepted; a
-  new one supersedes or amends it, and the old one's status note says so.
+  the `vantage:decide` skill. A record is a living document (decision
+  0048): while its decision stands it is strengthened in place, and the hub
+  keeps every revision. A decision that is reversed or replaced is
+  superseded by a new record.
 - **The roadmap**: items of the kind `ORCR`. An item comes only from a
   record or the build order, carries `owes`, `from`, `section`, and
   `checked` labels, and links its records. Report one done only with a
