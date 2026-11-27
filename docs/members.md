@@ -143,6 +143,14 @@ ran out. Each estate still owes its own starter (the roadmap).
 
 ### Vantage: Catalog, its picture
 
+Vantage is an estate's source of truth for intent, hierarchy, and
+exceptions (decision 0049). It holds the estate's decision records, its
+standards (one line per position, built for each scope and published in
+editions), the procedures that explain them, the rule packs that check
+them, and the exceptions to them. It reads the organization's tree from
+the catalog, judges nothing, and enforces nothing. Its own records say how
+(VAN-0003). None of it is built yet at v4.6.0 (the roadmap).
+
 Its server is TypeScript on Bun, read at v4.3.0 on 2026-11-23. It is owed
 in Go, in one release that changes no behavior, after a freeze; its web
 app stays TypeScript (decision 0035).
@@ -212,9 +220,13 @@ It does not count where an agent got stuck.
 
 ### Trellis: Rules
 
-One judge over an estate's standards. A standard is a pack of rules kept
-as data: security, telemetry, build, interfaces, catalog, access, alerts,
-delivery, and one that judges a Graft program today.
+One judge over an estate's standards. Vantage defines the standards, and
+Trellis judges whether they hold (decision 0049). Its packs are the rules
+that check a standard, kept as data: security, telemetry, build,
+interfaces, catalog, access, alerts, delivery, and one that judges a Graft
+program today. Today it reads them from its own repository; it owes
+reading them from a Vantage edition, and taking exceptions from Vantage
+(the roadmap).
 The same packs run on the board, by hand, and in a repository's pipeline, so
 they cannot disagree. Every rule ships a failing, a passing, and a no-data
 fixture. Waivers carry a reason, an owner, and an end date. The
@@ -228,6 +240,8 @@ instruction file, which is the first check of its soil.
 It reads Azure Policy as a source that brings its own rules: Azure's
 definitions, verdicts, and exemptions pass through, and Trellis never
 judges an Azure resource again (decision 0012). One engine per property.
+An exemption is now made from a Vantage exception, and counts only with
+one behind it (decision 0049).
 
 It is the suite's one judge (decision 0010). Its packs are an estate's
 laws. It does not yet read a repository's own laws. It also judges the
