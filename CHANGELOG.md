@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.22.0](https://github.com/orchard-suite/orchard/compare/v1.21.0...v1.22.0) (2026-11-27)
+
+### Features
+
+* **orchard:** vantage defines standards, trellis judges ([15d9783](https://github.com/orchard-suite/orchard/commit/15d9783f74bf156584afe21a6178934397516d23))
+
 ## [1.21.0](https://github.com/orchard-suite/orchard/compare/v1.20.0...v1.21.0) (2026-11-27)
 
 ### Features
