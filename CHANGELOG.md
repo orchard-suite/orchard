@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.22.1](https://github.com/orchard-suite/orchard/compare/v1.22.0...v1.22.1) (2026-11-27)
+
+### Bug Fixes
+
+* **orchard:** cite vantage's own model records ([395feb1](https://github.com/orchard-suite/orchard/commit/395feb11e62f05e3d2aa21f2e14ea99b371b62ed))
+
 ## [1.22.0](https://github.com/orchard-suite/orchard/compare/v1.21.0...v1.22.0) (2026-11-27)
 
 ### Features
