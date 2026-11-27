@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.21.0](https://github.com/orchard-suite/orchard/compare/v1.20.0...v1.21.0) (2026-11-27)
+
+### Features
+
+* **orchard:** keep records living with history ([897df59](https://github.com/orchard-suite/orchard/commit/897df59d278fe3e63ee996fbe623456b3239a695))
+
 ## [1.20.0](https://github.com/orchard-suite/orchard/compare/v1.19.1...v1.20.0) (2026-11-27)
 
 ### Features
