@@ -149,7 +149,8 @@ standards (one line per position, built for each scope and published in
 editions), the procedures that explain them, the rule packs that check
 them, and the exceptions to them. It reads the organization's tree from
 the catalog, judges nothing, and enforces nothing. Its own records say how
-(VAN-0003). None of it is built yet at v4.6.0 (the roadmap).
+(VAN-3017 to VAN-3022, VAN-5007, and VAN-5008). None of it is built
+yet at v4.6.0 (the roadmap).
 
 Its server is TypeScript on Bun, read at v4.3.0 on 2026-11-23. It is owed
 in Go, in one release that changes no behavior, after a freeze; its web
