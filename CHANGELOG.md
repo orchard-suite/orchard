@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.20.0](https://github.com/orchard-suite/orchard/compare/v1.19.1...v1.20.0) (2026-11-27)
+
+### Features
+
+* **orchard:** lean on the guide, cite no standard ([e6cee01](https://github.com/orchard-suite/orchard/commit/e6cee01eb71ff7256b681485aff8fbefdc6439c0))
+
 ## [1.19.1](https://github.com/orchard-suite/orchard/compare/v1.19.0...v1.19.1) (2026-11-27)
 
 ### Bug Fixes
