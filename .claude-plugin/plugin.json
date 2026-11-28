@@ -1,7 +1,7 @@
 {
   "name": "orchard",
   "description": "Orchard for agents: look up what the suite is, its members, its pillars, its decisions, and its roadmap.",
-  "version": "1.27.0",
+  "version": "1.28.0",
   "author": { "name": "dsswift" },
   "homepage": "https://github.com/orchard-suite/orchard",
   "repository": "https://github.com/orchard-suite/orchard",

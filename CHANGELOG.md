@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.28.0](https://github.com/orchard-suite/orchard/compare/v1.27.0...v1.28.0) (2026-11-28)
+
+### Features
+
+* **orchard:** unstated changes from activity logs ([9bc6f95](https://github.com/orchard-suite/orchard/commit/9bc6f95cf3cd8724ec7ef812e5df5b7528631fb9))
+
 ## [1.27.0](https://github.com/orchard-suite/orchard/compare/v1.26.2...v1.27.0) (2026-11-28)
 
 ### Features
