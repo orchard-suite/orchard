@@ -262,9 +262,12 @@ the limit: what does not fit moves beside the path. In a low class nearly
 everything costly sits beside it.
 
 The suite's own pipelines work this way (decision 5004). The full check
-runs once in the path, on the machine that lands the change. In CI the
-tests are a witness: they run beside the build, from a clean checkout,
-and the class sets whether a deploy waits for them.
+runs once in the path, when the change lands, on the exact tree that
+lands, and the lander signs a proof that it passed. A person's laptop runs
+the check itself. Graft runs it in a sandbox that holds no key, and its
+runner only signs. The release pipeline's first step checks that proof.
+In CI the tests are a witness: they run beside the build, from a clean
+checkout, and the class sets whether a deploy waits for them.
 
 ### Who must see a change before it runs
 
@@ -434,7 +437,7 @@ This table rates the parts that produce it.
 | Who must see a change | Orrery's approvals | Partial | Orrery asks a person by an action's rules alone. Nothing reads what a change does, so every apply asks, whatever it does. Decisions 6003 and 6004 owe the statement, the judge, and the watch. |
 | Red, then green | Graft | Partial | Asked of every small fix. Not asked of a feature. Since v6.6.0 every criterion of a plan needs a proof before a build lands: a test that shows it, or a screenshot, or an approver's waiver. |
 | Break-it runs | Nothing | Bring your own | The engines are open and free. No member reads what they find. |
-| Proof in an environment | Graft's sandbox | Partial | Each agent session runs in a sandbox of its own. Graft's gate runs the check a repository names in its own file, or its `make check`. A failed gate names the command. A gate that passes does not say what ran. A build lands only when its builder says it is finished and each criterion is proven. A preview of a change is the estate's own. |
+| Proof in an environment | Graft's sandbox | Partial | Each agent session runs in a sandbox of its own. Graft's gate runs the check a repository names in its own file, or its `make check`. A failed gate names the command. Since v7.1.0 a landing whose repository names a check carries a signed proof that names the check and the tree it passed on, and the release pipeline checks it first. A build lands only when its builder says it is finished and each criterion is proven. A preview of a change is the estate's own. |
 | Undo | Graft, and the estate's deploy tool | Partial | Graft names the ticket under every commit, and takes its commits back out when a round sends the build back and none are left. A build that fails its gate stalls, is kept, and never reaches the forge. A landed change whose pipeline is not green stalls the request, and the ticket links the commit and each failed job. A person decides what happens next. A new feature ships switched off. The rollout is the estate's own. |
 | Watch | Dispatch, Muster | Partial | Dispatch holds each incident and its postmortem. Muster counts failed changes and time to restore. A postmortem does not name the law that would have caught it. |
 | Cost of checking | Tally, Muster, Graft | Partial | Tally counts every agent session's tokens and each repository's build cost. Graft keeps what each request's agents spent on its catalog record, by stage: the screen, the plan, and the build with its proof. Muster writes each pipeline's median duration. Nothing joins them per change outside the desk. |

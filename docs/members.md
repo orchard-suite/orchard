@@ -346,7 +346,9 @@ test fails without the fix, no test that was there is edited or deleted,
 no protected path is touched, no dependency or data shape changes, and the
 change is under a size limit. Graft lands the commits from its own
 clone, watches the pipeline, and takes its commits back out past its last
-round. A new feature ships switched off. It has no review gate of its own.
+round. Since v7.1.0 a landing runs the repository's check in a sandbox
+with no key, on the exact tree that lands, and the runner signs the
+landing proof the release pipeline checks first (read on 2026-11-28). A new feature ships switched off. It has no review gate of its own.
 
 Since v6.6.0 a build lands only when its builder says it is finished and
 each criterion of its plan is proven, by a test, a screenshot, or an
