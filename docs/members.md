@@ -149,9 +149,12 @@ standards (one line per position, built for each scope and published in
 editions), the procedures that explain them, the rule packs that check
 them, and the exceptions to them. It reads the organization's tree from
 the catalog, judges nothing, and enforces nothing. Its own records say how
-(VAN-3017 to VAN-3022, VAN-5007, and VAN-5008). At v4.9.0 the scope
-tree is built; positions, standards, editions, and exceptions are on the
-roadmap.
+(VAN-3017 to VAN-3022, VAN-5007, and VAN-5008). At v4.15.0, read on
+2026-11-27, all of it is built: the scope tree, positions, standards and
+their editions, lines that every scope below inherits, conflicts sent to a
+steward, a workspace bound by its owner and the program it serves, and
+exceptions a line's steward grants. Trellis does not read the exceptions
+yet (the roadmap).
 
 It also holds an estate's plan and its work (decision 0051): roadmaps
 whose state is read from proof, and work items whose kinds and lifecycles
