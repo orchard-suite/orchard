@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.26.0](https://github.com/orchard-suite/orchard/compare/v1.25.1...v1.26.0) (2026-11-28)
+
+### Features
+
+* **orchard:** vantage tracks an estate's work ([fc06702](https://github.com/orchard-suite/orchard/commit/fc06702b86c8d823ef11fa2cf984a342e0dccb35))
+
 ## [1.25.1](https://github.com/orchard-suite/orchard/compare/v1.25.0...v1.25.1) (2026-11-28)
 
 ### Bug Fixes
