@@ -97,8 +97,9 @@ before the move.
 ## For agents
 
 This repository installs as an agent plugin named `orchard`. Its `consult`
-skill finds the document or the record that answers a question. Its
-`propose` skill sends a suite decision back here as an issue, from any
-machine. Its `fold` skill turns those issues into decision records and
-roadmap items in the hub, and document changes here, on the machine that
-owns this repository (decisions 0013 and 0027).
+skill finds the document or the record that answers a question. The
+plugin has no other skill. A suite decision lands as a record in the
+registry, written with the hub's own tools by the agent that made it, with
+its roadmap items and the document changes here in the same pass. The
+suite keeps no inbox: how a decision travels to the registry is each
+estate's own choice (decisions 0027 and 0048).
