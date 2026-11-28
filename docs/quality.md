@@ -273,7 +273,8 @@ checkout, and the class sets whether a deploy waits for them.
 
 A person's approval is rung 8: the scarcest time there is. So it goes only
 where a change needs it, and the change itself says whether it does
-(decisions 6003 and 6004).
+(decisions 6003 and 6004). A change that skips the gate is still seen
+(decision 6006).
 
 - **Judge a change by its effect, never its verb.** An effect is what a
   change does to a live thing: it stops it, cuts its callers, opens it to
@@ -292,6 +293,12 @@ where a change needs it, and the change itself says whether it does
 - **Each repeated ask points at a missing safe path.** A restart that a
   watched swap absorbs needs no person. Build the path once, and the asks
   stop.
+- **See what skips the gate, never block it.** The gate is for people and
+  agents acting without the estate's operators, not a fence around them.
+  Every write a cloud, edge, or cluster log records either matches a gated
+  run or is kept as an unstated change, with who made it and what it
+  touched, and watched like any other. A change people keep making by
+  hand points at a missing self-service action.
 
 ## What checking costs
 
@@ -434,7 +441,7 @@ This table rates the parts that produce it.
 | A bed's laws | Nothing | Gap | No member reads which of a repository's checks are laws, or judges whether an owner changed them. |
 | The door | Graft | Partial | A build that touches a protected path its plan did not name stops, and Graft asks again. A grower outside the desk has no door but a person. |
 | Class | Trellis's catalog pack | Partial | The pack checks that an app in the catalog has a tier: how much it matters when the app is down. No member reads a class to set the rigor of a change. |
-| Who must see a change | Orrery's approvals | Partial | Orrery asks a person by an action's rules alone. Nothing reads what a change does, so every apply asks, whatever it does. Decisions 6003 and 6004 owe the statement, the judge, and the watch. |
+| Who must see a change | Orrery's approvals | Partial | Orrery asks a person by an action's rules alone. Nothing reads what a change does, so every apply asks, whatever it does. Decisions 6003 and 6004 owe the statement, the judge, and the watch. A change made outside any writer is seen by nobody; decision 6006 owes reading it from the activity logs. |
 | Red, then green | Graft | Partial | Asked of every small fix. Not asked of a feature. Since v6.6.0 every criterion of a plan needs a proof before a build lands: a test that shows it, or a screenshot, or an approver's waiver. |
 | Break-it runs | Nothing | Bring your own | The engines are open and free. No member reads what they find. |
 | Proof in an environment | Graft's sandbox | Partial | Each agent session runs in a sandbox of its own. Graft's gate runs the check a repository names in its own file, or its `make check`. A failed gate names the command. Since v7.1.0 a landing whose repository names a check carries a signed proof that names the check and the tree it passed on, and the release pipeline checks it first. A build lands only when its builder says it is finished and each criterion is proven. A preview of a change is the estate's own. |

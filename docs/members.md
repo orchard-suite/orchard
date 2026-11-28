@@ -45,7 +45,7 @@ is owed (the roadmap).
 
 | App | Reads | Writes to |
 | --- | --- | --- |
-| Orrery | the forge's actions, Annals events, Graft's jobs, Alertmanager | Annals, Dispatch (every action run, as events) |
+| Orrery | the forge's actions, Annals events, Graft's jobs, Alertmanager; each estate's activity logs (owed, decision 6006) | Annals, Dispatch (every action run, as events; every write an activity log records, owed) |
 | Vantage | Orrery's catalog | none; an inventory of its workspaces is owed (decision 1001) |
 | My Apps | Orrery's catalog and actions | Orrery (its list of applications) |
 | Tally | Orrery's catalog and the bill in it, Prometheus | Orrery (cost on each namespace), metrics over OTLP |
