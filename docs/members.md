@@ -163,6 +163,18 @@ tracks the item; the tool that owns the work keeps its content, and
 Vantage never calls a tool. This is Vantage's part of Change. It owes
 pushing its items to the catalog (the roadmap).
 
+It is where an estate runs its programs, agents first (decision 0052).
+People own the work; agents run it under a delegation from the owner, and
+propose what they may not do alone. It takes the place of the trackers
+built for people: a team moves its open work in once, and reads its old
+tracker only while that move waits. At v4.17.1, read on 2026-11-28, an
+agent acts as itself for a person, a claim belongs to one run, an item
+has an owner, a delegation, and a scope, a kind builds on another kind,
+due dates show, and commits on GitHub or GitLab name their item as proof.
+Standing delegations, proposals, risks and requests, forecasts, status
+editions, insights, one program read, and its events on the estate's
+broker are on the roadmap.
+
 Its server is TypeScript on Bun, read at v4.3.0 on 2026-11-23. It is owed
 in Go, in one release that changes no behavior, after a freeze; its web
 app stays TypeScript (decision 5005).
