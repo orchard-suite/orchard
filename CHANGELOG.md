@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.29.0](https://github.com/orchard-suite/orchard/compare/v1.28.0...v1.29.0) (2026-11-28)
+
+### Features
+
+* **orchard:** intent joins catalog as a core pillar ([c481068](https://github.com/orchard-suite/orchard/commit/c481068f567600d314a77f6e666bbc8eedcadbae))
+
 ## [1.28.0](https://github.com/orchard-suite/orchard/compare/v1.27.0...v1.28.0) (2026-11-28)
 
 ### Features
