@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.25.0](https://github.com/orchard-suite/orchard/compare/v1.24.0...v1.25.0) (2026-11-28)
+
+### Features
+
+* **orchard:** trellis ships built-in standard sets ([89ec4ca](https://github.com/orchard-suite/orchard/commit/89ec4ca323534311396d08ff0a43fe0d49210e5c))
+
 ## [1.24.0](https://github.com/orchard-suite/orchard/compare/v1.23.0...v1.24.0) (2026-11-28)
 
 ### Features
