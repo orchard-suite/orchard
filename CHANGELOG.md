@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.23.0](https://github.com/orchard-suite/orchard/compare/v1.22.1...v1.23.0) (2026-11-28)
+
+### Features
+
+* **orchard:** the estate's own events start work ([0e9fd30](https://github.com/orchard-suite/orchard/commit/0e9fd304005ae17de3f592ec5064c505b9e8ac50))
+
 ## [1.22.1](https://github.com/orchard-suite/orchard/compare/v1.22.0...v1.22.1) (2026-11-27)
 
 ### Bug Fixes
