@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.25.1](https://github.com/orchard-suite/orchard/compare/v1.25.0...v1.25.1) (2026-11-28)
+
+### Bug Fixes
+
+* **orchard:** cite records by their numbers after the move ([9560de4](https://github.com/orchard-suite/orchard/commit/9560de463d17f36b638aa781e707cea9761a2c00))
+
 ## [1.25.0](https://github.com/orchard-suite/orchard/compare/v1.24.0...v1.25.0) (2026-11-28)
 
 ### Features
