@@ -39,6 +39,7 @@ Only these. Each is a contract the product owns and documents.
 | Audit | product to estate | events in Annals's shape, for the estate's Annals |
 | Events | product to estate | what a member did, its notices, its usage, and its changes, on the message broker the estate brings, once two members are joined (decision 0032) |
 | Alerts | estate to product | Alertmanager's webhook, into Dispatch |
+| Estate events | estate to product | the estate's own change events (its cloud's event service, its forge's webhooks, its cluster's watch), on the broker it brings, in the CloudEvents envelope; work starts from them and a clock is only the net (decision 0050) |
 | The forge | product to estate | through an adapter per forge, never one forge's API in the core |
 | The agent runtime | product to estate | through an adapter per runtime; the estate brings the runtime and the suite builds none (decision 0009) |
 

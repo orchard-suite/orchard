@@ -316,6 +316,15 @@ It leaves six: the wire, the envelope, the topics and who owns each,
 order, an estate's own senders, and sign-in to a broker with no workload
 identity.
 
+Decision 0050 brings the estate's own change events onto that broker:
+its cloud's event service, its forge's webhooks, and its cluster's watch.
+Every event takes the CloudEvents 1.0 envelope, which settles two of
+0032's six: the envelope and an estate's own senders. An event is a hint,
+and a receiver reads the source again before it acts. Work starts from
+events: Orrery's actions and sources, Rootstock's drift and applies, and
+Trellis's judging. A clock is only the net, and a net that finds what no
+event said is a finding. The crossings of the seam become eleven.
+
 Decision 0033 writes the gate once, in Go. Decision 0035 has since made
 it a library every member links, and closed its question on a Go core.
 It leaves one: where the gate keeps tokens and sessions.
@@ -400,7 +409,8 @@ fourth, and decision 0018 for the seventh:
   test of one app per pillar. The other eight are properties and outcomes.
 - `keep-every-estate-on-its-own-side-of-a-seam-with-a-closed-li`: the
   principle closes the list of crossings at eight. The suite adds a ninth, the
-  agent runtime, and a tenth, events on a message broker (decision 0032).
+  agent runtime, a tenth, events on a message broker (decision 0032), and an
+  eleventh, the estate's own events on that broker (decision 0050).
 - `the-platform-s-own-software-is-a-pillar-kit-engine-interface`: the
   principle treats the kit, the engine, and interfaces as three pillars. Here
   the kit and the interface shape are properties, and the engine is a
