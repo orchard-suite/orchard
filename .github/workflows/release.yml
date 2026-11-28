@@ -27,7 +27,11 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
           fetch-depth: 0
-      - uses: dsswift/release-damnit@v1.9.2
+      # Verify first: the commit must carry the landing proof that
+      # release-damnit land signed after the check passed.
+      - uses: dsswift/release-damnit@v1.11.0
         with:
+          verify: 'true'
+          allowed-signers: ${{ vars.RELEASE_DAMNIT_ALLOWED_SIGNERS }}
           since-last-release: 'true'
           publish: 'true'

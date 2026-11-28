@@ -101,8 +101,9 @@ check every write, commit, and push.
 ## Delivery
 
 Agents push to main. Land with `make land` (`make land BRANCH=<branch>`
-from a worktree): it runs `make check`, then `release-damnit land`. Commit
-as `<type>(orchard): <description>`:
+from a worktree): `release-damnit land` runs the config's check, `make
+check`, on the tree that lands and signs a landing proof the release
+verifies. Commit as `<type>(orchard): <description>`:
 
 - `feat`: the document changes a decision makes, or a change to what the
   suite is.
