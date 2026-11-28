@@ -8,8 +8,9 @@ becomes what the next one finds. So quality compounds, up or down, and
 someone has to tend it.
 
 Tending starts with seeing. A gardener asks the same questions every day.
-What do we have? What does it cost? Is it healthy? Is it safe? Are we
-shipping? Who, or which agent, changed what?
+What do we have? What did we decide, and where are we going? What does
+it cost? Is it healthy? Is it safe? Are we shipping? Who, or which agent,
+changed what?
 
 Then it asks the questions the old tools never did. Where do growers
 struggle? What taught this mistake? Is the loop fast? What should be cut
@@ -48,10 +49,12 @@ at work.
   repository, release, and service. An estate runs the ones it needs.
 - **One job.** Every member helps sense, trace, fix, stake, fence, or
   prune. `garden.md` defines those words and rates what the suite covers.
-- **One map.** Six pillars, each with one owner among the members. Six
+- **One map.** Seven pillars, each with one owner among the members. Two
+  are core, Catalog and Intent: what an estate has, and what it decided.
+  The other five stand on them (decision 4009). Six
   properties every pillar must have. Three outcomes the whole is for:
   flow, quality, and adoption. `pillars.md` rates each one (decisions
-  4005 and 4006). The six pillars are the six questions this page opens with.
+  4005 and 4006). The seven pillars are the questions this page opens with.
 - **Joined by the catalog.** Orrery is the spine. The others read it,
   describe themselves to it, and write their findings back to it. Each
   pushes an inventory of what it holds, and stays the home of its own
@@ -253,6 +256,12 @@ quality an outcome. It left four: whether the guide takes the new
 map, how adoption is counted, whether Health gets a proof of recovery,
 and whether Change keeps two apps. Decision 6001 has closed the last.
 
+Decision 4009 adds Intent, the seventh pillar, and gives it to Vantage.
+It names Catalog and Intent the two core pillars: every other pillar
+reads them, and they read only each other. Vantage leaves Catalog and
+Change, and an estate's plan and work sit in Intent. It reverses point 9
+of decision 0051, and leaves no question open.
+
 Decision 0017 merges redgreen and forgitten into one member, Muster. The
 suite has ten members until forgitten retires, and nine after. It left
 three questions: which repository holds Muster, whether it builds on the
@@ -407,7 +416,7 @@ fourth, and decision 0018 for the seventh:
 - `build-the-platform-s-nine-positions-in-dependency-order-star`: sensing
   friction goes first.
 - `map-the-platform-as-pillars-each-one-a-question-it-must-answ`: the
-  principle maps fourteen pillars. The suite maps six, and keeps the principle's
+  principle maps fourteen pillars. The suite maps seven, two of them core, and keeps the principle's
   test of one app per pillar. The other eight are properties and outcomes.
 - `keep-every-estate-on-its-own-side-of-a-seam-with-a-closed-li`: the
   principle closes the list of crossings at eight. The suite adds a ninth, the

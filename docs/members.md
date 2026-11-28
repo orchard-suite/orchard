@@ -1,9 +1,10 @@
 # The members
 
 Nine apps, each in its own repository, each belonging to one pillar and
-doing one tending job first (`pillars.md` holds the six pillars, and
-`garden.md` defines the jobs). Six own a pillar. Three are parts of
-Catalog: Vantage, My Apps, and Muster (decision 4005). redgreen took the
+doing one tending job first (`pillars.md` holds the seven pillars, and
+`garden.md` defines the jobs). Seven own a pillar, and two of those own
+the core pillars: Orrery owns Catalog, and Vantage owns Intent (decision
+4009). Two are parts of Catalog: My Apps and Muster (decision 4005). redgreen took the
 name Muster, and forgitten retired into it on 2026-11-23, once Muster
 held each estate's machine reports through Tender (decisions 0017 and
 5003). Its hub, store, page, and CLI are gone from each estate, and its
@@ -141,10 +142,12 @@ the run is approved, and the job holds its own identity. A run is given
 up only when the hub has not heard from it, never because a fixed time
 ran out. Each estate still owes its own starter (the roadmap).
 
-### Vantage: Catalog, its picture
+### Vantage: Intent, its owner
 
-Vantage is an estate's source of truth for intent, hierarchy, and
-exceptions (decision 4008). It holds the estate's decision records, its
+Vantage owns Intent, one of the two core pillars: what the estate
+decided, what must hold, and where it is going (decision 4009). It is an
+estate's source of truth for intent, hierarchy, and exceptions (decision
+4008). It holds the estate's decision records, its
 standards (one line per position, built for each scope and published in
 editions), the procedures that explain them, the rule packs that check
 them, and the exceptions to them. It reads the organization's tree from
@@ -160,7 +163,8 @@ It also holds an estate's plan and its work (decision 0051): roadmaps
 whose state is read from proof, and work items whose kinds and lifecycles
 are data, which agents claim, work, and hand to each other. Vantage
 tracks the item; the tool that owns the work keeps its content, and
-Vantage never calls a tool. This is Vantage's part of Change. It owes
+Vantage never calls a tool. The plan and the work are part of Intent:
+where the estate is going, item by item (decision 4009). It owes
 pushing its items to the catalog (the roadmap).
 
 It is where an estate runs its programs, agents first (decision 0052).

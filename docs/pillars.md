@@ -1,11 +1,12 @@
 # The map
 
 What a platform must answer, and how well the suite answers it. Decision
-4005 set this map on 2026-11-20, and decision 4006 added a sixth property
-on 2026-11-23. It has three lists, and each list has its own test.
+4005 set this map on 2026-11-20, decision 4006 added a sixth property
+on 2026-11-23, and decision 4009 added a seventh pillar, Intent, on
+2026-11-28. It has three lists, and each list has its own test.
 
-- **Six pillars.** A pillar is something a platform has. One app answers
-  its whole question.
+- **Seven pillars.** A pillar is something a platform has. One app
+  answers its whole question. Two are core and five support them.
 - **Six properties.** A property is something every pillar must be like.
   No app can own one. The suite's judge checks it.
 - **Three outcomes.** An outcome is a number read off the whole. No app
@@ -16,11 +17,36 @@ two members there, Rootstock and Toolshed, and requires neither
 (decisions 0028 and 0042).
 
 ```text
-Outcomes     Flow          Quality          Adoption
-Pillars      Catalog   Change   Health   Cost   Rules   Record
-Properties   Run as a product   Two doors   Self-service   One kit   Decided on purpose
-The floor    forge, pipelines, deploy tool, sign-in, vault, telemetry, agent runtime, environments
+Outcomes      Flow            Quality            Adoption
+Supporting    Change   Health   Cost   Rules   Record
+Core          Catalog (what is)        Intent (what should be)
+Properties    Run as a product   Two doors   Self-service   One kit   Decided on purpose   Agent first
+The floor     forge, pipelines, deploy tool, sign-in, vault, telemetry, broker, agent runtime, environments
 ```
+
+## Two core pillars
+
+Catalog and Intent hold up the rest (decision 4009). Catalog says what
+an estate has, who owns it, and how it connects. Intent says what the
+estate decided, what must hold, and where it is going. An estate with
+neither does not know what it has or what it wants to do with it.
+
+A core pillar is one every other pillar reads, and which reads only the
+other core pillar. Tally prices catalog entities. Dispatch opens
+incidents against catalog services. Annals records actions against
+catalog entities. Graft changes repositories the catalog lists. Trellis
+judges what Catalog says is there against what Intent says must hold.
+Vantage reads the organization's tree from Orrery, and pushes its items
+into the catalog (decision 1001). Neither core owner needs any of the
+other five to do its work.
+
+The five supporting pillars stand on the core. Each is still a question
+every estate must answer. What is optional is the suite's tool for it:
+an estate may bring its own.
+
+A new core pillar joins only by passing that test. A pillar that some
+other pillar does not read is a supporting pillar, however important it
+is.
 
 The pillars say what a platform must answer. `garden.md` says what a
 gardener must do, and rates the suite by tending job. The two pages are
@@ -52,15 +78,16 @@ repository that day, at the version named.
 - **Partial**: the owner answers part of it, or only for some estates.
 - **Gap**: nothing answers it yet.
 
-## The six pillars
+## The seven pillars
 
 | Pillar | The question | Owner | Rating | Parts in other members | What is missing |
 | --- | --- | --- | --- | --- | --- |
-| Catalog | What do we have, who owns it, and how does it connect? | Orrery | Covered | Vantage is its picture and holds its documents. My Apps is its front page. Muster feeds it the forges and each machine's work that never reached one. forgitten, which found that work, retired into Muster (decisions 0017 and 5003). | Pushers beyond Kubernetes and Entra live in each estate. The ground view is in preview. |
-| Change | How does a change get asked for, shipped, and undone? | Graft | Partial | Orrery's actions engine runs every change that is not a change to a repository, and carries the ones that wait or run long as one job for each run (decision 6001, v1.157.0). Vantage tracks an estate's roadmaps and work items, from the ask to its proof (decision 0051), and is where agents run the estate's programs, in place of the trackers built for people (decision 0052). | Graft changes a repository that exists, on two forges and one agent runtime, and only in the repositories its program file lists (v6.6.0). Starting a repository stays with the estate (decision 4001). One part of the answer lives in Orrery (decision 4005), and that line is fixed (decision 6001). |
+| Catalog (core) | What do we have, who owns it, and how does it connect? | Orrery | Covered | My Apps is its front page. Muster feeds it the forges and each machine's work that never reached one. forgitten, which found that work, retired into Muster (decisions 0017 and 5003). | Pushers beyond Kubernetes and Entra live in each estate. The ground view is in preview. |
+| Intent (core) | What did we decide, what must hold, and where are we going? | Vantage | Partial | None. Trellis judges against what Intent holds, from the Rules pillar. | Vantage holds the decision records, the standards in editions, their exceptions, the roadmaps and work items, and each system's documents and diagrams (v4.17.1). Its items do not reach the catalog yet (decision 1001). Standing delegations, proposals, risks and requests, forecasts, and status editions for an estate's programs are owed (decision 0052). Rated Partial on 2026-11-28, a judgment. |
+| Change | How does a change get asked for, shipped, and undone? | Graft | Partial | Orrery's actions engine runs every change that is not a change to a repository, and carries the ones that wait or run long as one job for each run (decision 6001, v1.157.0). The plan and the work behind a change are held in Intent (decisions 0051 and 4009). | Graft changes a repository that exists, on two forges and one agent runtime, and only in the repositories its program file lists (v6.6.0). Starting a repository stays with the estate (decision 4001). One part of the answer lives in Orrery (decision 4005), and that line is fixed (decision 6001). |
 | Health | Is it working, and does it come back when it breaks? | Dispatch | Partial | Trellis's telemetry pack judges whether a service emits telemetry. | Dispatch holds incidents, on-call, and postmortems, and sends notices (v0.0.40). The telemetry stack is the estate's. Nothing shows ahead of time that a thing comes back. |
 | Cost | What does each thing cost, in money and in capacity? | Tally | Partial | None. | Cloud cost reads one cloud only. Model work is counted by conversation, not by its unit: nothing says what one document, request, or thread costs, or watches the five shapes that waste it (decision 4007). Rated Partial on 2026-11-25, a judgment, from Tally at v1.2.0. |
-| Rules | Does everything stay inside what its owners said must hold? | Trellis | Partial | Vantage defines what the owners said: standards, the packs that check them, and exceptions (decision 4008, built in Vantage at v4.15.0; Trellis does not read them yet). Graft's fences hold a change made through the desk. | Trellis reads one forge, its registry, and one cloud. It judges an estate's laws, its nine packs, and no repository's own laws (decision 4002). Its 99 rules still name the old pillars (v5.6.1). |
+| Rules | Does everything stay inside what its owners said must hold? | Trellis | Partial | What the owners said is held in Intent: the standards, the packs that check them, and the exceptions (decision 4008). Trellis judges the gap between Catalog and Intent, and does not read Intent's exceptions yet. Graft's fences hold a change made through the desk. | Trellis reads one forge, its registry, and one cloud. It judges an estate's laws, its nine packs, and no repository's own laws (decision 4002). Its 99 rules still name the old pillars (v5.6.1). |
 | Record | Who, or which agent, did what, and on whose say-so? | Annals | Partial | None. | Only Orrery, Dispatch, and Graft say they post to it. |
 
 ## The six properties
@@ -97,7 +124,7 @@ The hub ships no model. Showing the three for a whole estate is owed
 
 Orrery owns Catalog. It is also the estate's control plane and the
 console for the people who run the platform (decision 1002). That work is
-not a seventh pillar: it is what the other pillars are reached through.
+not a pillar: it is what the other pillars are reached through.
 Each member feeds Orrery what it holds and offers what it can do as
 actions there, and keeps a panel of its own. The actions engine sits in
 Orrery, where the buttons are, by design. Whether that still makes Change

@@ -43,8 +43,11 @@ Orrery as an API, an inventory, an action runner, and an approval system
 ## The members
 
 Each member but two belongs to one of six pillars
-([docs/pillars.md](docs/pillars.md), decision 4005). Six own a pillar.
-Three are parts of Catalog. redgreen is Muster now, and forgitten retired
+([docs/pillars.md](docs/pillars.md), decisions 4005 and 4009). Seven own
+a pillar. Two pillars are core, and the other five stand on them:
+Catalog, what an estate has, owned by Orrery, and Intent, what it decided
+and where it is going, owned by Vantage. Two members are parts of
+Catalog. redgreen is Muster now, and forgitten retired
 into it on 2026-11-23, once Muster held each estate's machine reports
 (decisions 0017 and 5003); its repository is archived. Rootstock and
 Toolshed belong to no pillar. They stand on the floor: Rootstock deploys
@@ -55,8 +58,8 @@ members.
 
 | App | Pillar | What it answers | Its tending job |
 | --- | --- | --- | --- |
-| [Orrery](https://github.com/orchard-suite/orrery) | Catalog (owner), and the estate's control plane and console (decision 1002) | What exists, how it connects, and whether it is healthy. It holds the model, the actions, and the approvals, and it is where the people who run the platform see and act. | The one board. Sense, and act on many repositories at once. |
-| [Vantage](https://github.com/orchard-suite/vantage) | Catalog | What a system looks like and what is written about it: diagrams as code, kept true by the catalog, with the system's living documents beside them. | Sense: the shape of the system. |
+| [Orrery](https://github.com/orchard-suite/orrery) | Catalog (owner), a core pillar, and the estate's control plane and console (decision 1002) | What exists, how it connects, and whether it is healthy. It holds the model, the actions, and the approvals, and it is where the people who run the platform see and act. | The one board. Sense, and act on many repositories at once. |
+| [Vantage](https://github.com/orchard-suite/vantage) | Intent (owner), a core pillar (decision 4009) | What the estate decided, what must hold, and where it is going: its decision records, its standards and their exceptions, its roadmaps and work, and each system's documents and diagrams, kept true by the catalog. | Sense and stake: the estate's intent, written down where people and agents read it. |
 | [My Apps](https://github.com/orchard-suite/myapps) | Catalog | Which applications a person can open, and the landscape of everything the estate offers. | Sense: what people open. |
 | [Tally](https://github.com/orchard-suite/tally) | Cost (owner) | What each workload, host, agent, and job costs, in money and in capacity. | Sense cost. Prune: right-sizing. |
 | [Annals](https://github.com/orchard-suite/annals) | Record (owner) | What every person and agent did, across every product. | Sense and trace: who did what. |
@@ -79,7 +82,7 @@ them. `docs/members.md` lists the whole shed.
 - [docs/strategy.md](docs/strategy.md): why the suite exists and what it will and will not become.
 - [docs/members.md](docs/members.md): each app, what it reads and writes, its tending job, and the shed of installed tools beside the suite.
 - [docs/quality.md](docs/quality.md): how an estate keeps what it ships good when agents write most changes. Laws, the ladder of proof, and what checking costs.
-- [docs/pillars.md](docs/pillars.md): the map. Six pillars, six properties, and three outcomes, with a rating for each and what is missing.
+- [docs/pillars.md](docs/pillars.md): the map. Seven pillars, two of them core, six properties, and three outcomes, with a rating for each and what is missing.
 - [docs/seam.md](docs/seam.md): the line between Orchard and an estate, and the test for joining the suite.
 - [docs/seam-audit.md](docs/seam-audit.md): where the apps cross that line today.
 
