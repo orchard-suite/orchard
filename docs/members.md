@@ -3,10 +3,10 @@
 Nine apps, each in its own repository, each belonging to one pillar and
 doing one tending job first (`pillars.md` holds the six pillars, and
 `garden.md` defines the jobs). Six own a pillar. Three are parts of
-Catalog: Vantage, My Apps, and Muster (decision 0016). redgreen took the
+Catalog: Vantage, My Apps, and Muster (decision 4005). redgreen took the
 name Muster, and forgitten retired into it on 2026-11-23, once Muster
 held each estate's machine reports through Tender (decisions 0017 and
-0025). Its hub, store, page, and CLI are gone from each estate, and its
+5003). Its hub, store, page, and CLI are gone from each estate, and its
 repository is archived. Two more members
 belong to no pillar and stand on the floor: Rootstock (decision 0028) and
 Toolshed (decision 0042). A floor member puts the platform in place, works
@@ -17,15 +17,15 @@ read from each repository's `README.md`, `orrery.yaml`, and manifests on
 the shed on 2026-11-12. Orrery's ground was read on 2026-11-12, after it
 was built. Graft was read on 2026-11-12, at v4.9.4, when it joined
 (decision 0009), and again on 2026-11-18, at v6.2.0, with Trellis at
-v5.5.0, for decision 0010. Vantage was read again on 2026-11-20, at
+v5.5.0, for decision 4002. Vantage was read again on 2026-11-20, at
 v2.27.2, for decision 0014, and Dispatch the same day, at v0.0.40, for
 decision 0015. Graft was read again on 2026-11-20, at v6.6.0, and each
-member's pillar the same day, for decision 0016. Orrery's reports were read on 2026-11-21, at v1.156.3, for
-decision 0019, and its actions engine the same day, at v1.156.4 and
-again at v1.157.0, for decision 0020. Vantage was read again on
-2026-11-22, at v3.1.0, for decision 0022, and each member's store the
-same day, for decision 0023. Muster, forgitten, Tender, and platformkit
-were read on 2026-11-23, for decision 0025. Tender, Orrery, and Trellis
+member's pillar the same day, for decision 4005. Orrery's reports were read on 2026-11-21, at v1.156.3, for
+decision 2002, and its actions engine the same day, at v1.156.4 and
+again at v1.157.0, for decision 6001. Vantage was read again on
+2026-11-22, at v3.1.0, for decision 1001, and each member's store the
+same day, for decision 3001. Muster, forgitten, Tender, and platformkit
+were read on 2026-11-23, for decision 5003. Tender, Orrery, and Trellis
 were read again on 2026-11-24, at v0.0.6, v2.1.1, and v6.0.0, for
 decision 0042. "Reads" lists the APIs an app's `orrery.yaml` says it
 consumes.
@@ -35,18 +35,18 @@ consumes.
 Orrery is the spine and the one board. It is the estate's control plane
 and the console for the people who run the platform, and every other
 member is an engine behind it that keeps a panel of its own (decision
-0029). Most members read it, and several
+1002). Most members read it, and several
 write back to it. Annals is the record: the members that act post to it.
 
 Every member pushes an inventory of what it holds into the catalog
-(decision 0022). The catalog lists those things, and the member stays
+(decision 1001). The catalog lists those things, and the member stays
 their home. Six members write to the catalog today. Vantage's inventory
 is owed (the roadmap).
 
 | App | Reads | Writes to |
 | --- | --- | --- |
 | Orrery | the forge's actions, Annals events, Graft's jobs, Alertmanager | Annals, Dispatch (every action run, as events) |
-| Vantage | Orrery's catalog | none; an inventory of its workspaces is owed (decision 0022) |
+| Vantage | Orrery's catalog | none; an inventory of its workspaces is owed (decision 1001) |
 | My Apps | Orrery's catalog and actions | Orrery (its list of applications) |
 | Tally | Orrery's catalog and the bill in it, Prometheus | Orrery (cost on each namespace), metrics over OTLP |
 | Annals | none | none; everyone posts to it |
@@ -59,14 +59,14 @@ is owed (the roadmap).
 
 ## Where each keeps its data
 
-An estate brings one managed Postgres server (decision 0023). Every
+An estate brings one managed Postgres server (decision 3001). Every
 member that holds data takes its own database and its own role on it, and
 signs in as its pod's workload identity, with no password (decision
-0036), named for the member. No member supports two stores. Every member is on
+3002), named for the member. No member supports two stores. Every member is on
 the shared server today. One sits apart only when the need is real or
-near, and Dispatch is the first expected to (decisions 0037 and 0038).
+near, and Dispatch is the first expected to (decisions 3003 and 3004).
 Everything an estate deploys for a member carries the member's name
-(decision 0039). Four members keep one SQLite file
+(decision 6002). Four members keep one SQLite file
 today and owe a move: each ships a mover that checks every row and leaves
 the file as it was. Read from each repository on 2026-11-22.
 
@@ -80,14 +80,14 @@ the file as it was. Read from each repository on 2026-11-22.
 | Muster | One SQLite file. | v3.1.0 |
 | Tally | One SQLite file for what agents used, only when an estate sets it. | v0.0.45 |
 | My Apps | None. Its list lives in Orrery. | v0.0.47 |
-| Annals | ClickHouse today. It owes a move to Postgres: the events add-only and split by month behind a port of their own, with a columnar store as a later step on a measurement (decision 0040). | v1.0.2 |
+| Annals | ClickHouse today. It owes a move to Postgres: the events add-only and split by month behind a port of their own, with a columnar store as a later step on a measurement (decision 3005). | v1.0.2 |
 
 ## Each app
 
 ### Orrery: Catalog, and the control plane
 
 Orrery owns Catalog. It is also the estate's control plane and its
-console, which is no pillar (decision 0029). The control plane is the one
+console, which is no pillar (decision 1002). The control plane is the one
 service that holds the state of an estate's things and carries out
 changes to them. The console is where the people who run the platform see
 everything they own and act on it, as lists and actions. A member's
@@ -97,7 +97,7 @@ approval system. No business logic lives in Orrery.
 
 Its server is TypeScript on Node, read at v2.1.1 on 2026-11-23. It is
 owed in Go, in one release that changes no behavior, after a freeze; its
-web app stays TypeScript (decision 0035).
+web app stays TypeScript (decision 5005).
 
 One graph of everything an estate owns and runs, with live status on top.
 Blueprints (typed schemas for one kind of thing) define every list, page,
@@ -122,19 +122,19 @@ from and which have fallen behind, forecasts which numbers are about to
 leave their budgets, and runs one action on several beds at once. A
 switch shows all of it as tables under plain names. The hub ships no
 ground of its own. An admin opens the view to nobody, to the people named,
-or to everyone, and a new hub opens it to nobody (decision 0008).
+or to everyone, and a new hub opens it to nobody (decision 4001).
 
 It also keeps reports. A team defines a report once and publishes it
 again and again, and each published copy, an edition, is kept. Every data
 set is read as the report's owner, so an edition is the owner's view of
 the data, frozen on the day it was published. A publish tells the
 report's recipients through Dispatch. At v1.156.3 whoever may see a
-report's home sees the report. Decision 0019 says a report is private to
+report's home sees the report. Decision 2002 says a report is private to
 its owner and admins, and the owner shares it with people, a team, or an
 audience, as a saved query is shared. Naming a recipient is a share. That
 is owed (the roadmap).
 
-Decision 0020 says work that waits for a person, or runs long, is never
+Decision 6001 says work that waits for a person, or runs long, is never
 held by the thing that asked. Since v1.157.0 the engine can start one job
 for each run: a starter the estate runs starts one container the moment
 the run is approved, and the job holds its own identity. A run is given
@@ -144,7 +144,7 @@ ran out. Each estate still owes its own starter (the roadmap).
 ### Vantage: Catalog, its picture
 
 Vantage is an estate's source of truth for intent, hierarchy, and
-exceptions (decision 0049). It holds the estate's decision records, its
+exceptions (decision 4008). It holds the estate's decision records, its
 standards (one line per position, built for each scope and published in
 editions), the procedures that explain them, the rule packs that check
 them, and the exceptions to them. It reads the organization's tree from
@@ -154,7 +154,7 @@ yet at v4.6.0 (the roadmap).
 
 Its server is TypeScript on Bun, read at v4.3.0 on 2026-11-23. It is owed
 in Go, in one release that changes no behavior, after a freeze; its web
-app stays TypeScript (decision 0035).
+app stays TypeScript (decision 5005).
 
 Diagrams written in YAML, laid out and scored by the engine, rendered to
 SVG, PNG, or interactive HTML. A hub keeps every version, merges edits, and
@@ -176,7 +176,7 @@ files it never draws, a repository points at its document with one small
 file, and an onboarding skill offers to write a project's first set. No
 other skill reads that pointer yet (the roadmap).
 
-Decision 0022 says a hub pushes an inventory of its workspaces into the
+Decision 1001 says a hub pushes an inventory of its workspaces into the
 catalog: the members of each, how many documents and diagrams it holds,
 and the storage it uses. A person sees there only the workspaces they own
 or belong to. At v3.1.0 a hub reads the catalog and writes nothing to it.
@@ -206,7 +206,7 @@ back. A shipper on each machine already posts every agent conversation's
 tokens and the work it belongs to. Work a system starts on a model, a
 stage, a job, or a schedule, is owed a second intake: one record per run,
 by operation and unit, from which Tally watches the five shapes that waste
-it (decision 0044).
+it (decision 4007).
 
 ### Annals: Record
 
@@ -222,7 +222,7 @@ It does not count where an agent got stuck.
 ### Trellis: Rules
 
 One judge over an estate's standards. Vantage defines the standards, and
-Trellis judges whether they hold (decision 0049). Its packs are the rules
+Trellis judges whether they hold (decision 4008). Its packs are the rules
 that check a standard, kept as data: security, telemetry, build,
 interfaces, catalog, access, alerts, delivery, and one that judges a Graft
 program today. Today it reads them from its own repository; it owes
@@ -230,12 +230,12 @@ reading them from a Vantage edition, and taking exceptions from Vantage
 (the roadmap). It ships them as built-in sets, the way a cloud policy
 engine ships built-in initiatives: a new estate starts with the baseline
 set adopted, and adopts, configures, or disables any set in its own
-standard (decision 0049).
+standard (decision 4008).
 The same packs run on the board, by hand, and in a repository's pipeline, so
 they cannot disagree. Every rule ships a failing, a passing, and a no-data
 fixture. Waivers carry a reason, an owner, and an end date. The
 access pack judges access grants and how old each application's access
-review is (decision 0005).
+review is (decision 2001).
 
 Tending job: stake and fence. A rule on the board shows; the same rule in
 a pipeline stops. Its build pack checks that a repository has an
@@ -243,20 +243,20 @@ instruction file, which is the first check of its soil.
 
 It reads Azure Policy as a source that brings its own rules: Azure's
 definitions, verdicts, and exemptions pass through, and Trellis never
-judges an Azure resource again (decision 0012). One engine per property.
+judges an Azure resource again (decision 4004). One engine per property.
 An exemption is now made from a Vantage exception, and counts only with
-one behind it (decision 0049).
+one behind it (decision 4008).
 
-It is the suite's one judge (decision 0010). Its packs are an estate's
+It is the suite's one judge (decision 4002). Its packs are an estate's
 laws. It does not yet read a repository's own laws. It also judges the
 map's six properties, and its rules reach one of them today (decisions
-0016 and 0030). Each of its 99 rules still names one of the old pillars.
+4005 and 4006). Each of its 99 rules still names one of the old pillars.
 
 ### Muster: Catalog, where the code is
 
 Muster answers where the code is and what state it is in, on a forge or
 on a machine. It was redgreen, and took the name at v3.0.0 (decisions 0017
-and 0025). Read on 2026-11-23, at v3.1.0, in `orchard-suite/muster`.
+and 5003). Read on 2026-11-23, at v3.1.0, in `orchard-suite/muster`.
 
 It reads every repository, pipeline, deployment, and
 issue on GitHub, GitLab, and Azure DevOps into Orrery, and has no pages of
@@ -265,7 +265,7 @@ and a repository that runs nothing stays quiet) and the four DORA measures
 (deploy frequency, lead time, change failure rate, time to restore) are
 calculated fields on the blueprints it offers, so Orrery is the board.
 Restores come from Dispatch's incidents in the catalog. Decision 0004.
-A fifth measure, rework rate, is owed (decision 0016).
+A fifth measure, rework rate, is owed (decision 4005).
 
 It takes each machine's report through Tender, the suite's device agent,
 at `/tender/v1/readers/muster`, behind the `device` door from platformkit.
@@ -279,7 +279,7 @@ that hold work its forge has not seen. Muster's reader is the module
 `github.com/orchard-suite/muster/reader`, at `reader/v1.0.0`, and Tender
 carries it.
 
-It takes only the `device` package from platformkit (decision 0025).
+It takes only the `device` package from platformkit (decision 5003).
 Otherwise it stays off the kit (decision 0004).
 
 Tending job: sense, and prune. It writes each pipeline's median duration, 30-day
@@ -350,8 +350,8 @@ decision 0009 removed are gone.
 
 Tending job: fix. It is the hands that change a bed. It changes one
 repository per request. It is also where the suite already bounds a
-change: by size, by path, by plan, and by an undo (decision 0010), and
-where a request is weighed before anything is built (decision 0011).
+change: by size, by path, by plan, and by an undo (decision 4002), and
+where a request is weighed before anything is built (decision 4003).
 
 ## Rootstock: the floor
 
@@ -393,13 +393,13 @@ environments (decision 0042). It answers one question: what may run on
 an estate's machines, where it came from, and whether it is on every
 machine that should have it. It answers no pillar, and nothing requires
 it. It is owed: `orchard-suite/toolshed` does not exist yet, and its hub
-is built to the suite architecture from its first commit (decision 0041).
+is built to the suite architecture from its first commit (decision 1007).
 
 - **The shed file** is the estate's desired state. One reviewed file in
   the estate's own repository lists every admitted tool (plugin, skill,
   MCP server, CLI, image) with its source, its signer or forge project,
   and its version, and lists the packs. It replaces the recipes list of
-  decision 0006.
+  decision 5002.
 - **A pack** is a signed lockfile of exact tools at exact digests for one
   kind of machine: a person's laptop, a headless agent host, a pipeline
   sandbox. It has a version and rings, a canary ring and then everyone. A
@@ -432,10 +432,10 @@ holds to tend an estate with the suite (decision 0042).
 | Rudder | A desktop app that maps, scores, and tunes a repository's agent instruction files. | Soil: it ranks what to delete as well as what to add. |
 | release-damnit | A release tool and a landing command with a commit check. | Fence and loop: every change lands the same way. |
 | Observatory | A local dashboard of events from agents as they work. | Sense: one machine's agents, live. |
-| platformkit | A library the members build on. Since v3.1.0 it holds the `device` package, the door a member puts in front of a device's posts (decision 0025). Every member, shed tool, and estate app takes it as a public module by version, and nothing vendors it ([[decision:ORC-5001]]). | Seed stock: the door, telemetry, and Annals client a new service starts with. |
+| platformkit | A library the members build on. Since v3.1.0 it holds the `device` package, the door a member puts in front of a device's posts (decision 5003). Every member, shed tool, and estate app takes it as a public module by version, and nothing vendors it ([[decision:ORC-5001]]). | Seed stock: the door, telemetry, and Annals client a new service starts with. |
 | hedge | A CLI and an agent hook that keep an estate's names out of every repository that may not hold them, on every write, commit, push, and post, against a register the estate keeps private (decision 0024). | Fence: the seam itself, in the path of work. |
-| pipelines | The pipeline kit, in `orchard-suite/pipelines`, owed. Reusable workflows per kind of bed, and one action that signs, attests, verifies, and tags an image. Every member calls it at a major version, and an estate may (decision 0026). | Fence and loop: every pipeline has one shape, and a release waits only for what its class needs. |
-| Tender | The suite's one device agent, in `orchard-suite/tender`, built, at v0.0.6 (read 2026-11-24). It runs as the person and carries Muster's reader, and owes an agent-tooling reader that reports to Toolshed (decision 0042). Each reader stays off until the estate gives it an address. It asks a member before it posts, signs each post with the device certificate's key from the operating system's store, saves its place, and sends again after a failure. An estate with no device management enrolls a machine by sign-in with a step-ca authority, and Tender renews only a certificate it enrolled. It never updates itself (decisions 0018 and 0025). | Sense: what exists only on a machine. |
+| pipelines | The pipeline kit, in `orchard-suite/pipelines`, owed. Reusable workflows per kind of bed, and one action that signs, attests, verifies, and tags an image. Every member calls it at a major version, and an estate may (decision 5004). | Fence and loop: every pipeline has one shape, and a release waits only for what its class needs. |
+| Tender | The suite's one device agent, in `orchard-suite/tender`, built, at v0.0.6 (read 2026-11-24). It runs as the person and carries Muster's reader, and owes an agent-tooling reader that reports to Toolshed (decision 0042). Each reader stays off until the estate gives it an address. It asks a member before it posts, signs each post with the device certificate's key from the operating system's store, saves its place, and sends again after a failure. An estate with no device management enrolls a machine by sign-in with a step-ca authority, and Tender renews only a certificate it enrolled. It never updates itself (decisions 0018 and 5003). | Sense: what exists only on a machine. |
 
 ## What is not a member
 
@@ -449,7 +449,7 @@ above; the shed is a list of tending tools, not a kind of membership.
 | hedge | A guard installed on a machine, not a service. In the shed. |
 | release-damnit | A release tool for one way of working, not a platform service. In the shed. |
 | climb, Rudder, Observatory | Installed tools, not services. In the shed. |
-| Tender | An agent installed on a machine, not a service. In the shed (decisions 0018 and 0025). |
+| Tender | An agent installed on a machine, not a service. In the shed (decisions 0018 and 5003). |
 | Ion | An agent runtime. Graft drives it today. An estate brings its own runtime (decision 0009). |
 | SlopDrop | A personal hand-off box. |
 | cli-proxmox | A CLI for one hypervisor. |

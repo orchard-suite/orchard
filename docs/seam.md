@@ -15,15 +15,15 @@ docs, and fictional examples.
 
 **An estate** holds everything that is true only of it: its hosts and
 domains, its deploy overlays, its configuration and secrets, its database
-server (decision 0023), its message broker (decision 0032), its catalog model and pushers, its code analyzers (decision 0014), its chat bots
+server (decision 3001), its message broker (decision 1004), its catalog model and pushers, its code analyzers (decision 0014), its chat bots
 (decision 0015), its device certificates, from its device management or a
 small certificate authority of its own, and the list of addresses its
-device agent posts to (decisions 0018 and 0025), its Trellis packs and waivers, its classes, its lanes
+device agent posts to (decisions 0018 and 5003), its Trellis packs and waivers, its classes, its lanes
 and protected paths, each bed's own laws, its telemetry declarations, its
 dashboards and alert rules, and its own apps. An app an estate builds
 for its business keeps its own pages and its own rules, and reaches
 Orrery through Orrery's API, as an inventory, an action runner, and an
-approval system. No business logic lives in Orrery (decision 0029).
+approval system. No business logic lives in Orrery (decision 1002).
 
 ## What crosses the seam
 
@@ -31,15 +31,15 @@ Only these. Each is a contract the product owns and documents.
 
 | Crossing | Direction | Example |
 | --- | --- | --- |
-| Configuration | estate to product | environment variables and a config file, with no estate defaults baked in. The address of the estate's database server arrives this way (decision 0023) |
+| Configuration | estate to product | environment variables and a config file, with no estate defaults baked in. The address of the estate's database server arrives this way (decision 3001) |
 | Secrets | estate to product | read from the estate's vault by the estate's own secret operator |
 | Sign-in | estate to product | the estate's front door says who the person is in `X-Forwarded-Email` and `X-Forwarded-Groups`; the product gives roles. A machine's agent is named by a certificate the estate issues (decision 0018) |
 | Telemetry | product to estate | OTLP to the estate's collector, JSON logs to stdout |
 | Self-description | product to estate | the product's `orrery.yaml`, read by the estate's Orrery |
 | Audit | product to estate | events in Annals's shape, for the estate's Annals |
-| Events | product to estate | what a member did, its notices, its usage, and its changes, on the message broker the estate brings, once two members are joined (decision 0032) |
+| Events | product to estate | what a member did, its notices, its usage, and its changes, on the message broker the estate brings, once two members are joined (decision 1004) |
 | Alerts | estate to product | Alertmanager's webhook, into Dispatch |
-| Estate events | estate to product | the estate's own change events (its cloud's event service, its forge's webhooks, its cluster's watch), on the broker it brings, in the CloudEvents envelope; work starts from them and a clock is only the net (decision 0050) |
+| Estate events | estate to product | the estate's own change events (its cloud's event service, its forge's webhooks, its cluster's watch), on the broker it brings, in the CloudEvents envelope; work starts from them and a clock is only the net (decision 1008) |
 | The forge | product to estate | through an adapter per forge, never one forge's API in the core |
 | The agent runtime | product to estate | through an adapter per runtime; the estate brings the runtime and the suite builds none (decision 0009) |
 
@@ -52,7 +52,7 @@ inside its tables between organizations.
 Inside an estate the unit is a scope: the owner of a thing, a team named
 by its record in the catalog. Each thing a member holds may name an
 owner, and a token may be narrowed to the things of the owners it names.
-Empty means the whole estate (decision 0031).
+Empty means the whole estate (decision 1003).
 
 ## Rules
 
@@ -67,16 +67,16 @@ Empty means the whole estate (decision 0031).
    reads them through adapters. It runs no database server either. An
    estate brings one managed Postgres server, and every member that holds
    data takes its own database and role on it, named for the member
-   (decision 0036). A member takes a managed server apart from the shared
+   (decision 3002). A member takes a managed server apart from the shared
    one only by a decision that names one of two reasons, and only when
-   the need is real or near (decisions 0037 and 0038). Everything an
+   the need is real or near (decisions 3003 and 3004). Everything an
    estate deploys for a member carries the member's name, and an estate
    moves onto new names and stores in one staged cutover, with the old
-   left untouched as the way back (decision 0039). No member brings a
+   left untouched as the way back (decision 6002). No member brings a
    database cluster of its own as the way it is meant to run (decision
-   0023). It runs no message broker. An estate brings one once it joins
+   3001). It runs no message broker. An estate brings one once it joins
    two members, and every event travels on it; a member alone needs none
-   (decision 0032). The suite offers two members on the floor itself. Rootstock deploys
+   (decision 1004). The suite offers two members on the floor itself. Rootstock deploys
    and runs environments, on the forge, pipelines, builders, and
    registries the estate brings, and an estate may bring its own deploy
    tool in its place (decision 0028). Toolshed delivers tools to
@@ -121,7 +121,7 @@ A member passes all four:
 3. **It is estate-neutral.** It runs in any estate with configuration
    alone, by the rules above.
 4. **It is built the suite's way.** It is built to the suite
-   architecture (decision 0041), and Trellis's verdict on the shared
+   architecture (decision 1007), and Trellis's verdict on the shared
    contract tests is the proof. That covers telemetry from its first
    release, describing itself to Orrery, posting what it does to Annals,
    and signing people in through the estate's front door, each joined

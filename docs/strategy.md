@@ -51,18 +51,18 @@ at work.
 - **One map.** Six pillars, each with one owner among the members. Six
   properties every pillar must have. Three outcomes the whole is for:
   flow, quality, and adoption. `pillars.md` rates each one (decisions
-  0016 and 0030). The six pillars are the six questions this page opens with.
+  4005 and 4006). The six pillars are the six questions this page opens with.
 - **Joined by the catalog.** Orrery is the spine. The others read it,
   describe themselves to it, and write their findings back to it. Each
   pushes an inventory of what it holds, and stays the home of its own
-  records (decision 0022).
+  records (decision 1001).
 - **One control plane, and one console.** Orrery is the estate's control
   plane: the one service that holds the state of an estate's things and
   carries out changes to them. It holds the model, the inventory, the
   actions, the approvals, the schedules, the reports, and the scores, in
   one product. It is also the console: the desk where the people who run
   the platform see everything they own and act on it. In the console
-  everything is a list or an action (decision 0029).
+  everything is a list or an action (decision 1002).
 - **Engines, each with a panel of its own.** A member feeds Orrery what
   it holds and offers what it can do as actions there. It also keeps its
   own pages, shaped for its purpose: its data, its settings, its
@@ -70,51 +70,51 @@ at work.
   cannot give. The console's action and the member's panel call the
   member's one API. A member whose whole job fits its API may have no
   panel. Where a member has pages, they are as good as Orrery's, and
-  members are the same wherever they can be (decision 0029).
+  members are the same wherever they can be (decision 1002).
 - **Built for the agent first.** An agent reaches a member through its
   agent tools and its API, and a person through its pages. So every
   member is held to the cost of a local disk: finding one fact, reading
   one part, or changing one sentence costs an agent no more than the same
   task on a file. A write sends what changed, a read answers what was
   asked, and a benchmark in each member's own check holds the bar. This
-  is the map's sixth property (decision 0030).
+  is the map's sixth property (decision 4006).
 - **One core.** Every member's server is Go. Orrery and Vantage are
   TypeScript today, and each is re-cored in Go in one release that
   changes no behavior, after a freeze. Their web apps stay TypeScript
-  (decision 0035).
+  (decision 5005).
 - **One gate.** Sign-in, sessions, tokens, and the agent door's sign-in
   server are written once, in Go, in the kit, and every member links
-  them in (decisions 0033 and 0035).
+  them in (decisions 1005 and 5005).
 - **Sized for a company, not a household.** Every member is designed and
   measured for one estate of 150 people after ten years: a million things
   in the catalog, a hundred changes a second, a hundred thousand diagrams.
   A small estate is where a change is tried, never proof that a member is
   fast enough. Every kind of record says whether it levels off or grows
-  without end, and if it grows, how it ages out (decision 0034).
+  without end, and if it grows, how it ages out (decision 1006).
 - **Actions, not a command line.** A command line that only calls a
   member's API is a tool for operations, and the console's actions take
   its place. A command line stays where it works on the files of the
   machine it runs on, or runs inside a container for a pipeline or a
-  workflow (decision 0029).
+  workflow (decision 1002).
 - **One board.** Orrery shows the whole estate as a sky, and each
   repository as a bed on the ground beneath it. The ground is in preview:
   an admin opens it to the people named. The suite builds no master app
   that replaces its members' own pages. A gardener acts on many beds
   through Orrery's actions, and opens a member for what only its panel
-  shows (decision 0029).
+  shows (decision 1002).
 - **One pair of hands.** Graft takes a request to change a repository
   that exists. An agent makes the change, and Graft lands it and watches
   it ship (decision 0009).
 - **No seeds of its own.** A template a new repository starts from carries
   an estate's own choices. It stays with the estate, and an Orrery action
-  plants it (decision 0008).
+  plants it (decision 4001).
 - **Recorded in one Annals.** What a person or an agent does through any
   member lands in Annals, in one shape.
 - **One judge, and bounds before opinions.** Trellis judges an estate's
   laws and each bed's laws. A change is held by its size, the paths it may
   touch, the laws it must keep, and how it is undone. A request is
   evidence, not a specification, and an owner judges a plan, never the
-  code. `quality.md` is the framework (decisions 0010 and 0011).
+  code. `quality.md` is the framework (decisions 4002 and 4003).
 - **Estate-neutral.** The same build runs in any estate. The seam in
   `seam.md` keeps each estate's facts on its own side.
 
@@ -139,26 +139,26 @@ at work.
 - **Not a database server.** Bring one managed Postgres server. Every
   member that holds data takes a database and a role on it, so any member
   can run two copies and roll with no downtime. No member supports two
-  stores (decisions 0023 and 0036). The server is shared, and a member
+  stores (decisions 3001 and 3002). The server is shared, and a member
   takes a managed server apart only for one of two reasons: it must stay
   up when the shared server is down or busy, or its load, measured at the
-  scale target, starves the others (decision 0037). A server apart is a
+  scale target, starves the others (decision 3003). A server apart is a
   step on the scaling path: no estate brings one until the need is real
   or near, and Dispatch, the first expected to take it, stays on the
-  shared server until then (decision 0038).
+  shared server until then (decision 3004).
 - **One name, and one staged move.** Everything an estate deploys for a
   member carries the member's name, and an older name is retired. An
   estate builds the new beside the old, moves data by a checked copy,
   and cuts over in one short planned window. The old stays untouched as
-  the way back (decision 0039).
+  the way back (decision 6002).
 - **Not a message broker.** Bring one once two members are joined:
   Azure Service Bus, RabbitMQ, or their equal. Every event travels on
   it. A member saves each event with the change that made it, so none is
   lost, and a new reader subscribes with no change to a sender. Orrery
-  holds what is, and the broker carries what happened (decision 0032).
+  holds what is, and the broker carries what happened (decision 1004).
 - **Not a home for several organizations.** The estate is the tenant.
   One copy serves one organization. Inside it, a scope is the owner of a
-  thing, the same in every member (decision 0031).
+  thing, the same in every member (decision 1003).
 - **Not an agent runtime.** Bring the runtime. The suite senses what
   agents do and shapes the beds they work in. Graft starts agent
   sessions on the runtime an estate brings, and the suite builds none
@@ -166,13 +166,13 @@ at work.
 - **Not a test runner or a code reviewer.** Bring your test tools and
   your break-it engine. Bring the tool that stands up an environment, or
   take Rootstock's (decision 0028). The suite judges what they report. No member gates a change
-  on a person's or a model's opinion of the code (decision 0010).
+  on a person's or a model's opinion of the code (decision 4002).
 - **Not a controller.** Nothing in the suite changes a repository on its
   own. A person or an agent starts an action, and the action is recorded.
   Graft is held to this: it changes a repository only when asked.
 - **Not a server on a person's machine.** What a member reads from a
   machine comes through one small device agent, Tender, which only
-  reports (decisions 0018 and 0025).
+  reports (decisions 0018 and 5003).
 - **Not a home for personal apps.** An app for one person or one family is
   a private app that may use the suite. It never joins it.
 - **Not a portal for a business, and not an ERP.** An app an estate
@@ -180,7 +180,7 @@ at work.
   Orrery as an API, an inventory, an action runner, and an approval
   system. No business logic lives in Orrery: it knows that a thing
   exists, who owns it, how it is doing, and what may be done to it
-  (decision 0029).
+  (decision 1002).
 
 ## How it grows
 
@@ -188,7 +188,7 @@ at work.
    is the one number nothing measures: how often a grower gets stuck. A
    gardener cannot tend what it cannot see. A new, small source will count
    it and write it to the catalog, with no pages of its own (decision
-   0008). It is not built.
+   4001). It is not built.
 2. **Give every bed its three numbers.** Loop, friction, and weeds, as
    plain fields on each repository in the catalog, with the five delivery
    measures as the guard.
@@ -198,18 +198,18 @@ at work.
 4. **Give every bed its laws.** Trellis reads which of a repository's
    checks are laws and judges them. Each bed carries what its checking
    costs and what each check caught, so a check that guards nothing is
-   pruned (decision 0010). None of this is built.
+   pruned (decision 4002). None of this is built.
 5. **Close the gaps on the map.** `pillars.md` rates each pillar, each
    property, and each outcome. The weakest go next. The members move to
    the map's names first, because that is only renaming and it gets dearer
-   the longer it waits (decision 0016).
+   the longer it waits (decision 4005).
 6. **Close the seam.** `seam-audit.md` lists where members still name an
    estate or depend on one forge. Each row is fixed in the member's own
    repository.
 7. **One shape.** Once the kit gives every member's API the same shape,
    build generated SDKs over all of them, and one docs site. No command
    line is built over them: the console's actions do that job (decision
-   0029).
+   1002).
 8. **Admit carefully.** A new member passes the test in `seam.md` and
    joins by a decision record. Most tools will not.
 
@@ -223,35 +223,35 @@ the registry: how a decision travels there is each estate's own choice
 
 ## What is still open
 
-Decision 0007 left three questions open. Decision 0008 settles them: a
+Decision 0007 left three questions open. Decision 4001 settles them: a
 new, small source counts friction, seeds stay with each estate, and the
-suite maps a thirteenth pillar, growing conditions. Decision 0016 has
+suite maps a thirteenth pillar, growing conditions. Decision 4005 has
 since made growing conditions part of two outcomes.
 
-Decision 0008 leaves three smaller ones: the friction source's name and
+Decision 4001 leaves three smaller ones: the friction source's name and
 whether its reader shares code with Tally's, which weeds get a source, and
 when an estate opens the ground view to everyone.
 
 Decision 0009 admitted Graft and left one: whether a request to Graft
-changes the rating of platform as a product. Decision 0011 settles it. The
+changes the rating of platform as a product. Decision 4003 settles it. The
 suite now listens, and the pillar stays Partial because two apps share its
 question.
 
-Decision 0010 sets how the suite answers for quality and leaves four:
+Decision 4002 sets how the suite answers for quality and leaves four:
 where the one list of law paths lives, how a pipeline knows an owner
 changed a law, whether break-it runs get a source, and whether the
 guide takes the pillar.
 
-Decision 0011 puts the start of quality at the request and leaves two: how
+Decision 4003 puts the start of quality at the request and leaves two: how
 a request is weighed outside the desk, and which checks a desk's gate can
 run.
 
-Decision 0016 replaces the fourteen pillars with six pillars, five
-properties, and three outcomes. It closes one question of decision 0010:
+Decision 4005 replaces the fourteen pillars with six pillars, five
+properties, and three outcomes. It closes one question of decision 4002:
 the guide took the pillar on quality, and the suite has since made
 quality an outcome. It left four: whether the guide takes the new
 map, how adoption is counted, whether Health gets a proof of recovery,
-and whether Change keeps two apps. Decision 0020 has closed the last.
+and whether Change keeps two apps. Decision 6001 has closed the last.
 
 Decision 0017 merges redgreen and forgitten into one member, Muster. The
 suite has ten members until forgitten retires, and nine after. It left
@@ -265,35 +265,35 @@ certificate that is, where the member's door lives, how Tender updates,
 whether friction is one of its readers, and what an estate with no device
 management does.
 
-Decision 0025 settles all of these but friction. Muster is redgreen's
+Decision 5003 settles all of these but friction. Muster is redgreen's
 public repository, renamed. It takes only the kit's `device` door. A
 report keeps counts and branch names, never file names. Tender runs as
 the person, with a certificate that names the person and the device. It
 never updates itself. An estate with no device management runs a small
 certificate authority of its own, and each machine enrolls once by
-sign-in. Where friction is sensed stays open (decision 0008).
+sign-in. Where friction is sensed stays open (decision 4001).
 
-Decision 0020 says work that waits for a person, or runs long, is never
+Decision 6001 says work that waits for a person, or runs long, is never
 held by the thing that asked. The actions engine starts one job for each
 run, and a run lives by heartbeat. It closes the question on Change: two
 apps, with a fixed line between them. It leaves two: how a run that ends
 wakes the agent that asked, and where a conversation with an agent lives
 when no machine is awake.
 
-Decision 0022 says every member pushes an inventory of what it holds
+Decision 1001 says every member pushes an inventory of what it holds
 into the catalog, and the catalog is never the store for a member's own
 records. It leaves two: which members still owe an inventory, and whether
 Vantage holds work items.
 
-Decision 0023 says an estate brings one managed Postgres server, and
+Decision 3001 says an estate brings one managed Postgres server, and
 each member that needs Postgres takes a database on it. The server is one
 instance with backups, until what an estate builds on the suite becomes
 mission critical. It left three: whether Vantage's work tracking takes
 a second database, what an estate brings for a store that is neither
 Postgres nor SQLite, and which backup proves no data is lost. Decisions
-0036 and 0040 have closed the second: no member keeps such a store.
+3002 and 3005 have closed the second: no member keeps such a store.
 
-Decision 0029 says what Orrery is: the estate's control plane, and the
+Decision 1002 says what Orrery is: the estate's control plane, and the
 console for the people who run the platform. A member is an engine behind
 it and keeps a panel of its own. A business builds its own portal on top,
 and no business logic lives in Orrery. The console takes the place of a
@@ -302,65 +302,65 @@ member's pages is and who judges it, whether Change stays Partial, which
 members offer their lists and actions through Orrery today, which
 members have no panel, and which commands of which members go.
 
-Decision 0030 adds a sixth property, built for the agent first, and holds
+Decision 4006 adds a sixth property, built for the agent first, and holds
 every member to the cost of a local disk. It leaves three: where each
 member stands against the bar, how a script signs in with no command
 line, and what each member's tasks are.
 
-Decision 0031 says the estate is the tenant, and that a scope inside it
+Decision 1003 says the estate is the tenant, and that a scope inside it
 is one shared owner. It leaves three: whether one view across estates is
 ever wanted, how a member alone names an owner, and the claim's shape in
 a token.
 
-Decision 0032 has an estate bring a message broker once two members are
+Decision 1004 has an estate bring a message broker once two members are
 joined, and puts every event on it. The crossings of the seam become ten.
 It leaves six: the wire, the envelope, the topics and who owns each,
 order, an estate's own senders, and sign-in to a broker with no workload
 identity.
 
-Decision 0050 brings the estate's own change events onto that broker:
+Decision 1008 brings the estate's own change events onto that broker:
 its cloud's event service, its forge's webhooks, and its cluster's watch.
 Every event takes the CloudEvents 1.0 envelope, which settles two of
-0032's six: the envelope and an estate's own senders. An event is a hint,
+1004's six: the envelope and an estate's own senders. An event is a hint,
 and a receiver reads the source again before it acts. Work starts from
 events: Orrery's actions and sources, Rootstock's drift and applies, and
 Trellis's judging. A clock is only the net, and a net that finds what no
 event said is a finding. The crossings of the seam become eleven.
 
-Decision 0033 writes the gate once, in Go. Decision 0035 has since made
+Decision 1005 writes the gate once, in Go. Decision 5005 has since made
 it a library every member links, and closed its question on a Go core.
 It leaves one: where the gate keeps tokens and sessions.
 
-Decision 0034 sets the scale target: one estate of 150 people after ten
+Decision 1006 sets the scale target: one estate of 150 people after ten
 years. It leaves three: each member's speed limits at the target, how
 often the benchmark runs, and the target for the record and for usage.
 
-Decision 0035 re-cores Orrery and Vantage in Go, each in one release that
+Decision 5005 re-cores Orrery and Vantage in Go, each in one release that
 changes no behavior, after a freeze, with the store left as it is. It
 leaves four: which hub goes first, how exact the same picture is for
 Vantage, how long a freeze may last, and whether shared code could ship
 to the browser as WebAssembly.
 
-Decision 0036 puts every member's data in Postgres, and has each member
-on SQLite move once. Decision 0040 has since settled Annals's store. It
+Decision 3002 puts every member's data in Postgres, and has each member
+on SQLite move once. Decision 3005 has since settled Annals's store. It
 leaves two: whether Trellis
 holds data when its history is off, and a member run alone on a laptop.
 
-Decision 0037 keeps one shared Postgres server for an estate, and lets a
-member sit apart only for one of two named reasons. Decision 0038 has
+Decision 3003 keeps one shared Postgres server for an estate, and lets a
+member sit apart only for one of two named reasons. Decision 3004 has
 since said no estate takes that step until the need is real or near, so
-Dispatch stays on the shared server. Decision 0037 leaves four: whether Orrery or Annals sits apart, whether members connect
+Dispatch stays on the shared server. Decision 3003 leaves four: whether Orrery or Annals sits apart, whether members connect
 through a pooler, when the shared server gets a second instance, and what
 apart means in an estate with one cluster and no cloud.
 
-Decision 0038 leaves two: the numbers that mean near, and who watches.
+Decision 3004 leaves two: the numbers that mean near, and who watches.
 
-Decision 0039 has an estate deploy every member under the member's name
+Decision 6002 has an estate deploy every member under the member's name
 and move in one staged cutover. It leaves two: how long the old stays
 after a cutover, and whether a mover can run while the member still
 writes.
 
-Decision 0040 has Annals keep the record in Postgres, with the events
+Decision 3005 has Annals keep the record in Postgres, with the events
 add-only and split by month behind a port of their own. A columnar store
 is a later step, taken on a measurement at the scale target. It leaves
 two: how many events the scale target really means, and how long an event
@@ -379,7 +379,7 @@ and prescribes nothing, so the suite builds to no standard of the book's.
 The suite names no estate, so it cites neither estate's own platform
 standard. It leans on these principles of the guide. The list was read at
 version 2026.1107.1839, when the guide was still called the standard, and
-the three principles decision 0016 chooses against were read again at
+the three principles decision 4005 chooses against were read again at
 version 2026.1120.2003:
 
 - `map-the-platform-as-pillars-each-one-a-question-it-must-answ`
@@ -399,7 +399,7 @@ version 2026.1120.2003:
 - `respond-to-an-escape-by-turning-it-off-then-closing-exactly-`
 
 It chooses against seven principles. Decision 0007 says why for the first two,
-decision 0016 for the third, fifth, and sixth, decision 0009 for the
+decision 4005 for the third, fifth, and sixth, decision 0009 for the
 fourth, and decision 0018 for the seventh:
 
 - `admit-a-tool-to-the-platform-suite-only-by-a-written-members`: the
@@ -411,8 +411,8 @@ fourth, and decision 0018 for the seventh:
   test of one app per pillar. The other eight are properties and outcomes.
 - `keep-every-estate-on-its-own-side-of-a-seam-with-a-closed-li`: the
   principle closes the list of crossings at eight. The suite adds a ninth, the
-  agent runtime, a tenth, events on a message broker (decision 0032), and an
-  eleventh, the estate's own events on that broker (decision 0050).
+  agent runtime, a tenth, events on a message broker (decision 1004), and an
+  eleventh, the estate's own events on that broker (decision 1008).
 - `the-platform-s-own-software-is-a-pillar-kit-engine-interface`: the
   principle treats the kit, the engine, and interfaces as three pillars. Here
   the kit and the interface shape are properties, and the engine is a
@@ -428,19 +428,19 @@ ladder of remedies, a loop budget per repository, counting friction or
 weeds, or a class of installed tending tools. Decision 0007 sets those
 here. Nor has it a principle for a pillar on growing conditions, for templates
 that stay with an estate, or for opening a new view to named people first.
-Decision 0008 sets those. Nor has it a principle for the one question that
+Decision 4001 sets those. Nor has it a principle for the one question that
 tells a member from an estate's own app, for a member that changes
 repositories, or for an agent runtime reached through an adapter.
 Decision 0009 sets those. Nor has it a principle that defines quality, for
 bounding a change in place of inspecting it, for a law as a check its
 grower cannot change, for a ladder of proof, for counting what checking
-costs and catches, or for a pillar on quality. Decision 0010 sets those.
+costs and catches, or for a pillar on quality. Decision 4002 sets those.
 Nor has it a principle that a request is evidence and not a specification, that
 an owner judges a brief of the plan and never the code, or for the kind of
-a change as a dial beside its class. Decision 0011 sets those. Nor has it
+a change as a dial beside its class. Decision 4003 sets those. Nor has it
 a principle that sorts what a platform must answer into pillars, properties,
 and outcomes, for a member that names one pillar, or for adoption as an
-outcome. Decision 0016 sets those. Nor has it a principle for a signed pack
+outcome. Decision 4005 sets those. Nor has it a principle for a signed pack
 of tools per kind of machine, rolled out in rings through the estate's
 own installers, or for a test that tells which of the platform's own
 software stands under the pillars. Decisions 0042 and 0043 set those. The guide has since taken the

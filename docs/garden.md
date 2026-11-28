@@ -2,9 +2,9 @@
 
 This page is the suite's framework. It says what a platform is, what
 tending it means, and which jobs a gardener needs tools for. Decision 0007
-adopted it. Decision 0008 settled where friction is counted and where
-seeds live. Decision 0010 added the words for quality; `quality.md` is
-that framework. Decision 0016 set the map this work sits in: the three
+adopted it. Decision 4001 settled where friction is counted and where
+seeds live. Decision 4002 added the words for quality; `quality.md` is
+that framework. Decision 4005 set the map this work sits in: the three
 numbers here feed two of its outcomes, flow and quality (`pillars.md`).
 
 ## The idea
@@ -97,7 +97,7 @@ scores.
 | **Weeds** | How much there is that should not grow. | Counts by kind: lint suppressions, skipped tests, open waivers. |
 
 The delivery measures stay: deploy frequency, lead time, change failure
-rate, time to restore, and, since decision 0016, rework rate. They are the
+rate, time to restore, and, since decision 4005, rework rate. They are the
 guard: a bed whose three numbers improve while its delivery measures get
 worse is being gamed.
 
@@ -121,23 +121,23 @@ The same words cover serving customers, not only building for them.
 Each job, and what answers it today. The ratings are a judgment, made on
 2026-11-12 from each app's repository, in the terms `pillars.md` uses.
 The stake and seed rows were judged again the same day, after Orrery built
-its ground and decision 0008 was made. The fence and prune rows were
-judged again on 2026-11-18, by decision 0010. `quality.md` rates the
+its ground and decision 4001 was made. The fence and prune rows were
+judged again on 2026-11-18, by decision 4002. `quality.md` rates the
 parts of quality the same way.
 
 | Job | Covered by | Rating | What is missing |
 | --- | --- | --- | --- |
 | Sense what exists and its health | Orrery, Muster, Dispatch | Covered | |
-| Sense what it costs | Tally | Partial | Model work is counted by conversation, not by its unit, and nothing watches its shapes. Judged again on 2026-11-25, by decision 0044. |
+| Sense what it costs | Tally | Partial | Model work is counted by conversation, not by its unit, and nothing watches its shapes. Judged again on 2026-11-25, by decision 4007. |
 | Sense what growers did | Annals | Partial | Only Orrery, Dispatch, and Graft say they post to it. |
-| Sense friction | Nothing | Gap | No member counts retries, stops, or failed tool calls. A new, small source will, and Orrery will show its numbers (decision 0008). It is not built. |
+| Sense friction | Nothing | Gap | No member counts retries, stops, or failed tool calls. A new, small source will, and Orrery will show its numbers (decision 4001). It is not built. |
 | Trace a weed to its stem | Dispatch's postmortems, Annals | Partial | A postmortem traces an incident. Nothing links a weed in code to what taught it. |
 | Fix at the source, everywhere | Orrery's actions, Graft | Partial | An action can ask a backend to change many beds. Graft has an agent change one bed per request (decision 0009). No member finds every copy of a weed. |
 | Stake | Trellis in a pipeline, Orrery's scorecards and field budgets | Partial | Orrery keeps a budget beside a number and shows when the number is outside it. The budget shows and stops nothing. Each estate sets its own; the suite ships none. |
-| Fence | Trellis in a pipeline, with waivers; Graft's protected paths | Partial | The fences themselves (required checks, admission, permissions) are the estate's own. No member reads a bed's own laws (decision 0010). |
-| Prune | Tally's right-sizing, Muster's checkouts | Partial | No member finds unused code, stale instructions, or checks that guard nothing. Decision 0010 says how a check is judged: by what it costs and what it caught. Nothing counts either yet. |
+| Fence | Trellis in a pipeline, with waivers; Graft's protected paths | Partial | The fences themselves (required checks, admission, permissions) are the estate's own. No member reads a bed's own laws (decision 4002). |
+| Prune | Tally's right-sizing, Muster's checkouts | Partial | No member finds unused code, stale instructions, or checks that guard nothing. Decision 4002 says how a check is judged: by what it costs and what it caught. Nothing counts either yet. |
 | Soil | Trellis's build pack | Partial | It checks that a bed has an instruction file. It does not judge what the file says. |
-| Seed | Bring your own | Bring your own | Seeds stay with each estate (decision 0008). Orrery's ground lists the templates beds were started from, which beds have fallen behind, and the action that plants a new one. |
+| Seed | Bring your own | Bring your own | Seeds stay with each estate (decision 4001). Orrery's ground lists the templates beds were started from, which beds have fallen behind, and the action that plants a new one. |
 | Nursery | Nothing | Bring your own | An estate picks its own nursery bed. |
 
 ## The sky and the ground

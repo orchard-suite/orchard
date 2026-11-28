@@ -35,7 +35,7 @@ them. With `ORC` and `ORCR` as the names in `vantage.yaml`:
 - **Records**: `vantage_outline ORC` lists them, one line each.
   `vantage_find` with `in: ORC` searches them. `vantage_read
   ORC-0013#decision` reads one section. A document that says "decision
-  0016" means `ORC-0016`.
+  4005" means `ORC-4005`.
 - **Roadmap**: `vantage_outline ORCR` lists the items and their states
   (`ORCR#planned` for one state). `vantage_read ORCR-9` reads one: who owes
   it (`owes`), the records it comes from (`from`), its section, its state,
@@ -58,7 +58,7 @@ cannot be read here.
    disagree, the record wins. A later record amends or supersedes an
    earlier one, and the earlier one's status note, at the top of its
    Context, says so. Read it before you rely on a record.
-3. Cite what you use: the record's citation (`ORC-0016`), and this
+3. Cite what you use: the record's citation (`ORC-4005`), and this
    plugin's version from `../../.claude-plugin/plugin.json` for a
    document.
 4. A fact about one app (a version, a command, a field) is checked in that

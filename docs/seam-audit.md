@@ -64,7 +64,7 @@ adapter per runtime.
 
 | Gap | Members |
 | --- | --- |
-| Not on the shared kit | Orrery, Trellis, Vantage, forgitten, and Muster by decision 0004, which takes only the kit's `device` door (decision 0025) |
+| Not on the shared kit | Orrery, Trellis, Vantage, forgitten, and Muster by decision 0004, which takes only the kit's `device` door (decision 5003) |
 | Not shown posting to Annals in its `orrery.yaml` | Vantage, My Apps, Tally, Trellis, Muster, forgitten |
 | No `consumes` in its `orrery.yaml` | forgitten, Annals (Annals only receives, so this one is correct) |
 

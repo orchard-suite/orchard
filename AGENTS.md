@@ -24,8 +24,8 @@ estate's own Vantage settings map the repository to its hub and workspace.
 Never bring a records folder, a roadmap file, or a diagram file back here;
 `make check` fails on each.
 
-- **Decision records**: the registry `ORC`. A record is cited `ORC-0016`;
-  a document here may say "decision 0016". Write and change records with
+- **Decision records**: the registry `ORC`. A record is cited `ORC-4005`;
+  a document here may say "decision 4005". Write and change records with
   the `vantage:decide` skill. A record is a living document (decision
   0048): while its decision stands it is strengthened in place, and the hub
   keeps every revision. A decision that is reversed or replaced is

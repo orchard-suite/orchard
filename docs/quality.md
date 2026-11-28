@@ -1,8 +1,8 @@
 # Quality
 
 This page is the suite's answer to one question: how does an estate keep
-what it ships good, when agents write most of the changes? Decision 0010
-adopted it, and decision 0011 added the half before a change exists. It
+what it ships good, when agents write most of the changes? Decision 4002
+adopted it, and decision 4003 added the half before a change exists. It
 uses the words of `garden.md`.
 
 ## What quality is
@@ -54,7 +54,7 @@ A change can pass every law and still make the software worse. A person
 asks for ten special cases. An agent builds all ten, with tests. Nothing
 that was promised broke, and the system now has ten rules where one would
 do. The next grower copies them. No law catches this. A plan does
-(decision 0011).
+(decision 4003).
 
 - **A request is evidence, not a specification.** It says a problem
   exists. It does not say what the fix is. Each claim in it is checked
@@ -261,7 +261,7 @@ cost paid during an escape, when it hurts most. The bed's loop budget is
 the limit: what does not fit moves beside the path. In a low class nearly
 everything costly sits beside it.
 
-The suite's own pipelines work this way (decision 0026). The full check
+The suite's own pipelines work this way (decision 5004). The full check
 runs once in the path, on the machine that lands the change. In CI the
 tests are a witness: they run beside the build, from a clean checkout,
 and the class sets whether a deploy waits for them.
@@ -270,7 +270,7 @@ and the class sets whether a deploy waits for them.
 
 A person's approval is rung 8: the scarcest time there is. So it goes only
 where a change needs it, and the change itself says whether it does
-(decisions 0045 and 0046).
+(decisions 6003 and 6004).
 
 - **Judge a change by its effect, never its verb.** An effect is what a
   change does to a live thing: it stops it, cuts its callers, opens it to
@@ -368,7 +368,7 @@ Plain counts and money, beside the three numbers of `garden.md`.
 
 The delivery measures stay the guard here too. A bed that cuts its
 checking and sees its change failure rate or its rework rate rise has cut
-too far. Decision 0016 made the guard five measures: rework rate is the
+too far. Decision 4005 made the guard five measures: rework rate is the
 share of deployments that are unplanned and happen because of an incident
 in production. It catches a defect that reached people without failing a
 deployment. Nothing counts it yet (the roadmap).
@@ -414,11 +414,11 @@ without a paid account.
 
 Each part, and what answers it today. The ratings are a judgment, made on
 2026-11-18 from each app's repository: Graft at v6.2.0 and Trellis at
-v5.5.0. Graft's rows were read again the same day for decision 0011.
+v5.5.0. Graft's rows were read again the same day for decision 4003.
 The facts in the proof, undo, cost, and red-then-green rows were read
 again on 2026-11-20, from Graft at v6.6.0. No rating changed.
 
-Quality is one of the map's three outcomes (decision 0016, `pillars.md`).
+Quality is one of the map's three outcomes (decision 4005, `pillars.md`).
 This table rates the parts that produce it.
 
 | Part | Covered by | Rating | What is missing |
@@ -431,7 +431,7 @@ This table rates the parts that produce it.
 | A bed's laws | Nothing | Gap | No member reads which of a repository's checks are laws, or judges whether an owner changed them. |
 | The door | Graft | Partial | A build that touches a protected path its plan did not name stops, and Graft asks again. A grower outside the desk has no door but a person. |
 | Class | Trellis's catalog pack | Partial | The pack checks that an app in the catalog has a tier: how much it matters when the app is down. No member reads a class to set the rigor of a change. |
-| Who must see a change | Orrery's approvals | Partial | Orrery asks a person by an action's rules alone. Nothing reads what a change does, so every apply asks, whatever it does. Decisions 0045 and 0046 owe the statement, the judge, and the watch. |
+| Who must see a change | Orrery's approvals | Partial | Orrery asks a person by an action's rules alone. Nothing reads what a change does, so every apply asks, whatever it does. Decisions 6003 and 6004 owe the statement, the judge, and the watch. |
 | Red, then green | Graft | Partial | Asked of every small fix. Not asked of a feature. Since v6.6.0 every criterion of a plan needs a proof before a build lands: a test that shows it, or a screenshot, or an approver's waiver. |
 | Break-it runs | Nothing | Bring your own | The engines are open and free. No member reads what they find. |
 | Proof in an environment | Graft's sandbox | Partial | Each agent session runs in a sandbox of its own. Graft's gate runs the check a repository names in its own file, or its `make check`. A failed gate names the command. A gate that passes does not say what ran. A build lands only when its builder says it is finished and each criterion is proven. A preview of a change is the estate's own. |

@@ -1,7 +1,7 @@
 # The map
 
 What a platform must answer, and how well the suite answers it. Decision
-0016 set this map on 2026-11-20, and decision 0030 added a sixth property
+4005 set this map on 2026-11-20, and decision 4006 added a sixth property
 on 2026-11-23. It has three lists, and each list has its own test.
 
 - **Six pillars.** A pillar is something a platform has. One app answers
@@ -33,7 +33,7 @@ Until 2026-11-20 this page listed fourteen pillars. The platform guide tests
 a pillar one way: one app answers its whole question (principle
 `map-the-platform-as-pillars-each-one-a-question-it-must-answ`). Six of
 the fourteen could never pass that test, because they were not things an
-app can own. Decision 0016 holds the evidence. In short:
+app can own. Decision 4005 holds the evidence. In short:
 
 | What was checked | What was found |
 | --- | --- |
@@ -56,11 +56,11 @@ repository that day, at the version named.
 
 | Pillar | The question | Owner | Rating | Parts in other members | What is missing |
 | --- | --- | --- | --- | --- | --- |
-| Catalog | What do we have, who owns it, and how does it connect? | Orrery | Covered | Vantage is its picture and holds its documents. My Apps is its front page. Muster feeds it the forges and each machine's work that never reached one. forgitten, which found that work, retired into Muster (decisions 0017 and 0025). | Pushers beyond Kubernetes and Entra live in each estate. The ground view is in preview. |
-| Change | How does a change get asked for, shipped, and undone? | Graft | Partial | Orrery's actions engine runs every change that is not a change to a repository, and carries the ones that wait or run long as one job for each run (decision 0020, v1.157.0). | Graft changes a repository that exists, on two forges and one agent runtime, and only in the repositories its program file lists (v6.6.0). Starting a repository stays with the estate (decision 0008). One part of the answer lives in Orrery (decision 0016), and that line is fixed (decision 0020). |
+| Catalog | What do we have, who owns it, and how does it connect? | Orrery | Covered | Vantage is its picture and holds its documents. My Apps is its front page. Muster feeds it the forges and each machine's work that never reached one. forgitten, which found that work, retired into Muster (decisions 0017 and 5003). | Pushers beyond Kubernetes and Entra live in each estate. The ground view is in preview. |
+| Change | How does a change get asked for, shipped, and undone? | Graft | Partial | Orrery's actions engine runs every change that is not a change to a repository, and carries the ones that wait or run long as one job for each run (decision 6001, v1.157.0). | Graft changes a repository that exists, on two forges and one agent runtime, and only in the repositories its program file lists (v6.6.0). Starting a repository stays with the estate (decision 4001). One part of the answer lives in Orrery (decision 4005), and that line is fixed (decision 6001). |
 | Health | Is it working, and does it come back when it breaks? | Dispatch | Partial | Trellis's telemetry pack judges whether a service emits telemetry. | Dispatch holds incidents, on-call, and postmortems, and sends notices (v0.0.40). The telemetry stack is the estate's. Nothing shows ahead of time that a thing comes back. |
-| Cost | What does each thing cost, in money and in capacity? | Tally | Partial | None. | Cloud cost reads one cloud only. Model work is counted by conversation, not by its unit: nothing says what one document, request, or thread costs, or watches the five shapes that waste it (decision 0044). Rated Partial on 2026-11-25, a judgment, from Tally at v1.2.0. |
-| Rules | Does everything stay inside what its owners said must hold? | Trellis | Partial | Vantage defines what the owners said: standards, the packs that check them, and exceptions (decision 0049, not built yet). Graft's fences hold a change made through the desk. | Trellis reads one forge, its registry, and one cloud. It judges an estate's laws, its nine packs, and no repository's own laws (decision 0010). Its 99 rules still name the old pillars (v5.6.1). |
+| Cost | What does each thing cost, in money and in capacity? | Tally | Partial | None. | Cloud cost reads one cloud only. Model work is counted by conversation, not by its unit: nothing says what one document, request, or thread costs, or watches the five shapes that waste it (decision 4007). Rated Partial on 2026-11-25, a judgment, from Tally at v1.2.0. |
+| Rules | Does everything stay inside what its owners said must hold? | Trellis | Partial | Vantage defines what the owners said: standards, the packs that check them, and exceptions (decision 4008, not built yet). Graft's fences hold a change made through the desk. | Trellis reads one forge, its registry, and one cloud. It judges an estate's laws, its nine packs, and no repository's own laws (decision 4002). Its 99 rules still name the old pillars (v5.6.1). |
 | Record | Who, or which agent, did what, and on whose say-so? | Annals | Partial | None. | Only Orrery, Dispatch, and Graft say they post to it. |
 
 ## The six properties
@@ -70,12 +70,12 @@ findings and waivers. Today its rules reach one of the six.
 
 | Property | What it asks of every pillar | Rating | What holds today | What is missing |
 | --- | --- | --- | --- | --- |
-| Run as a product | Its use is measured, and it improves from what people say. | Partial | My Apps counts what people open. A request to Graft is how a person says what they need, and each gets one answer (decision 0011). | No rule judges it. Use is not measured pillar by pillar. |
+| Run as a product | Its use is measured, and it improves from what people say. | Partial | My Apps counts what people open. A request to Graft is how a person says what they need, and each gets one answer (decision 4003). | No rule judges it. Use is not measured pillar by pillar. |
 | Two doors | An agent can use every door a person can, in one shape. | Partial | Trellis's interfaces pack judges the shape of an HTTP API. Orrery, Vantage, Annals, and Dispatch each have a door for agents. | No one CLI shape, no generated SDKs, and no one docs site. No door for agents was found in the other five members. |
 | Self-service | No ticket and no person stands in the way, unless the risk says so. | Partial | Orrery's actions engine runs, approves, and records. A lane in Graft sets how far a request goes with no person in the way. | No rule judges whether a capability still needs a ticket. |
-| One kit | The platform's own software is built from one shared kit. | Partial | Five of eleven members build on the kit: My Apps, Tally, Annals, Dispatch, and Graft. | Orrery, Trellis, Vantage, and Rootstock do not, and Toolshed is not built yet. Muster takes only the kit's `device` door, and stays off the rest by decision 0004 (decision 0025). No rule judges it. |
+| One kit | The platform's own software is built from one shared kit. | Partial | Five of eleven members build on the kit: My Apps, Tally, Annals, Dispatch, and Graft. | Orrery, Trellis, Vantage, and Rootstock do not, and Toolshed is not built yet. Muster takes only the kit's `device` door, and stays off the rest by decision 0004 (decision 5003). No rule judges it. |
 | Decided on purpose | Each choice is written down, with why, and what would reopen it. | Partial | Vantage keeps its records in a hub registry, and the suite keeps its own there too. Orrery, Graft, and Trellis keep records in their repositories. | The other members keep none. No rule judges it. |
-| Built for the agent first | An agent can afford every door: finding one fact, reading one part, or changing one sentence costs it no more than the same task on a local disk (decision 0030). | Partial | Vantage holds the bar by its own decision, with a benchmark in its check. Orrery bounds every answer an agent reads. | No other member was read against the bar. The kit has no wrapper that counts a tool call and no benchmark harness. No rule judges it. |
+| Built for the agent first | An agent can afford every door: finding one fact, reading one part, or changing one sentence costs it no more than the same task on a local disk (decision 4006). | Partial | Vantage holds the bar by its own decision, with a benchmark in its check. Orrery bounds every answer an agent reads. | No other member was read against the bar. The kit has no wrapper that counts a tool call and no benchmark harness. No rule judges it. |
 
 ## The three outcomes
 
@@ -85,7 +85,7 @@ defines cost of checking and catches.
 
 | Outcome | The question | Its numbers | What is counted today | What is not |
 | --- | --- | --- | --- | --- |
-| Flow | How fast and how smoothly does work move? | Deploy frequency, lead time, the loop, friction. | Deploy frequency and lead time are calculated in Orrery from what Muster writes. Muster writes each pipeline's median duration, which is most of the loop. | Nothing counts friction. Its source is decided and not built (decision 0008). |
+| Flow | How fast and how smoothly does work move? | Deploy frequency, lead time, the loop, friction. | Deploy frequency and lead time are calculated in Orrery from what Muster writes. Muster writes each pipeline's median duration, which is most of the loop. | Nothing counts friction. Its source is decided and not built (decision 4001). |
 | Quality | Is what ships good, and what does knowing that cost? | Change failure rate, rework rate, time to restore, laws that hold, weeds, cost of checking, catches. | Change failure rate and time to restore are calculated in Orrery. Graft keeps what each request's agents spent, by stage, on its catalog record (v6.5.0). | Rework rate, a repository's laws, weeds, and catches have no source. Cost of checking is not joined per change outside the desk. |
 | Adoption | Do people and agents choose it? | Who uses what, and what they ask for. | My Apps counts what people open. Graft keeps each request. | No member counts what an agent chooses. Nothing shows these together. |
 
@@ -96,7 +96,7 @@ The hub ships no model. Showing the three for a whole estate is owed
 ## What the pillars are reached through
 
 Orrery owns Catalog. It is also the estate's control plane and the
-console for the people who run the platform (decision 0029). That work is
+console for the people who run the platform (decision 1002). That work is
 not a seventh pillar: it is what the other pillars are reached through.
 Each member feeds Orrery what it holds and offers what it can do as
 actions there, and keeps a panel of its own. The actions engine sits in
@@ -106,7 +106,7 @@ Partial is open, and the rating above was not changed.
 ## The floor
 
 A forge, pipelines, a deploy tool, sign-in, a vault, a telemetry stack, a
-message broker (decision 0032), an agent runtime, and environments. An estate brings each one, and the suite
+message broker (decision 1004), an agent runtime, and environments. An estate brings each one, and the suite
 reads it through an adapter. `seam.md` holds the full list and the line.
 None is a pillar, and none is rated here.
 
@@ -167,7 +167,7 @@ steps keep their numbers. Their names follow the new map.
 1. **Friction (Flow).** Count where growers get stuck: retries, stops,
    redirects, and failed tool calls per session, as plain numbers on each
    repository. Nothing measures this today. A new, small source will, with
-   no pages of its own (decision 0008). It is not built.
+   no pages of its own (decision 4001). It is not built.
 2. **The numbers on every bed (Flow and Quality).** The loop, friction,
    and weeds as fields on each repository in the catalog, beside the five
    delivery measures. Muster already writes each pipeline's median
@@ -178,7 +178,7 @@ steps keep their numbers. Their names follow the new map.
    is left is to open it to everyone.
 4. **A bed's laws (Rules).** Trellis reads which of a repository's checks
    are laws, and judges them and who changed them. The class goes on each
-   bed's catalog entry (decision 0010).
+   bed's catalog entry (decision 4002).
 5. **Two doors.** One CLI shape and one token story across the members.
 6. **One kit.** Move the other five members onto the kit, which also
    gives them one door, one telemetry setup, and one Annals client.

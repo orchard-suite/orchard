@@ -32,21 +32,21 @@ configuration, and its code and docs name neither.
 Orchard is not a forge, a build system, an identity provider, or a secrets
 store. You bring those: GitHub, GitLab, Azure DevOps, Bitbucket, your
 pipelines, your sign-in, your vault, your observability stack, and, once
-two members are joined, your message broker (decision 0032). Orchard
+two members are joined, your message broker (decision 1004). Orchard
 reads them and fills the gaps the market leaves between them.
 
 Orchard is not a portal for a business, and not an ERP. An app an estate
 builds for its business has its own pages and its own rules, and uses
 Orrery as an API, an inventory, an action runner, and an approval system
-(decision 0029).
+(decision 1002).
 
 ## The members
 
 Each member but two belongs to one of six pillars
-([docs/pillars.md](docs/pillars.md), decision 0016). Six own a pillar.
+([docs/pillars.md](docs/pillars.md), decision 4005). Six own a pillar.
 Three are parts of Catalog. redgreen is Muster now, and forgitten retired
 into it on 2026-11-23, once Muster held each estate's machine reports
-(decisions 0017 and 0025); its repository is archived. Rootstock and
+(decisions 0017 and 5003); its repository is archived. Rootstock and
 Toolshed belong to no pillar. They stand on the floor: Rootstock deploys
 software to environments (decision 0028), and Toolshed delivers tools to
 machines (decision 0042). A floor member puts the platform in place,
@@ -55,7 +55,7 @@ members.
 
 | App | Pillar | What it answers | Its tending job |
 | --- | --- | --- | --- |
-| [Orrery](https://github.com/orchard-suite/orrery) | Catalog (owner), and the estate's control plane and console (decision 0029) | What exists, how it connects, and whether it is healthy. It holds the model, the actions, and the approvals, and it is where the people who run the platform see and act. | The one board. Sense, and act on many repositories at once. |
+| [Orrery](https://github.com/orchard-suite/orrery) | Catalog (owner), and the estate's control plane and console (decision 1002) | What exists, how it connects, and whether it is healthy. It holds the model, the actions, and the approvals, and it is where the people who run the platform see and act. | The one board. Sense, and act on many repositories at once. |
 | [Vantage](https://github.com/orchard-suite/vantage) | Catalog | What a system looks like and what is written about it: diagrams as code, kept true by the catalog, with the system's living documents beside them. | Sense: the shape of the system. |
 | [My Apps](https://github.com/orchard-suite/myapps) | Catalog | Which applications a person can open, and the landscape of everything the estate offers. | Sense: what people open. |
 | [Tally](https://github.com/orchard-suite/tally) | Cost (owner) | What each workload, host, agent, and job costs, in money and in capacity. | Sense cost. Prune: right-sizing. |
@@ -87,7 +87,7 @@ them. `docs/members.md` lists the whole shed.
 
 The suite's decision records, its roadmap, and its diagrams live in a
 Vantage hub, not in this repository (decision 0027). `vantage.yaml` names
-them: the registry `ORC`, where decision 0016 is `ORC-0016`; the roadmap
+them: the registry `ORC`, where decision 4005 is `ORC-4005`; the roadmap
 kind `ORCR`; and the document `orchard`, whose pages are the documents in
 `docs/`. It names no hub: the estate that keeps them maps this repository
 to its hub in its own settings, and nothing is copied to another hub. This
