@@ -215,9 +215,11 @@ at work.
 
 The roadmap lists each thing these steps and the decisions leave owed, who
 owes it, and whether it is done. A decision made in any conversation
-reaches this repository as a proposal and is folded into a record without
-the owner carrying it (decision 0013). The records and the roadmap live in
-a hub, and `vantage.yaml` names them (decision 0027).
+lands as a record in the suite's registry, with the roadmap items it owes,
+written by the agent that made it. The suite keeps no inbox in front of
+the registry: how a decision travels there is each estate's own choice
+(decision 0048). The records and the roadmap live in a hub, and
+`vantage.yaml` names them (decision 0027).
 
 ## What is still open
 

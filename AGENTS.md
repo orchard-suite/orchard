@@ -10,9 +10,9 @@ send a decision back.
 
 - The suite's strategy, its members, its pillar coverage, and its seam, as
   the documents in `docs/`.
-- The plugin: `.claude-plugin/` and `skills/` (`consult`, `propose`,
-  `fold`). A skill here says how to read or change the suite. It never
-  repeats what a document or a record says.
+- The plugin: `.claude-plugin/` and its one skill, `skills/consult/`. It
+  says how to read the suite. It never repeats what a document or a
+  record says.
 - `vantage.yaml`: the pointer to what lives in the hub. It names no hub.
 - Anything an app's own repository already says stays there. Link to it.
 
@@ -42,13 +42,20 @@ Never bring a records folder, a roadmap file, or a diagram file back here;
 
 ## How a decision arrives
 
-A decision made in any conversation, on any machine, arrives as a proposal:
-an issue labelled `proposal` (the `propose` skill). The `fold` skill turns
-proposals into records on a schedule. A proposal that changes an accepted
-decision is labelled `needs-ruling` and waits for the owner. A decision
-made in a conversation in this repository is written the same way a fold
-writes one: the record and the roadmap items in the hub, the documents
-here.
+The suite keeps no inbox (decision `ORC-0048`). A decision about the
+suite, made in any conversation on any machine that can reach the hub, is
+written straight into the hub by that conversation, in one pass:
+
+- the record in `ORC`, with the `vantage:decide` skill;
+- an `ORCR` item for each thing the decision leaves owed, linked to the
+  record;
+- the documents here that the decision makes wrong, and their copied
+  pages and the views of the document `orchard` in the hub.
+
+A decision that changes an accepted record is written with the status
+`proposed` and waits for the owner, who accepts it or turns it down in the
+hub. How a decision travels from a machine that cannot reach the hub is
+that estate's own choice; no document here names one.
 
 ## The seam
 

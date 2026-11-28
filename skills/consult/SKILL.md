@@ -9,7 +9,9 @@ This plugin is the Orchard repository itself. Its documents sit two
 folders above this file: `../../README.md` and `../../docs/`. Its decision
 records, its roadmap, and its diagrams live in a Vantage hub, and
 `../../vantage.yaml` names them (decision `ORC-0027`). Never edit any of
-them from here; a change goes in as a proposal (the `propose` skill).
+them from here; a suite decision is written as an `ORC` record with the
+`vantage:decide` skill, with its `ORCR` items and the document changes in
+the same pass (decision `ORC-0048`).
 
 | Question | Read |
 | --- | --- |
@@ -64,7 +66,8 @@ cannot be read here.
    and the roadmap items say when each such fact was last read.
 5. Say where the work departs. If the work does something a decision
    turned down, or something no decision covers, tell the person before you
-   build. Once it is settled, send it back with the `propose` skill.
+   build. Once it is settled, write it as a record in the registry, as
+   above.
 
 The suite names no estate. Nothing here says how one household or one
 company runs it.
