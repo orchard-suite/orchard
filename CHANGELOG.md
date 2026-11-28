@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.26.2](https://github.com/orchard-suite/orchard/compare/v1.26.1...v1.26.2) (2026-11-28)
+
+### Bug Fixes
+
+* **orchard:** graft signs its landing proofs ([fc4cae1](https://github.com/orchard-suite/orchard/commit/fc4cae112a600c09522f18e087b446d9de0215d2))
+
 ## [1.26.1](https://github.com/orchard-suite/orchard/compare/v1.26.0...v1.26.1) (2026-11-28)
 
 ### Bug Fixes
