@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.24.0](https://github.com/orchard-suite/orchard/compare/v1.23.0...v1.24.0) (2026-11-28)
+
+### Features
+
+* **orchard:** drop the proposal inbox ([f28e51f](https://github.com/orchard-suite/orchard/commit/f28e51fbd7a9a2b5663da314b50a5d055d55406c))
+
 ## [1.23.0](https://github.com/orchard-suite/orchard/compare/v1.22.1...v1.23.0) (2026-11-28)
 
 ### Features
