@@ -227,7 +227,10 @@ that check a standard, kept as data: security, telemetry, build,
 interfaces, catalog, access, alerts, delivery, and one that judges a Graft
 program today. Today it reads them from its own repository; it owes
 reading them from a Vantage edition, and taking exceptions from Vantage
-(the roadmap).
+(the roadmap). It ships them as built-in sets, the way a cloud policy
+engine ships built-in initiatives: a new estate starts with the baseline
+set adopted, and adopts, configures, or disables any set in its own
+standard (decision 0049).
 The same packs run on the board, by hand, and in a repository's pipeline, so
 they cannot disagree. Every rule ships a failing, a passing, and a no-data
 fixture. Waivers carry a reason, an owner, and an end date. The
