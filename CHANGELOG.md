@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.27.0](https://github.com/orchard-suite/orchard/compare/v1.26.2...v1.27.0) (2026-11-28)
+
+### Features
+
+* **orchard:** vantage runs programs, agents first ([2068327](https://github.com/orchard-suite/orchard/commit/20683277e1edb64a233108a233a0294ed7d60f00))
+
 ## [1.26.2](https://github.com/orchard-suite/orchard/compare/v1.26.1...v1.26.2) (2026-11-28)
 
 ### Bug Fixes
